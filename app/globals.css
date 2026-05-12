@@ -1,4 +1,12 @@
 @import "tailwindcss";
+
+/* Hide page content until loader is ready — prevents flash before React hydration */
+html.lymar-loading body > *:not(#lymar-loader) {
+  visibility: hidden;
+}
+#lymar-loader {
+  visibility: visible !important;
+}
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 

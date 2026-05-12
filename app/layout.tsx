@@ -34,6 +34,9 @@ export default function RootLayout({
       lang="fr"
       className={`${playfair.variable} ${inter.variable} h-full antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `try{if(!sessionStorage.getItem('lymar_loaded'))document.documentElement.classList.add('lymar-loading')}catch(e){}` }} />
+      </head>
       <body className="min-h-full flex flex-col bg-white text-[#0A0A0A]">
         <Loader />
         <Header />

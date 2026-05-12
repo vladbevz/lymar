@@ -3,16 +3,25 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+function revealPage() {
+  document.documentElement.classList.remove("lymar-loading");
+}
+
 export default function Loader() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const already = sessionStorage.getItem("lymar_loaded");
     if (!already) {
-      setVisible(true);
       sessionStorage.setItem("lymar_loaded", "1");
-      const t = setTimeout(() => setVisible(false), 3000);
+      setVisible(true);
+      const t = setTimeout(() => {
+        setVisible(false);
+        revealPage();
+      }, 3000);
       return () => clearTimeout(t);
+    } else {
+      revealPage();
     }
   }, []);
 
@@ -20,6 +29,7 @@ export default function Loader() {
     <AnimatePresence>
       {visible && (
         <motion.div
+          id="lymar-loader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
