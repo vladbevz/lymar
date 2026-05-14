@@ -33,7 +33,7 @@ export default function LocalisationSection() {
           <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-3">
             Nos cabinets
           </p>
-          <h2 className="font-(family-name:--font-playfair) text-4xl font-bold italic text-black mb-14">
+          <h2 className="font-(family-name:--font-playfair) text-4xl font-semibold text-black mb-14">
             Deux adresses, une expertise
           </h2>
         </FadeUp>

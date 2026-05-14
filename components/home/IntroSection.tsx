@@ -14,7 +14,7 @@ export default function IntroSection() {
 
           <div>
             <FadeUp delay={0.1}>
-              <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-bold italic leading-tight text-black mb-8">
+              <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-semibold leading-tight text-black mb-8">
                 Un regard expert au service de votre beauté naturelle
               </h2>
             </FadeUp>

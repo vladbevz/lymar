@@ -39,13 +39,13 @@ export default function AProposPage() {
                 <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
                   À propos
                 </p>
-                <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-bold italic text-black leading-[1.05] max-w-lg mb-5">
+                <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold text-black leading-[1.05] max-w-lg mb-5">
                   Anastasiia Lymar
                 </h1>
                 <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
                   Experte internationale en maquillage permanent et pigmentation correctrice. Deux cabinets : Saint-Georges-de-Didonne et Beaune.
                 </p>
-                <p className="font-(family-name:--font-playfair) text-lg italic text-zinc-600 max-w-sm leading-relaxed">
+                <p className="font-(family-name:--font-playfair) text-lg text-zinc-600 max-w-sm leading-relaxed">
                   &ldquo;Chaque visage est une toile unique. Mon rôle est de révéler sa beauté propre.&rdquo;
                 </p>
               </FadeUp>
@@ -86,7 +86,7 @@ export default function AProposPage() {
 
             <div>
               <FadeUp delay={0.1}>
-                <p className="font-(family-name:--font-playfair) text-2xl italic text-black mb-8 leading-relaxed">
+                <p className="font-(family-name:--font-playfair) text-2xl text-black mb-8 leading-relaxed">
                   &ldquo;Chaque visage est une toile unique. Mon rôle est de révéler sa beauté propre, avec précision et bienveillance.&rdquo;
                 </p>
               </FadeUp>
@@ -120,7 +120,7 @@ export default function AProposPage() {
             <p className="text-xs tracking-[0.3em] uppercase font-(family-name:--font-inter) text-zinc-500 mb-4">
               Formation
             </p>
-            <h2 className="font-(family-name:--font-playfair) text-4xl italic font-light text-black mb-4">
+            <h2 className="font-(family-name:--font-playfair) text-4xl font-light text-black mb-4">
               Une expertise forgée à l&apos;international
             </h2>
             <Separator className="w-12 mx-auto bg-black mb-10" />
@@ -139,7 +139,7 @@ export default function AProposPage() {
               <p className="text-xs tracking-[0.3em] uppercase font-(family-name:--font-inter) text-zinc-500 mb-4">
                 Mes valeurs
               </p>
-              <h2 className="font-(family-name:--font-playfair) text-4xl italic font-light text-black">
+              <h2 className="font-(family-name:--font-playfair) text-4xl font-light text-black">
                 Ce qui guide mon travail
               </h2>
             </div>
@@ -150,7 +150,7 @@ export default function AProposPage() {
               <FadeUp key={v.titre} delay={i * 0.15}>
                 <div className="text-center px-6">
                   <div className="w-px h-12 bg-black mx-auto mb-6" />
-                  <h3 className="font-(family-name:--font-playfair) text-2xl italic text-black mb-4">
+                  <h3 className="font-(family-name:--font-playfair) text-2xl text-black mb-4">
                     {v.titre}
                   </h3>
                   <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed">

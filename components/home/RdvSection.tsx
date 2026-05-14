@@ -14,7 +14,7 @@ export default function RdvSection() {
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-bold italic text-black mb-6 leading-tight">
+          <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-semibold text-black mb-6 leading-tight">
             Prête à vous sublimer ?
           </h2>
         </FadeUp>

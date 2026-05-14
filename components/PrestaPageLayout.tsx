@@ -49,7 +49,7 @@ export default function PrestaPageLayout({
                 <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
                   {breadcrumb}
                 </p>
-                <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-bold italic text-black leading-[1.05] max-w-lg mb-5">
+                <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold text-black leading-[1.05] max-w-lg mb-5">
                   {titre}
                 </h1>
                 {sousTitre && (

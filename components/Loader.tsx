@@ -33,13 +33,13 @@ export default function Loader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-          className="fixed inset-0 z-[200] bg-black flex flex-col items-center justify-center"
+          className="fixed inset-0 z-200 bg-black flex flex-col items-center justify-center"
         >
           <motion.h1
             initial={{ opacity: 0, letterSpacing: "0.4em" }}
             animate={{ opacity: 1, letterSpacing: "0.55em" }}
             transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-            className="font-(family-name:--font-playfair) text-white text-4xl md:text-5xl font-light tracking-[0.55em] uppercase mb-3"
+            className="font-(family-name:--font-playfair) text-white text-4xl md:text-5xl font-light tracking-[0.55em] uppercase mb-3 not-italic"
           >
             Lymar
           </motion.h1>

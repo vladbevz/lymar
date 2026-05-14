@@ -51,7 +51,7 @@ export default function PrestationsPreview() {
               <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-3">
                 Prestations
               </p>
-              <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-bold italic text-black leading-tight">
+              <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-semibold text-black leading-tight">
                 Notre expertise
               </h2>
             </div>

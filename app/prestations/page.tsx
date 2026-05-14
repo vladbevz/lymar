@@ -75,7 +75,7 @@ export default function PrestationsPage() {
                 <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
                   Nos prestations
                 </p>
-                <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-bold italic text-black leading-[1.05] mb-5">
+                <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold text-black leading-[1.05] mb-5">
                   Expertise
                   <br />
                   & précision
@@ -144,7 +144,7 @@ export default function PrestationsPage() {
       {/* CTA */}
       <section className="py-20 bg-zinc-50 border-t border-zinc-100 text-center">
         <FadeUp>
-          <p className="font-(family-name:--font-playfair) text-3xl font-bold italic text-black mb-4">
+          <p className="font-(family-name:--font-playfair) text-3xl font-semibold text-black mb-4">
             Consultation — 20 €
           </p>
           <p className="font-(family-name:--font-inter) text-sm text-zinc-500 mb-8">

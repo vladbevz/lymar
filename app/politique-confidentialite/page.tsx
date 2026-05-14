@@ -10,7 +10,7 @@ export default function PolitiqueConfidentialitePage() {
     <section className="pt-36 pb-24 bg-white">
       <div className="max-w-3xl mx-auto px-6 lg:px-8">
         <FadeUp>
-          <h1 className="font-(family-name:--font-playfair) text-4xl italic font-light text-black mb-12">
+          <h1 className="font-(family-name:--font-playfair) text-4xl font-light text-black mb-12">
             Politique de confidentialité
           </h1>
           <div className="space-y-8 font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed">

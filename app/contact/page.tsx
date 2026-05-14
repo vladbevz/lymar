@@ -27,7 +27,7 @@ export default function ContactPage() {
                 <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
                   Contact
                 </p>
-                <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-bold italic text-black leading-[1.05] mb-5">
+                <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold text-black leading-[1.05] mb-5">
                   Prenons contact
                 </h1>
                 <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-8">
@@ -89,7 +89,7 @@ export default function ContactPage() {
             <div>
               <FadeUp>
                 <div className="mb-12 p-8 border border-black bg-zinc-50 text-center">
-                  <p className="font-(family-name:--font-playfair) text-2xl italic text-black mb-2">
+                  <p className="font-(family-name:--font-playfair) text-2xl text-black mb-2">
                     Réservation en ligne
                   </p>
                   <p className="font-(family-name:--font-inter) text-sm text-zinc-500 mb-6">
@@ -150,7 +150,7 @@ export default function ContactPage() {
                       <p className="font-(family-name:--font-inter) text-sm text-zinc-500">
                         Chèque · Espèces · Virement Wero
                       </p>
-                      <p className="font-(family-name:--font-inter) text-xs text-zinc-500 mt-1 italic">
+                      <p className="font-(family-name:--font-inter) text-xs text-zinc-500 mt-1">
                         CB non acceptée
                       </p>
                     </div>
@@ -178,7 +178,7 @@ export default function ContactPage() {
             {/* Formulaire */}
             <FadeUp delay={0.15}>
               <div>
-                <h2 className="font-(family-name:--font-playfair) text-2xl italic font-light text-black mb-8">
+                <h2 className="font-(family-name:--font-playfair) text-2xl font-light text-black mb-8">
                   Envoyer un message
                 </h2>
                 <form className="space-y-6">

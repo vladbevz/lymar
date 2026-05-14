@@ -52,7 +52,7 @@ export default function AvisSection() {
                     <span key={i} className="text-black text-sm">★</span>
                   ))}
                 </div>
-                <p className="font-(family-name:--font-playfair) text-lg italic text-black leading-relaxed mb-6">
+                <p className="font-(family-name:--font-playfair) text-lg text-black leading-relaxed mb-6">
                   &ldquo;{a.texte}&rdquo;
                 </p>
                 <div className="border-t border-zinc-100 pt-4">
