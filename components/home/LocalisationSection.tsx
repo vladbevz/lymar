@@ -1,22 +1,27 @@
 import { FadeUp } from "@/components/AnimatedSection";
 import { MapPin } from "lucide-react";
+import MapboxMap from "@/components/MapboxMap";
 
 const cabinets = [
   {
     ville: "Saint-Georges-de-Didonne",
     adresse: "34 Rue Henri Collignon",
     cp: "17110",
-    horaires: "Lun–Sam 9h–19h",
+    horaires: "Sur rendez-vous uniquement",
     maps: "https://maps.google.com/?q=34+Rue+Henri+Collignon,+17110+Saint-Georges-de-Didonne",
-    embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2760.0!2d-1.0036!3d45.5847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s34+Rue+Henri+Collignon%2C+17110+Saint-Georges-de-Didonne!5e0!3m2!1sfr!2sfr!4v1",
+    lng: -1.0008,
+    lat: 45.6025,
+    zoom: 16,
   },
   {
     ville: "Beaune",
-    adresse: "Adresse à confirmer",
+    adresse: "3 Rue du Moulin Noizé",
     cp: "21200",
-    horaires: "Sur rendez-vous",
-    maps: "https://maps.google.com/?q=Beaune+21200",
-    embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43063.0!2d4.8357!3d47.0264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f29b5b1e7c8c6b%3A0x40c34dc02d54e37!2sBeaune!5e0!3m2!1sfr!2sfr!4v1",
+    horaires: "Sur rendez-vous uniquement",
+    maps: "https://maps.google.com/?q=3+Rue+du+Moulin+Noizé,+21200+Beaune",
+    lng: 4.8378,
+    lat: 47.0221,
+    zoom: 16,
   },
 ];
 
@@ -36,18 +41,13 @@ export default function LocalisationSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {cabinets.map((c, i) => (
             <FadeUp key={c.ville} delay={i * 0.15}>
-              <div className="border border-zinc-100">
-                <div className="aspect-video relative overflow-hidden bg-zinc-100">
-                  <iframe
-                    title={`Localisation ${c.ville}`}
-                    src={c.embed}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="absolute inset-0 grayscale"
+              <div className="border border-zinc-100 overflow-hidden">
+                <div className="aspect-video relative bg-zinc-100">
+                  <MapboxMap
+                    lng={c.lng}
+                    lat={c.lat}
+                    zoom={c.zoom}
+                    alt={`Localisation ${c.ville}`}
                   />
                 </div>
                 <div className="p-6">

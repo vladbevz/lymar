@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <h3 className="font-(family-name:--font-playfair) text-xl font-bold italic text-white mb-3">
-              Lymar<br />Dermo-Esthetic
+            <h3 className="font-(family-name:--font-playfair) text-xl font-light tracking-[0.15em] uppercase text-white mb-3">
+              Lymar Dermo-Esthetic
             </h3>
             <p className="text-xs font-(family-name:--font-inter) text-zinc-500 leading-relaxed">
               Maquillage permanent & pigmentation correctrice. Experte internationale.
@@ -44,7 +44,7 @@ export default function Footer() {
               <div className="flex items-start gap-2">
                 <MapPin size={13} className="text-zinc-600 mt-0.5 shrink-0" />
                 <p className="font-(family-name:--font-inter) text-xs text-zinc-400">
-                  Adresse à confirmer<br />21200 Beaune
+                  3 Rue du Moulin Noizé<br />21200 Beaune
                 </p>
               </div>
               <div className="flex items-center gap-2">
