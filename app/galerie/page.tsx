@@ -183,17 +183,8 @@ export default function GaleriePage() {
               </FadeUp>
             </div>
 
-            <div className="relative h-64 lg:h-[calc(100svh-64px-80px)]">
-              <div className="lg:hidden relative w-full h-full overflow-hidden bg-zinc-100">
-                <Image
-                  src={heroPhotos[0].src}
-                  alt={heroPhotos[0].alt}
-                  fill
-                  priority
-                  className="object-cover"
-                />
-              </div>
-              <div className="hidden lg:grid grid-cols-2 gap-2 w-full h-full">
+            <div className="relative h-72 lg:h-[calc(100svh-64px-80px)]">
+              <div className="grid grid-cols-2 gap-1 lg:gap-2 w-full h-full">
                 {heroPhotos.map((photo) => (
                   <div key={photo.src} className="relative overflow-hidden bg-zinc-100">
                     <Image src={photo.src} alt={photo.alt} fill priority className="object-cover" />
