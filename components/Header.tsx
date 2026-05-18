@@ -31,6 +31,7 @@ const navLinks = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [navValue, setNavValue] = useState("");
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-zinc-100">
@@ -47,9 +48,9 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6">
-          <NavigationMenu>
+          <NavigationMenu value={navValue} onValueChange={setNavValue}>
             <NavigationMenuList>
-              <NavigationMenuItem>
+              <NavigationMenuItem value="prestations">
                 <NavigationMenuTrigger className="bg-transparent font-(family-name:--font-glacial) text-xs tracking-widest uppercase text-zinc-500 hover:text-black data-[state=open]:text-black h-auto py-0">
                   Prestations
                 </NavigationMenuTrigger>
@@ -59,6 +60,7 @@ export default function Header() {
                       <li key={p.href}>
                         <Link
                           href={p.href}
+                          onClick={() => setNavValue("")}
                           className="block px-4 py-2.5 text-sm font-(family-name:--font-inter) text-zinc-700 hover:text-black hover:bg-zinc-50 transition-colors"
                         >
                           {p.label}
