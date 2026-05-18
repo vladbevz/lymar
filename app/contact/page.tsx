@@ -40,10 +40,15 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative mt-16 flex h-[calc(100svh-64px)] overflow-hidden bg-white">
+      <section className="relative mt-16 overflow-hidden bg-white lg:flex lg:h-[calc(100svh-64px)]">
+
+        {/* Mobile image */}
+        <div className="relative h-100 w-full lg:hidden">
+          <Image src="/images/contact.webp" alt="Cabinet Lymar Dermo-Esthetic" fill priority className="object-cover object-top" />
+        </div>
 
         {/* Left — text */}
-        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-14 overflow-hidden">
+        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-10 lg:py-14 overflow-hidden">
           <FadeUp>
             <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-4">
               Contact

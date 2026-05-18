@@ -29,8 +29,12 @@ export default function AProposPage() {
   return (
     <>
       {/* Hero — split layout */}
-      <section className="relative mt-16 flex h-[calc(100svh-64px)] overflow-hidden bg-white">
-        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-14 overflow-hidden">
+      <section className="relative mt-16 overflow-hidden bg-white lg:flex lg:h-[calc(100svh-64px)]">
+        {/* Mobile image */}
+        <div className="relative h-100 w-full lg:hidden">
+          <Image src="/images/apropos1.webp" alt="Portrait d'Anastasiia Lymar" fill priority className="object-cover object-[center_35%]" />
+        </div>
+        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-10 lg:py-14 overflow-hidden">
           <FadeUp>
             <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-4">
               À propos

@@ -9,10 +9,15 @@ const PLANITY = "https://www.planity.com/lymar-dermo-esthetic-17110-saint-george
 
 export default function HeroSection() {
   return (
-    <section className="relative mt-16 flex h-[calc(100svh-64px)] overflow-hidden bg-white">
+    <section className="relative mt-16 overflow-hidden bg-white lg:flex lg:h-[calc(100svh-64px)]">
+
+      {/* Mobile image */}
+      <div className="relative h-95 w-full lg:hidden">
+        <Image src="/images/hero.webp" alt="Anastasiia Lymar — maquillage permanent" fill priority className="object-cover object-center" />
+      </div>
 
       {/* Left — text */}
-      <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-14 overflow-hidden">
+      <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-10 lg:py-14 overflow-hidden">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
