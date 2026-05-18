@@ -23,7 +23,7 @@ export default function ScrollToTop() {
           transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Retour en haut"
-          className="fixed bottom-8 right-8 z-40 w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-zinc-700 transition-colors duration-300 group"
+          className="fixed bottom-8 right-8 z-40 w-12 h-12 rounded-full bg-black text-white flex items-center justify-center hover:bg-zinc-700 transition-colors duration-300 group"
         >
           <ArrowUp
             size={16}
