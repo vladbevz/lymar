@@ -84,7 +84,7 @@ export default function HeroSection() {
             ))}
           </div>
           <p className="font-(family-name:--font-inter) text-sm text-zinc-500">
-            <strong className="text-black">5.0</strong> · 77 avis vérifiés
+            <strong className="text-black">5.0</strong> · 200+ avis vérifiés
           </p>
         </motion.div>
       </div>

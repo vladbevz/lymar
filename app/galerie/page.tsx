@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, animate } from "framer-motion";
 import { FadeUp } from "@/components/AnimatedSection";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -36,6 +36,8 @@ interface ModalState {
   index: number;
 }
 
+const CARD_STEP = 262; // 260px card + 2px gap
+
 function PhotoStrip({
   photos,
   label,
@@ -49,6 +51,7 @@ function PhotoStrip({
   const innerRef = useRef<HTMLDivElement>(null);
   const [constraints, setConstraints] = useState({ left: 0, right: 0 });
   const isDragging = useRef(false);
+  const x = useMotionValue(0);
 
   useEffect(() => {
     const calc = () => {
@@ -62,6 +65,16 @@ function PhotoStrip({
     return () => window.removeEventListener("resize", calc);
   }, [photos]);
 
+  const scrollPrev = () => {
+    const target = Math.min(0, x.get() + CARD_STEP * 2);
+    animate(x, target, { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] });
+  };
+
+  const scrollNext = () => {
+    const target = Math.max(constraints.left, x.get() - CARD_STEP * 2);
+    animate(x, target, { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] });
+  };
+
   return (
     <div className="py-10">
       <FadeUp>
@@ -70,10 +83,20 @@ function PhotoStrip({
         </p>
       </FadeUp>
 
-      <div
-        ref={outerRef}
-        className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
-      >
+      <div className="relative">
+        {/* Prev */}
+        <button
+          onClick={scrollPrev}
+          aria-label="Précédent"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all duration-200 shadow-sm ml-1"
+        >
+          <ChevronLeft size={15} strokeWidth={1.5} />
+        </button>
+
+        <div
+          ref={outerRef}
+          className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
+        >
         <motion.div
           ref={innerRef}
           className="flex gap-2 px-6 lg:px-16"
@@ -81,6 +104,7 @@ function PhotoStrip({
           dragConstraints={constraints}
           dragElastic={0.06}
           dragMomentum={true}
+          style={{ x }}
           onDragStart={() => {
             isDragging.current = false;
           }}
@@ -121,6 +145,16 @@ function PhotoStrip({
           ))}
           <div className="shrink-0 w-6 lg:w-10" />
         </motion.div>
+      </div>
+
+        {/* Next */}
+        <button
+          onClick={scrollNext}
+          aria-label="Suivant"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all duration-200 shadow-sm mr-1"
+        >
+          <ChevronRight size={15} strokeWidth={1.5} />
+        </button>
       </div>
     </div>
   );

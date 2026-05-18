@@ -110,7 +110,7 @@ export default function ContactPage() {
       </section>
 
       {/* Cartes */}
-      <section className="py-24 bg-white border-t border-zinc-100">
+      <section className="py-12 lg:py-24 bg-white border-t border-zinc-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeUp>
             <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-3">
@@ -160,7 +160,7 @@ export default function ContactPage() {
       </section>
 
       {/* Formulaire */}
-      <section className="py-24 bg-zinc-50 border-t border-zinc-100">
+      <section className="py-12 lg:py-24 bg-zinc-50 border-t border-zinc-100">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <FadeUp>
             <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-3">

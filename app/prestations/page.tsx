@@ -142,7 +142,7 @@ export default function PrestationsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-zinc-50 border-t border-zinc-100 text-center">
+      <section className="py-10 lg:py-20 bg-zinc-50 border-t border-zinc-100 text-center">
         <FadeUp>
           <p className="font-(family-name:--font-playfair) text-3xl font-semibold text-black mb-4">
             Consultation — 20 €

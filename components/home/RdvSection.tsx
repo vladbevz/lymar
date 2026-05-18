@@ -5,7 +5,7 @@ const PLANITY = "https://www.planity.com/lymar-dermo-esthetic-17110-saint-george
 
 export default function RdvSection() {
   return (
-    <section className="py-24 lg:py-32 bg-white border-t border-zinc-100">
+    <section className="py-12 lg:py-32 bg-white border-t border-zinc-100">
       <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
         <FadeUp>
           <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-5">

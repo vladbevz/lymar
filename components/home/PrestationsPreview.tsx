@@ -63,7 +63,7 @@ const transition = { duration: 0.35, ease: [0.25, 0.1, 0.25, 1] as const };
 
 export default function PrestationsPreview() {
   return (
-    <section className="py-24 lg:py-32 bg-white border-t border-zinc-100">
+    <section className="py-12 lg:py-32 bg-white border-t border-zinc-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <FadeUp>
           <div className="flex items-end justify-between mb-14">
@@ -95,14 +95,14 @@ export default function PrestationsPreview() {
                 className="h-full"
               >
                 <Link href={cat.href} className="block p-8 h-full">
-                  <p className="font-(family-name:--font-inter) text-xs text-zinc-400 mb-3">{cat.prix}</p>
                   <motion.h3
                     variants={titleVariants}
                     transition={transition}
-                    className="font-(family-name:--font-playfair) text-2xl font-bold text-black mb-3 origin-left"
+                    className="font-(family-name:--font-playfair) text-2xl font-bold text-black mb-2 origin-left"
                   >
                     {cat.title}
                   </motion.h3>
+                  <p className="font-(family-name:--font-inter) text-xs text-zinc-400 mb-3">{cat.prix}</p>
                   <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed mb-6">
                     {cat.description}
                   </p>

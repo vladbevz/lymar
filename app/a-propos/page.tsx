@@ -59,9 +59,9 @@ export default function AProposPage() {
       </section>
 
       {/* Portrait + Histoire */}
-      <section className="py-16 bg-white">
+      <section className="py-8 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-center">
             <FadeUp>
               <div className="relative aspect-3/4 w-full max-w-sm">
                 <Image
@@ -105,7 +105,7 @@ export default function AProposPage() {
       </section>
 
       {/* Formation */}
-      <section className="py-24 bg-zinc-50">
+      <section className="py-12 lg:py-24 bg-zinc-50">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <FadeUp>
             <p className="text-xs tracking-[0.3em] uppercase font-glacial text-zinc-500 mb-4">
@@ -123,7 +123,7 @@ export default function AProposPage() {
       </section>
 
       {/* Valeurs */}
-      <section className="py-24 bg-white">
+      <section className="py-12 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeUp>
             <div className="text-center mb-16">
