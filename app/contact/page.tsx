@@ -24,7 +24,7 @@ export default function ContactPage() {
             {/* Text */}
             <div className="pt-14 pb-8 lg:py-0">
               <FadeUp>
-                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
+                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-4">
                   Contact
                 </p>
                 <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold text-black leading-[1.05] mb-5">
@@ -59,7 +59,7 @@ export default function ContactPage() {
                   href="https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block font-(family-name:--font-inter) text-xs tracking-widest uppercase bg-black text-white px-10 py-3 hover:bg-zinc-800 transition-colors"
+                  className="inline-block font-(family-name:--font-glacial) text-xs tracking-widest uppercase bg-black text-white px-10 py-3 hover:bg-zinc-800 transition-colors"
                 >
                   Réserver sur Planity
                 </a>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                   </p>
                   <Button
                     asChild
-                    className="bg-black text-white hover:bg-zinc-700 rounded-none px-8 py-3 tracking-widest uppercase text-xs font-(family-name:--font-inter) w-full"
+                    className="bg-black text-white hover:bg-zinc-700 rounded-none px-8 py-3 tracking-widest uppercase text-xs font-(family-name:--font-glacial) w-full"
                   >
                     <a href="https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne" target="_blank" rel="noopener noreferrer">
                       Réserver sur Planity
@@ -122,7 +122,7 @@ export default function ContactPage() {
                         href="https://maps.google.com/?q=34+Rue+Henri+Collignon,+17110+Saint-Georges-de-Didonne"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs tracking-widest uppercase font-(family-name:--font-inter) text-black border-b border-black pb-0.5 hover:text-zinc-500 hover:border-zinc-500 transition-colors mt-2 inline-block"
+                        className="text-xs tracking-widest uppercase font-(family-name:--font-glacial) text-black border-b border-black pb-0.5 hover:text-zinc-500 hover:border-zinc-500 transition-colors mt-2 inline-block"
                       >
                         Voir sur Maps
                       </a>
@@ -184,7 +184,7 @@ export default function ContactPage() {
                 <form className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs tracking-widest uppercase font-(family-name:--font-inter) text-zinc-500 mb-2 block">
+                      <label className="text-xs tracking-widest uppercase font-(family-name:--font-glacial) text-zinc-500 mb-2 block">
                         Prénom
                       </label>
                       <Input
@@ -193,7 +193,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="text-xs tracking-widest uppercase font-(family-name:--font-inter) text-zinc-500 mb-2 block">
+                      <label className="text-xs tracking-widest uppercase font-(family-name:--font-glacial) text-zinc-500 mb-2 block">
                         Nom
                       </label>
                       <Input
@@ -203,7 +203,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div>
-                    <label className="text-xs tracking-widest uppercase font-(family-name:--font-inter) text-zinc-500 mb-2 block">
+                    <label className="text-xs tracking-widest uppercase font-(family-name:--font-glacial) text-zinc-500 mb-2 block">
                       Email
                     </label>
                     <Input
@@ -213,7 +213,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label className="text-xs tracking-widest uppercase font-(family-name:--font-inter) text-zinc-500 mb-2 block">
+                    <label className="text-xs tracking-widest uppercase font-(family-name:--font-glacial) text-zinc-500 mb-2 block">
                       Message
                     </label>
                     <Textarea
@@ -224,7 +224,7 @@ export default function ContactPage() {
                   </div>
                   <Button
                     type="submit"
-                    className="w-full bg-black text-white hover:bg-zinc-700 rounded-none py-3 tracking-widest uppercase text-xs font-(family-name:--font-inter)"
+                    className="w-full bg-black text-white hover:bg-zinc-700 rounded-none py-3 tracking-widest uppercase text-xs font-(family-name:--font-glacial)"
                   >
                     Envoyer le message
                   </Button>

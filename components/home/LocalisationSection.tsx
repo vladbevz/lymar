@@ -30,7 +30,7 @@ export default function LocalisationSection() {
     <section className="py-24 lg:py-32 bg-white border-t border-zinc-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <FadeUp>
-          <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-3">
+          <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-3">
             Nos cabinets
           </p>
           <h2 className="font-(family-name:--font-playfair) text-4xl font-semibold text-black mb-14">
@@ -67,7 +67,7 @@ export default function LocalisationSection() {
                     href={c.maps}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 font-(family-name:--font-inter) text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
+                    className="inline-flex items-center gap-1.5 font-(family-name:--font-glacial) text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
                   >
                     Voir sur Google Maps
                   </a>

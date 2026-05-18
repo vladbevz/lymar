@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Montserrat } from "next/font/google";
+import { Cormorant_Garamond, Montserrat, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 
-const playfair = Bodoni_Moda({
+const playfair = Cormorant_Garamond({
   variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
   style: ["normal"],
 });
 
@@ -16,6 +16,13 @@ const inter = Montserrat({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+});
+
+const baskerville = Libre_Baskerville({
+  variable: "--font-libre",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -32,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${playfair.variable} ${inter.variable} h-full antialiased`}
+      className={`${playfair.variable} ${inter.variable} ${baskerville.variable} h-full antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: `try{if(!sessionStorage.getItem('lymar_loaded'))document.documentElement.classList.add('lymar-loading')}catch(e){}` }} />

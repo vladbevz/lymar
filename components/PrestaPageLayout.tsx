@@ -46,7 +46,7 @@ export default function PrestaPageLayout({
             {/* Text */}
             <div className="pt-14 pb-8 lg:py-0">
               <FadeUp>
-                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
+                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-4">
                   {breadcrumb}
                 </p>
                 <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold text-black leading-[1.05] max-w-lg mb-5">
@@ -57,7 +57,7 @@ export default function PrestaPageLayout({
                     {sousTitre}
                   </p>
                 )}
-                <p className="font-(family-name:--font-inter) text-xs tracking-[0.2em] uppercase text-zinc-400">
+                <p className="font-(family-name:--font-glacial) text-xs tracking-[0.2em] uppercase text-zinc-400">
                   À partir de {services[0]?.prix ?? "—"} · {services[0]?.duree ?? ""}
                 </p>
               </FadeUp>
@@ -120,7 +120,7 @@ export default function PrestaPageLayout({
         <FadeUp>
           <Button
             asChild
-            className="bg-black text-white hover:bg-zinc-800 rounded-none px-12 py-4 h-auto tracking-widest uppercase text-xs font-(family-name:--font-inter)"
+            className="bg-black text-white hover:bg-zinc-800 rounded-none px-12 py-4 h-auto tracking-widest uppercase text-xs font-(family-name:--font-glacial)"
           >
             <a href={PLANITY} target="_blank" rel="noopener noreferrer">
               Réserver sur Planity

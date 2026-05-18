@@ -25,7 +25,7 @@ export default function AvisSection() {
         <FadeUp>
           <div className="flex items-center gap-6 mb-14">
             <div>
-              <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-3">
+              <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-3">
                 Avis clients
               </p>
               <div className="flex items-center gap-3">
@@ -52,11 +52,11 @@ export default function AvisSection() {
                     <span key={i} className="text-black text-sm">★</span>
                   ))}
                 </div>
-                <p className="font-(family-name:--font-playfair) text-lg text-black leading-relaxed mb-6">
+                <p className="font-baskerville text-base text-black leading-relaxed mb-6">
                   &ldquo;{a.texte}&rdquo;
                 </p>
                 <div className="border-t border-zinc-100 pt-4">
-                  <p className="font-(family-name:--font-inter) text-sm font-medium text-black">{a.nom}</p>
+                  <p className="font-glacial text-xs tracking-widest uppercase text-black">{a.nom}</p>
                   <p className="font-(family-name:--font-inter) text-xs text-zinc-500 mt-0.5">{a.service}</p>
                 </div>
               </div>

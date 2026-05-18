@@ -18,7 +18,7 @@ export default function Footer() {
 
           {/* Cabinet 1 */}
           <div>
-            <h4 className="font-(family-name:--font-inter) text-xs tracking-widest uppercase text-zinc-500 mb-4">
+            <h4 className="font-(family-name:--font-glacial) text-xs tracking-widest uppercase text-zinc-500 mb-4">
               Saint-Georges-de-Didonne
             </h4>
             <div className="space-y-2">
@@ -37,7 +37,7 @@ export default function Footer() {
 
           {/* Cabinet 2 */}
           <div>
-            <h4 className="font-(family-name:--font-inter) text-xs tracking-widest uppercase text-zinc-500 mb-4">
+            <h4 className="font-(family-name:--font-glacial) text-xs tracking-widest uppercase text-zinc-500 mb-4">
               Beaune
             </h4>
             <div className="space-y-2">
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="font-(family-name:--font-inter) text-xs tracking-widest uppercase text-zinc-500 mb-4">
+            <h4 className="font-(family-name:--font-glacial) text-xs tracking-widest uppercase text-zinc-500 mb-4">
               Navigation
             </h4>
             <ul className="space-y-2">

@@ -47,7 +47,7 @@ export default function Loader() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.6 }}
             transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
-            className="font-(family-name:--font-inter) text-white text-xs tracking-[0.35em] uppercase"
+            className="font-(family-name:--font-glacial) text-white text-xs tracking-[0.35em] uppercase"
           >
             Dermo-Esthetic
           </motion.p>

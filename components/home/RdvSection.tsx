@@ -8,7 +8,7 @@ export default function RdvSection() {
     <section className="py-24 lg:py-32 bg-white border-t border-zinc-100">
       <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
         <FadeUp>
-          <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-5">
+          <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-5">
             Réservation
           </p>
         </FadeUp>
@@ -28,7 +28,7 @@ export default function RdvSection() {
         <FadeUp delay={0.3}>
           <Button
             asChild
-            className="bg-black text-white hover:bg-zinc-800 rounded-none px-12 py-4 h-auto tracking-widest uppercase text-xs font-(family-name:--font-inter)"
+            className="bg-black text-white hover:bg-zinc-800 rounded-none px-12 py-4 h-auto tracking-widest uppercase text-xs font-(family-name:--font-glacial)"
           >
             <a href={PLANITY} target="_blank" rel="noopener noreferrer">
               Réserver sur Planity

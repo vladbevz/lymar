@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Glacial Indifference";
+  src: url("/fonts/GlacialIndifference-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Glacial Indifference";
+  src: url("/fonts/GlacialIndifference-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Glacial Indifference";
+  src: url("/fonts/GlacialIndifference-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Hide page content until loader is ready — prevents flash before React hydration */
 html.lymar-loading body > *:not(#lymar-loader) {
   visibility: hidden;
@@ -17,6 +41,8 @@ html.lymar-loading body > *:not(#lymar-loader) {
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-heading: var(--font-playfair);
+  --font-glacial: "Glacial Indifference", sans-serif;
+  --font-baskerville: var(--font-libre);
   --font-mono: monospace;
   --color-ring: var(--ring);
   --color-input: var(--input);

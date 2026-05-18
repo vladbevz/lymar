@@ -36,7 +36,7 @@ export default function AProposPage() {
             {/* Text */}
             <div className="pt-14 pb-8 lg:py-0">
               <FadeUp>
-                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
+                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-4">
                   À propos
                 </p>
                 <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold text-black leading-[1.05] max-w-lg mb-5">
@@ -117,7 +117,7 @@ export default function AProposPage() {
       <section className="py-24 bg-zinc-50">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <FadeUp>
-            <p className="text-xs tracking-[0.3em] uppercase font-(family-name:--font-inter) text-zinc-500 mb-4">
+            <p className="text-xs tracking-[0.3em] uppercase font-(family-name:--font-glacial) text-zinc-500 mb-4">
               Formation
             </p>
             <h2 className="font-(family-name:--font-playfair) text-4xl font-light text-black mb-4">
@@ -136,7 +136,7 @@ export default function AProposPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeUp>
             <div className="text-center mb-16">
-              <p className="text-xs tracking-[0.3em] uppercase font-(family-name:--font-inter) text-zinc-500 mb-4">
+              <p className="text-xs tracking-[0.3em] uppercase font-(family-name:--font-glacial) text-zinc-500 mb-4">
                 Mes valeurs
               </p>
               <h2 className="font-(family-name:--font-playfair) text-4xl font-light text-black">

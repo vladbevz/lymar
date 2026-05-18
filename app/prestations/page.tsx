@@ -72,7 +72,7 @@ export default function PrestationsPage() {
             {/* Text */}
             <div className="pt-14 pb-8 lg:py-0">
               <FadeUp>
-                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
+                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-4">
                   Nos prestations
                 </p>
                 <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold text-black leading-[1.05] mb-5">
@@ -83,7 +83,7 @@ export default function PrestationsPage() {
                 <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
                   Consultation personnalisée incluse (20 €, déduits si la prestation est confirmée). Sur rendez-vous uniquement — Saint-Georges-de-Didonne et Beaune.
                 </p>
-                <p className="font-(family-name:--font-inter) text-xs tracking-[0.2em] uppercase text-zinc-400">
+                <p className="font-(family-name:--font-glacial) text-xs tracking-[0.2em] uppercase text-zinc-400">
                   {categories.length} prestations disponibles
                 </p>
               </FadeUp>
@@ -154,7 +154,7 @@ export default function PrestationsPage() {
             href="https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block font-(family-name:--font-inter) text-xs tracking-widest uppercase bg-black text-white px-10 py-3 hover:bg-zinc-800 transition-colors"
+            className="inline-block font-(family-name:--font-glacial) text-xs tracking-widest uppercase bg-black text-white px-10 py-3 hover:bg-zinc-800 transition-colors"
           >
             Réserver sur Planity
           </a>

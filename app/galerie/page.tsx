@@ -43,7 +43,7 @@ export default function GaleriePage() {
             {/* Text */}
             <div className="pt-14 pb-8 lg:py-0">
               <FadeUp>
-                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
+                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-4">
                   Galerie
                 </p>
                 <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold text-black leading-[1.05] mb-5">
@@ -52,7 +52,7 @@ export default function GaleriePage() {
                 <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
                   Résultats réels — sourcils, lèvres, yeux, corrections. Chaque transformation révèle une beauté unique.
                 </p>
-                <p className="font-(family-name:--font-inter) text-xs tracking-[0.2em] uppercase text-zinc-400">
+                <p className="font-(family-name:--font-glacial) text-xs tracking-[0.2em] uppercase text-zinc-400">
                   {photos.length} réalisations · Filtrable par catégorie
                 </p>
               </FadeUp>
@@ -97,7 +97,7 @@ export default function GaleriePage() {
               <button
                 key={f.value}
                 onClick={() => setFiltre(f.value)}
-                className={`text-xs tracking-widest uppercase font-(family-name:--font-inter) pb-1 transition-all ${
+                className={`text-xs tracking-widest uppercase font-(family-name:--font-glacial) pb-1 transition-all ${
                   filtre === f.value
                     ? "text-black border-b border-black"
                     : "text-zinc-500 hover:text-black"

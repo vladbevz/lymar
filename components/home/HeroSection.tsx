@@ -19,7 +19,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as const }}
-              className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4"
+              className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-4"
             >
               Saint-Georges-de-Didonne · Beaune
             </motion.p>
@@ -28,7 +28,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.08, ease: [0.25, 0.1, 0.25, 1] as const }}
-              className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold leading-[1.05] text-black mb-5"
+              className="font-(family-name:--font-playfair) text-[3rem] sm:text-6xl lg:text-[5.5rem] font-light leading-[1.05] text-black mb-5"
             >
               L&apos;art du
               <br />
@@ -54,7 +54,7 @@ export default function HeroSection() {
             >
               <Button
                 asChild
-                className="bg-black text-white hover:bg-zinc-800 rounded-none px-7 py-2.5 h-auto tracking-widest uppercase text-xs font-(family-name:--font-inter)"
+                className="bg-black text-white hover:bg-zinc-800 rounded-none px-7 py-2.5 h-auto tracking-widest uppercase text-xs font-(family-name:--font-glacial)"
               >
                 <a href={PLANITY} target="_blank" rel="noopener noreferrer">
                   Prendre rendez-vous
@@ -63,7 +63,7 @@ export default function HeroSection() {
               <Button
                 asChild
                 variant="outline"
-                className="border-black text-black hover:bg-black hover:text-white rounded-none px-7 py-2.5 h-auto tracking-widest uppercase text-xs font-(family-name:--font-inter) transition-colors"
+                className="border-black text-black hover:bg-black hover:text-white rounded-none px-7 py-2.5 h-auto tracking-widest uppercase text-xs font-(family-name:--font-glacial) transition-colors"
               >
                 <Link href="/prestations">Voir les prestations</Link>
               </Button>

@@ -7,7 +7,7 @@ export default function IntroSection() {
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
           <FadeUp>
-            <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mt-2">
+            <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mt-2">
               Le cabinet
             </p>
           </FadeUp>
@@ -28,7 +28,7 @@ export default function IntroSection() {
             <FadeUp delay={0.3}>
               <Link
                 href="/a-propos"
-                className="inline-flex items-center gap-2 font-(family-name:--font-inter) text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
+                className="inline-flex items-center gap-2 font-(family-name:--font-glacial) text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
               >
                 En savoir plus sur Anastasiia
               </Link>

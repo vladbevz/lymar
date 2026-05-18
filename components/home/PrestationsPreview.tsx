@@ -48,7 +48,7 @@ export default function PrestationsPreview() {
         <FadeUp>
           <div className="flex items-end justify-between mb-14">
             <div>
-              <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-3">
+              <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-3">
                 Prestations
               </p>
               <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-semibold text-black leading-tight">
@@ -57,7 +57,7 @@ export default function PrestationsPreview() {
             </div>
             <Link
               href="/prestations"
-              className="hidden lg:flex items-center gap-2 font-(family-name:--font-inter) text-xs tracking-widest uppercase text-zinc-500 hover:text-black transition-colors"
+              className="hidden lg:flex items-center gap-2 font-(family-name:--font-glacial) text-xs tracking-widest uppercase text-zinc-500 hover:text-black transition-colors"
             >
               Tout voir <ArrowRight size={12} />
             </Link>
@@ -75,7 +75,7 @@ export default function PrestationsPreview() {
                 <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed mb-6">
                   {cat.description}
                 </p>
-                <span className="inline-flex items-center gap-1.5 font-(family-name:--font-inter) text-xs tracking-widest uppercase text-black group-hover:gap-3 transition-all">
+                <span className="inline-flex items-center gap-1.5 font-(family-name:--font-glacial) text-xs tracking-widest uppercase text-black group-hover:gap-3 transition-all">
                   Découvrir <ArrowRight size={12} />
                 </span>
               </Link>
@@ -87,7 +87,7 @@ export default function PrestationsPreview() {
           <div className="text-center mt-10 lg:hidden">
             <Link
               href="/prestations"
-              className="inline-flex items-center gap-2 font-(family-name:--font-inter) text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
+              className="inline-flex items-center gap-2 font-(family-name:--font-glacial) text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
             >
               Voir toutes les prestations <ArrowRight size={12} />
             </Link>
