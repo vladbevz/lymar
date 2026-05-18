@@ -12,8 +12,8 @@ export default function LevresPage() {
       breadcrumb="Prestations · Lèvres"
       titre="Maquillage permanent lèvres"
       sousTitre="Candy Lips dégradé & effet aquarelle — couleur, volume et définition en toute délicatesse."
-      heroImage="https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=900&q=85&fit=crop"
-      heroImageAlt="Candy Lips maquillage permanent lèvres"
+      heroImage="/images/levres.webp"
+      heroImageAlt="Maquillage permanent lèvres — Lymar Dermo-Esthetic"
       intro="Redéfinissez vos lèvres avec les techniques Candy Lips (dégradé du contour vers le centre, effet gourmand) ou aquarelle (fondu vaporeux ultra-naturel). La 1ère retouche est incluse. Si vous êtes sujette aux herpès labiaux, un traitement antiviral préventif est recommandé avant la séance."
       services={[
         { nom: "Lèvres dégradé (Candy Lips) + 1ère retouche", duree: "2h", prix: "300 €" },

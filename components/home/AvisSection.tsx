@@ -23,21 +23,24 @@ export default function AvisSection() {
     <section className="py-24 lg:py-32 bg-zinc-50 border-t border-zinc-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <FadeUp>
-          <div className="flex items-center gap-6 mb-14">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
             <div>
               <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-3">
                 Avis clients
               </p>
-              <div className="flex items-center gap-3">
-                <span className="font-(family-name:--font-playfair) text-5xl font-bold text-black">5.0</span>
-                <div>
-                  <div className="flex gap-0.5 mb-1">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <span key={i} className="text-black text-sm">★</span>
-                    ))}
-                  </div>
-                  <p className="font-(family-name:--font-inter) text-xs text-zinc-500">77 avis Google & Planity</p>
+              <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-semibold text-black leading-tight">
+                Elles nous font confiance
+              </h2>
+            </div>
+            <div className="flex items-center gap-3 shrink-0">
+              <span className="font-(family-name:--font-playfair) text-5xl font-light text-black">5.0</span>
+              <div>
+                <div className="flex gap-0.5 mb-1">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <span key={i} className="text-black text-sm">★</span>
+                  ))}
                 </div>
+                <p className="font-(family-name:--font-inter) text-xs text-zinc-500">77 avis Google & Planity</p>
               </div>
             </div>
           </div>

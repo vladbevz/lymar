@@ -33,8 +33,9 @@ export default function SourcilsPage() {
       breadcrumb="Prestations · Sourcils"
       titre="Maquillage permanent sourcils"
       sousTitre="Microblading & microshading à Saint-Georges-de-Didonne — résultats naturels et durables."
-      heroImage="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=900&q=85&fit=crop"
-      heroImageAlt="Microblading sourcils — résultat naturel"
+      heroImage="/images/sourcils.webp"
+      heroImageAlt="Microblading sourcils — résultat naturel Lymar Dermo-Esthetic"
+      heroImageFit="contain"
       intro="Technique poil à poil ou effet poudré — chaque paire de sourcils est redessinée selon la morphologie du visage, les poils naturels et les souhaits de la cliente. La 1ère retouche est incluse dans le tarif."
       services={[
         { nom: "Effet poil à poil (microblading) + 1ère retouche", duree: "1h 40 min", prix: "250 €" },

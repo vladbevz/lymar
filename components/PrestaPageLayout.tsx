@@ -20,6 +20,7 @@ interface Props {
   children?: ReactNode;
   heroImage?: string;
   heroImageAlt?: string;
+  heroImageFit?: "cover" | "contain";
 }
 
 const PLANITY = "https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne";
@@ -35,48 +36,44 @@ export default function PrestaPageLayout({
   children,
   heroImage = DEFAULT_IMG,
   heroImageAlt = "Maquillage permanent — Lymar Dermo-Esthetic",
+  heroImageFit = "cover",
 }: Props) {
   return (
     <>
-      {/* Hero — stack on mobile, 2-col on desktop */}
-      <section className="relative mt-16 bg-white border-b border-zinc-100 overflow-hidden lg:h-[calc(100svh-64px)]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full lg:h-full lg:flex lg:items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 lg:items-center w-full">
+      {/* Hero — split like home hero */}
+      <section className="relative mt-16 flex h-[calc(100svh-64px)] overflow-hidden bg-white">
 
-            {/* Text */}
-            <div className="pt-14 pb-8 lg:py-0">
-              <FadeUp>
-                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-4">
-                  {breadcrumb}
-                </p>
-                <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold text-black leading-[1.05] max-w-lg mb-5">
-                  {titre}
-                </h1>
-                {sousTitre && (
-                  <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
-                    {sousTitre}
-                  </p>
-                )}
-                <p className="font-(family-name:--font-glacial) text-xs tracking-[0.2em] uppercase text-zinc-400">
-                  À partir de {services[0]?.prix ?? "—"} · {services[0]?.duree ?? ""}
-                </p>
-              </FadeUp>
-            </div>
-
-            {/* Image — h-64 on mobile, fills column on desktop */}
-            <div className="relative h-64 lg:h-[calc(100svh-64px-80px)]">
-              <div className="relative w-full h-full overflow-hidden bg-zinc-100">
-                <Image
-                  src={heroImage}
-                  alt={heroImageAlt}
-                  fill
-                  priority
-                  className="object-cover object-top"
-                />
-              </div>
-            </div>
-          </div>
+        {/* Left — text */}
+        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-14 overflow-hidden">
+          <FadeUp>
+            <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-4">
+              {breadcrumb}
+            </p>
+            <h1 className="font-(family-name:--font-playfair) text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] max-w-lg mb-5">
+              {titre}
+            </h1>
+            {sousTitre && (
+              <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
+                {sousTitre}
+              </p>
+            )}
+            <p className="font-glacial text-xs tracking-[0.2em] uppercase text-zinc-400">
+              À partir de {services[0]?.prix ?? "—"} · {services[0]?.duree ?? ""}
+            </p>
+          </FadeUp>
         </div>
+
+        {/* Right — edge-to-edge photo */}
+        <div className="hidden lg:block relative flex-1">
+          <Image
+            src={heroImage}
+            alt={heroImageAlt}
+            fill
+            priority
+            className="object-cover object-bottom"
+          />
+        </div>
+
       </section>
 
       {/* Intro + Services */}
@@ -120,7 +117,7 @@ export default function PrestaPageLayout({
         <FadeUp>
           <Button
             asChild
-            className="bg-black text-white hover:bg-zinc-800 rounded-none px-12 py-4 h-auto tracking-widest uppercase text-xs font-(family-name:--font-glacial)"
+            className="bg-black text-white hover:bg-zinc-800 rounded-none px-12 py-4 h-auto tracking-widest uppercase text-xs font-glacial"
           >
             <a href={PLANITY} target="_blank" rel="noopener noreferrer">
               Réserver sur Planity
