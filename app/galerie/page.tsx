@@ -245,6 +245,41 @@ export default function GaleriePage() {
         />
       </section>
 
+      {/* Instagram */}
+      <section className="py-16 bg-white border-t border-zinc-100 text-center">
+        <FadeUp>
+          <p className="font-glacial text-xs tracking-[0.25em] uppercase text-zinc-400 mb-4">
+            Retrouvez plus de réalisations
+          </p>
+          <a
+            href="https://www.instagram.com/lymar.dermo.esthetic/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 group"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-black group-hover:opacity-50 transition-opacity"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+            <span className="font-glacial text-xs tracking-widest uppercase text-zinc-500 group-hover:text-black transition-colors">
+              Voir sur Instagram
+            </span>
+          </a>
+        </FadeUp>
+      </section>
+
       {/* Modal */}
       <AnimatePresence>
         {modal && (
@@ -318,10 +353,6 @@ export default function GaleriePage() {
               </button>
             )}
 
-            {/* Caption */}
-            <p className="absolute bottom-6 left-1/2 -translate-x-1/2 font-glacial text-[10px] tracking-[0.2em] uppercase text-white/25 whitespace-nowrap select-none">
-              {modal.photos[modal.index].alt}
-            </p>
           </motion.div>
         )}
       </AnimatePresence>

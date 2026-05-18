@@ -42,9 +42,22 @@ export default function AProposPage() {
             <h1 className="font-(family-name:--font-playfair) text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] max-w-lg mb-5">
               Anastasiia Lymar
             </h1>
-            <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm">
+            <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
               Experte internationale en maquillage permanent et pigmentation correctrice. Deux cabinets : Saint-Georges-de-Didonne et Beaune.
             </p>
+            <a
+              href="https://www.instagram.com/lymar.dermo.esthetic/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 group w-fit"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-400 group-hover:text-black transition-colors">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+              <span className="font-glacial text-xs tracking-widest uppercase text-zinc-400 group-hover:text-black transition-colors">
+                Voir sur Instagram
+              </span>
+            </a>
           </FadeUp>
         </div>
         <div className="hidden lg:block relative flex-1">
