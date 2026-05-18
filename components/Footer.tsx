@@ -8,9 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <h3 className="font-(family-name:--font-playfair) text-xl font-light tracking-[0.15em] uppercase text-white mb-3">
-              Lymar Dermo-Esthetic
-            </h3>
+            <div className="flex flex-col leading-tight mb-3">
+              <span className="font-(family-name:--font-playfair) text-xl font-light tracking-[0.25em] uppercase text-white">
+                Lymar
+              </span>
+              <span className="font-glacial text-[9px] tracking-[0.3em] uppercase text-zinc-500">
+                Dermo-Esthetic
+              </span>
+            </div>
             <p className="text-xs font-(family-name:--font-inter) text-zinc-500 leading-relaxed">
               Maquillage permanent & pigmentation correctrice. Experte internationale.
             </p>
@@ -18,7 +23,7 @@ export default function Footer() {
 
           {/* Cabinet 1 */}
           <div>
-            <h4 className="font-(family-name:--font-glacial) text-xs tracking-widest uppercase text-zinc-500 mb-4">
+            <h4 className="font-glacial text-xs tracking-widest uppercase text-zinc-500 mb-4">
               Saint-Georges-de-Didonne
             </h4>
             <div className="space-y-2">
@@ -37,7 +42,7 @@ export default function Footer() {
 
           {/* Cabinet 2 */}
           <div>
-            <h4 className="font-(family-name:--font-glacial) text-xs tracking-widest uppercase text-zinc-500 mb-4">
+            <h4 className="font-glacial text-xs tracking-widest uppercase text-zinc-500 mb-4">
               Beaune
             </h4>
             <div className="space-y-2">
@@ -56,7 +61,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="font-(family-name:--font-glacial) text-xs tracking-widest uppercase text-zinc-500 mb-4">
+            <h4 className="font-glacial text-xs tracking-widest uppercase text-zinc-500 mb-4">
               Navigation
             </h4>
             <ul className="space-y-2">

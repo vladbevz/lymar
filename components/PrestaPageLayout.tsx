@@ -21,6 +21,7 @@ interface Props {
   heroImage?: string;
   heroImageAlt?: string;
   heroImageFit?: "cover" | "contain";
+  heroImagePosition?: string;
 }
 
 const PLANITY = "https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne";
@@ -37,6 +38,7 @@ export default function PrestaPageLayout({
   heroImage = DEFAULT_IMG,
   heroImageAlt = "Maquillage permanent — Lymar Dermo-Esthetic",
   heroImageFit = "cover",
+  heroImagePosition = "object-bottom",
 }: Props) {
   return (
     <>
@@ -70,7 +72,7 @@ export default function PrestaPageLayout({
             alt={heroImageAlt}
             fill
             priority
-            className="object-cover object-bottom"
+            className={`object-cover ${heroImagePosition}`}
           />
         </div>
 

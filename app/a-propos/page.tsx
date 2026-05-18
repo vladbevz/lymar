@@ -38,21 +38,18 @@ export default function AProposPage() {
             <h1 className="font-(family-name:--font-playfair) text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] max-w-lg mb-5">
               Anastasiia Lymar
             </h1>
-            <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
+            <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm">
               Experte internationale en maquillage permanent et pigmentation correctrice. Deux cabinets : Saint-Georges-de-Didonne et Beaune.
-            </p>
-            <p className="font-(family-name:--font-playfair) text-lg text-zinc-600 max-w-sm leading-relaxed">
-              &ldquo;Chaque visage est une toile unique. Mon rôle est de révéler sa beauté propre.&rdquo;
             </p>
           </FadeUp>
         </div>
         <div className="hidden lg:block relative flex-1">
           <Image
-            src="/images/apropos2.webp"
+            src="/images/apropos1.webp"
             alt="Portrait d'Anastasiia Lymar"
             fill
             priority
-            className="object-cover object-[center_20%]"
+            className="object-cover object-[center_35%]"
           />
         </div>
       </section>
@@ -60,11 +57,11 @@ export default function AProposPage() {
       {/* Portrait + Histoire */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <FadeUp>
-              <div className="relative aspect-3/4 w-full max-w-md">
+              <div className="relative aspect-3/4 w-full max-w-sm">
                 <Image
-                  src="/images/apropos1.webp"
+                  src="/images/apropos2.webp"
                   alt="Portrait d'Anastasiia Lymar, praticienne en maquillage permanent"
                   fill
                   className="object-cover"
@@ -88,7 +85,7 @@ export default function AProposPage() {
               <FadeUp delay={0.3}>
                 <div className="space-y-5 font-(family-name:--font-inter) text-base text-zinc-500 leading-relaxed">
                   <p>
-                    Passionnée par l&apos;art du maquillage permanent depuis plus de dix ans, Anastasiia Lymar a forgé son expertise auprès des maîtres les plus reconnus en Europe et en Asie.
+                    Passionnée par l&apos;art du maquillage permanent depuis plus de dix ans, Anastasiia Lymar a forgé son expertise auprès des maîtres les plus reconnus en Europe.
                   </p>
                   <p>
                     Son approche est celle d&apos;une artiste autant que d&apos;une technicienne : elle analyse la morphologie de chaque visage, étudie les teintes naturelles de la peau et propose des formes qui harmonisent les traits plutôt que de les imposer.

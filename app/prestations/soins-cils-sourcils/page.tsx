@@ -12,8 +12,9 @@ export default function SoinsCilsSourcilsPage() {
       breadcrumb="Prestations · Soins cils & sourcils"
       titre="Soins cils & sourcils"
       sousTitre="Lashlift, browlift, teinture — des soins express pour sublimer votre regard au quotidien."
-      heroImage="https://images.unsplash.com/photo-1487412840181-f6f0af1f5427?w=900&q=85&fit=crop&crop=faces"
-      heroImageAlt="Soins cils et sourcils — résultat naturel"
+      heroImage="/images/soins-cils.webp"
+      heroImageAlt="Soins cils et sourcils — Lymar Dermo-Esthetic"
+      heroImagePosition="object-center"
       intro="Ces soins non permanents apportent une mise en valeur immédiate du regard, sans pigmentation. Idéals en complément d'un maquillage permanent ou seuls pour entretenir et sublimer les cils et sourcils naturels."
       services={[
         { nom: "Teinture cils ou sourcils", duree: "15 min", prix: "10 €" },

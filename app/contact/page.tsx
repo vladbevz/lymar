@@ -1,240 +1,229 @@
 import type { Metadata } from "next";
 import { FadeUp } from "@/components/AnimatedSection";
-import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Clock, CreditCard } from "lucide-react";
 import Image from "next/image";
+import MapboxMap from "@/components/MapboxMap";
 
 export const metadata: Metadata = {
   title: "Contact & Rendez-vous — Lymar Dermo-Esthetic · Saint-Georges-de-Didonne",
   description:
-    "Prenez rendez-vous avec Anastasiia Lymar. Cabinet de maquillage permanent à Saint-Georges-de-Didonne. Réservation en ligne via Planity.",
+    "Prenez rendez-vous avec Anastasiia Lymar. Cabinet de maquillage permanent à Saint-Georges-de-Didonne et Beaune. Réservation en ligne via Planity.",
 };
+
+const PLANITY = "https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne";
+
+const cabinets = [
+  {
+    ville: "Saint-Georges-de-Didonne",
+    adresse: "34 Rue Henri Collignon",
+    cp: "17110",
+    maps: "https://maps.google.com/?q=34+Rue+Henri+Collignon,+17110+Saint-Georges-de-Didonne",
+    lng: -1.0008,
+    lat: 45.6025,
+    zoom: 16,
+  },
+  {
+    ville: "Beaune",
+    adresse: "3 Rue du Moulin Noizé",
+    cp: "21200",
+    maps: "https://maps.google.com/?q=3+Rue+du+Moulin+Noizé,+21200+Beaune",
+    lng: 4.8378,
+    lat: 47.0221,
+    zoom: 16,
+  },
+];
 
 export default function ContactPage() {
   return (
     <>
-      {/* Hero — stack on mobile, 2-col on desktop */}
-      <section className="relative mt-16 bg-white border-b border-zinc-100 overflow-hidden lg:h-[calc(100svh-64px)]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full lg:h-full lg:flex lg:items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 lg:items-center w-full">
+      {/* Hero */}
+      <section className="relative mt-16 flex h-[calc(100svh-64px)] overflow-hidden bg-white">
 
-            {/* Text */}
-            <div className="pt-14 pb-8 lg:py-0">
-              <FadeUp>
-                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-4">
-                  Contact
-                </p>
-                <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold text-black leading-[1.05] mb-5">
-                  Prenons contact
-                </h1>
-                <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-8">
-                  Réservation en ligne 24h/24 via Planity — ou envoyez-nous un message directement.
-                </p>
+        {/* Left — text */}
+        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-14 overflow-hidden">
+          <FadeUp>
+            <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-4">
+              Contact
+            </p>
+            <h1 className="font-(family-name:--font-playfair) text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] max-w-lg mb-8">
+              Prenons contact
+            </h1>
 
-                <div className="space-y-3 mb-8">
-                  <div className="flex items-center gap-3">
-                    <MapPin size={14} className="text-zinc-400 shrink-0" />
-                    <p className="font-(family-name:--font-inter) text-xs text-zinc-500">
-                      34 Rue Henri Collignon, 17110 Saint-Georges-de-Didonne
+            <div className="space-y-4 mb-10">
+              {cabinets.map((c) => (
+                <div key={c.ville} className="flex items-start gap-3">
+                  <MapPin size={14} className="text-zinc-400 shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-(family-name:--font-inter) text-xs font-medium text-black">
+                      {c.ville}
                     </p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Clock size={14} className="text-zinc-400 shrink-0" />
                     <p className="font-(family-name:--font-inter) text-xs text-zinc-500">
-                      Sur rendez-vous uniquement
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CreditCard size={14} className="text-zinc-400 shrink-0" />
-                    <p className="font-(family-name:--font-inter) text-xs text-zinc-500">
-                      Chèque · Espèces · Wero — CB non acceptée
+                      {c.adresse}, {c.cp}
                     </p>
                   </div>
                 </div>
-
-                <a
-                  href="https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block font-(family-name:--font-glacial) text-xs tracking-widest uppercase bg-black text-white px-10 py-3 hover:bg-zinc-800 transition-colors"
-                >
-                  Réserver sur Planity
-                </a>
-              </FadeUp>
-            </div>
-
-            {/* Image — h-64 on mobile, fills column on desktop */}
-            <div className="relative h-64 lg:h-[calc(100svh-64px-80px)]">
-              <div className="relative w-full h-full overflow-hidden bg-zinc-100">
-                <Image
-                  src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=85&fit=crop"
-                  alt="Cabinet Lymar Dermo-Esthetic — intérieur"
-                  fill
-                  priority
-                  className="object-cover"
-                />
+              ))}
+              <div className="flex items-center gap-3">
+                <Clock size={14} className="text-zinc-400 shrink-0" />
+                <p className="font-(family-name:--font-inter) text-xs text-zinc-500">
+                  Sur rendez-vous uniquement
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <CreditCard size={14} className="text-zinc-400 shrink-0" />
+                <p className="font-(family-name:--font-inter) text-xs text-zinc-500">
+                  Chèque · Espèces · Wero — CB non acceptée
+                </p>
               </div>
             </div>
+
+            <a
+              href={PLANITY}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block font-glacial text-xs tracking-widest uppercase bg-black text-white px-10 py-3 hover:bg-zinc-800 transition-colors"
+            >
+              Réserver sur Planity
+            </a>
+          </FadeUp>
+        </div>
+
+        {/* Right — photo */}
+        <div className="hidden lg:block relative flex-1">
+          <Image
+            src="/images/contact.webp"
+            alt="Cabinet Lymar Dermo-Esthetic"
+            fill
+            priority
+            className="object-cover object-top"
+          />
+        </div>
+
+      </section>
+
+      {/* Cartes */}
+      <section className="py-24 bg-white border-t border-zinc-100">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <FadeUp>
+            <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-3">
+              Nos cabinets
+            </p>
+            <h2 className="font-(family-name:--font-playfair) text-4xl font-semibold text-black mb-14">
+              Deux adresses, une expertise
+            </h2>
+          </FadeUp>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {cabinets.map((c, i) => (
+              <FadeUp key={c.ville} delay={i * 0.15}>
+                <div className="border border-zinc-100 overflow-hidden">
+                  <div className="aspect-video relative bg-zinc-100">
+                    <MapboxMap
+                      lng={c.lng}
+                      lat={c.lat}
+                      zoom={c.zoom}
+                      alt={`Localisation ${c.ville}`}
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-(family-name:--font-playfair) text-xl font-bold text-black mb-3">
+                      {c.ville}
+                    </h3>
+                    <div className="flex items-start gap-3 mb-4">
+                      <MapPin size={15} className="text-zinc-400 mt-0.5 shrink-0" />
+                      <p className="font-(family-name:--font-inter) text-sm text-zinc-600">
+                        {c.adresse}<br />{c.cp} {c.ville}
+                      </p>
+                    </div>
+                    <a
+                      href={c.maps}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 font-glacial text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
+                    >
+                      Voir sur Google Maps
+                    </a>
+                  </div>
+                </div>
+              </FadeUp>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-            {/* Infos + RDV */}
-            <div>
-              <FadeUp>
-                <div className="mb-12 p-8 border border-black bg-zinc-50 text-center">
-                  <p className="font-(family-name:--font-playfair) text-2xl text-black mb-2">
-                    Réservation en ligne
-                  </p>
-                  <p className="font-(family-name:--font-inter) text-sm text-zinc-500 mb-6">
-                    Disponible 24h/24 — choisissez votre prestation et votre créneau directement sur Planity.
-                  </p>
-                  <Button
-                    asChild
-                    className="bg-black text-white hover:bg-zinc-700 rounded-none px-8 py-3 tracking-widest uppercase text-xs font-(family-name:--font-glacial) w-full"
-                  >
-                    <a href="https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne" target="_blank" rel="noopener noreferrer">
-                      Réserver sur Planity
-                    </a>
-                  </Button>
-                </div>
-              </FadeUp>
+      {/* Formulaire */}
+      <section className="py-24 bg-zinc-50 border-t border-zinc-100">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <FadeUp>
+            <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-3">
+              Message
+            </p>
+            <h2 className="font-(family-name:--font-playfair) text-4xl font-light text-black mb-12">
+              Envoyer un message
+            </h2>
+          </FadeUp>
 
-              <FadeUp delay={0.1}>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <MapPin size={18} className="text-black mt-1 shrink-0" />
-                    <div>
-                      <p className="font-(family-name:--font-inter) text-sm font-medium text-black mb-1">
-                        Adresse
-                      </p>
-                      <p className="font-(family-name:--font-inter) text-sm text-zinc-500">
-                        34 Rue Henri Collignon<br />
-                        17110 Saint-Georges-de-Didonne
-                      </p>
-                      <a
-                        href="https://maps.google.com/?q=34+Rue+Henri+Collignon,+17110+Saint-Georges-de-Didonne"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs tracking-widest uppercase font-(family-name:--font-glacial) text-black border-b border-black pb-0.5 hover:text-zinc-500 hover:border-zinc-500 transition-colors mt-2 inline-block"
-                      >
-                        Voir sur Maps
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <Clock size={18} className="text-black mt-1 shrink-0" />
-                    <div>
-                      <p className="font-(family-name:--font-inter) text-sm font-medium text-black mb-1">
-                        Horaires
-                      </p>
-                      <p className="font-(family-name:--font-inter) text-sm text-zinc-500">
-                        Sur rendez-vous uniquement
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <CreditCard size={18} className="text-black mt-1 shrink-0" />
-                    <div>
-                      <p className="font-(family-name:--font-inter) text-sm font-medium text-black mb-1">
-                        Modes de paiement
-                      </p>
-                      <p className="font-(family-name:--font-inter) text-sm text-zinc-500">
-                        Chèque · Espèces · Virement Wero
-                      </p>
-                      <p className="font-(family-name:--font-inter) text-xs text-zinc-500 mt-1">
-                        CB non acceptée
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </FadeUp>
-
-              <FadeUp delay={0.2}>
-                <div className="mt-10 aspect-4/3 relative overflow-hidden border border-zinc-200">
-                  <iframe
-                    title="Localisation Lymar Dermo-Esthetic"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2760.0!2d-1.0036!3d45.5847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s34+Rue+Henri+Collignon%2C+17110+Saint-Georges-de-Didonne!5e0!3m2!1sfr!2sfr!4v1"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="absolute inset-0"
+          <FadeUp delay={0.1}>
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-xs tracking-widest uppercase font-glacial text-zinc-500 mb-2 block">
+                    Prénom
+                  </label>
+                  <Input
+                    placeholder="Votre prénom"
+                    className="rounded-none border-zinc-200 bg-white font-(family-name:--font-inter) text-sm focus-visible:ring-0 focus-visible:border-black"
                   />
                 </div>
-              </FadeUp>
-            </div>
-
-            {/* Formulaire */}
-            <FadeUp delay={0.15}>
-              <div>
-                <h2 className="font-(family-name:--font-playfair) text-2xl font-light text-black mb-8">
-                  Envoyer un message
-                </h2>
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-xs tracking-widest uppercase font-(family-name:--font-glacial) text-zinc-500 mb-2 block">
-                        Prénom
-                      </label>
-                      <Input
-                        placeholder="Votre prénom"
-                        className="rounded-none border-zinc-200 bg-white font-(family-name:--font-inter) text-sm focus-visible:ring-(--color-accent) focus-visible:border-black"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-xs tracking-widest uppercase font-(family-name:--font-glacial) text-zinc-500 mb-2 block">
-                        Nom
-                      </label>
-                      <Input
-                        placeholder="Votre nom"
-                        className="rounded-none border-zinc-200 bg-white font-(family-name:--font-inter) text-sm focus-visible:ring-(--color-accent) focus-visible:border-black"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-xs tracking-widest uppercase font-(family-name:--font-glacial) text-zinc-500 mb-2 block">
-                      Email
-                    </label>
-                    <Input
-                      type="email"
-                      placeholder="votre@email.fr"
-                      className="rounded-none border-zinc-200 bg-white font-(family-name:--font-inter) text-sm focus-visible:ring-(--color-accent) focus-visible:border-black"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs tracking-widest uppercase font-(family-name:--font-glacial) text-zinc-500 mb-2 block">
-                      Message
-                    </label>
-                    <Textarea
-                      placeholder="Votre message, la prestation souhaitée..."
-                      rows={6}
-                      className="rounded-none border-zinc-200 bg-white font-(family-name:--font-inter) text-sm focus-visible:ring-(--color-accent) focus-visible:border-black resize-none"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="w-full bg-black text-white hover:bg-zinc-700 rounded-none py-3 tracking-widest uppercase text-xs font-(family-name:--font-glacial)"
-                  >
-                    Envoyer le message
-                  </Button>
-                  <p className="text-xs font-(family-name:--font-inter) text-zinc-500 text-center">
-                    Pour une réservation rapide, privilégiez Planity.
-                  </p>
-                </form>
+                <div>
+                  <label className="text-xs tracking-widest uppercase font-glacial text-zinc-500 mb-2 block">
+                    Nom
+                  </label>
+                  <Input
+                    placeholder="Votre nom"
+                    className="rounded-none border-zinc-200 bg-white font-(family-name:--font-inter) text-sm focus-visible:ring-0 focus-visible:border-black"
+                  />
+                </div>
               </div>
-            </FadeUp>
-          </div>
+              <div>
+                <label className="text-xs tracking-widest uppercase font-glacial text-zinc-500 mb-2 block">
+                  Email
+                </label>
+                <Input
+                  type="email"
+                  placeholder="votre@email.fr"
+                  className="rounded-none border-zinc-200 bg-white font-(family-name:--font-inter) text-sm focus-visible:ring-0 focus-visible:border-black"
+                />
+              </div>
+              <div>
+                <label className="text-xs tracking-widest uppercase font-glacial text-zinc-500 mb-2 block">
+                  Message
+                </label>
+                <Textarea
+                  placeholder="Votre message, la prestation souhaitée..."
+                  rows={6}
+                  className="rounded-none border-zinc-200 bg-white font-(family-name:--font-inter) text-sm focus-visible:ring-0 focus-visible:border-black resize-none"
+                />
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 items-center">
+                <Button
+                  type="submit"
+                  className="w-full sm:w-auto bg-black text-white hover:bg-zinc-700 rounded-none px-12 py-3 tracking-widest uppercase text-xs font-glacial"
+                >
+                  Envoyer
+                </Button>
+                <p className="font-(family-name:--font-inter) text-xs text-zinc-400">
+                  Pour une réservation rapide, privilégiez{" "}
+                  <a href={PLANITY} target="_blank" rel="noopener noreferrer" className="underline hover:text-black transition-colors">
+                    Planity
+                  </a>.
+                </p>
+              </div>
+            </form>
+          </FadeUp>
         </div>
       </section>
     </>
