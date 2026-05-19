@@ -11,26 +11,20 @@ gsap.registerPlugin(useGSAP);
 
 const PLANITY = "https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne";
 
-const TITLE_LINES = ["L'art du", "maquillage", "permanent"];
-
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      const tl = gsap.timeline({ defaults: { ease: "power2.out", duration: 0.8 } });
 
-      tl.from(".hero-eyebrow", { opacity: 0, y: 10, duration: 0.6 })
-        .from(
-          ".hero-line",
-          { y: "110%", opacity: 0, duration: 0.75, stagger: 0.1 },
-          "-=0.35"
-        )
-        .from(".hero-desc", { opacity: 0, y: 12, duration: 0.6 }, "-=0.45")
-        .from(".hero-cta", { opacity: 0, y: 12, duration: 0.6 }, "-=0.4")
-        .from(".hero-rating", { opacity: 0, duration: 0.5 }, "-=0.3")
-        .from(".hero-img-desktop", { opacity: 0, duration: 1.4, ease: "power2.out" }, 0)
-        .from(".hero-img-desktop img", { scale: 1.08, duration: 2.2, ease: "power2.out" }, 0);
+      tl.from(".hero-eyebrow", { opacity: 0, y: 22 })
+        .from(".hero-title",   { opacity: 0, y: 22 }, "-=0.5")
+        .from(".hero-desc",    { opacity: 0, y: 22 }, "-=0.5")
+        .from(".hero-cta",     { opacity: 0, y: 22 }, "-=0.5")
+        .from(".hero-rating",  { opacity: 0, y: 22 }, "-=0.5")
+        .from(".hero-img-desktop",     { opacity: 0, duration: 1.4 }, 0)
+        .from(".hero-img-desktop img", { scale: 1.08, duration: 2.2 }, 0);
     },
     { scope: sectionRef }
   );
@@ -57,12 +51,12 @@ export default function HeroSection() {
           Saint-Georges-de-Didonne · Beaune
         </p>
 
-        <h1 className="font-(family-name:--font-playfair) text-[2.8rem] sm:text-5xl lg:text-[4.5rem] xl:text-[5rem] font-light leading-[1.05] text-black mb-5">
-          {TITLE_LINES.map((line, i) => (
-            <span key={i} className="block overflow-hidden">
-              <span className="hero-line block">{line}</span>
-            </span>
-          ))}
+        <h1 className="hero-title font-(family-name:--font-playfair) text-[2.8rem] sm:text-5xl lg:text-[4.5rem] xl:text-[5rem] font-light leading-[1.05] text-black mb-5">
+          L&apos;art du
+          <br />
+          maquillage
+          <br />
+          permanent
         </h1>
 
         <p className="hero-desc font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed mb-8 max-w-sm">
