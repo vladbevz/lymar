@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence, useMotionValue, animate } from "framer-motion";
+import { gsap } from "gsap";
 import { FadeUp } from "@/components/AnimatedSection";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -36,7 +36,7 @@ interface ModalState {
   index: number;
 }
 
-const CARD_STEP = 262; // 260px card + 2px gap
+const CARD_STEP = 262;
 
 function PhotoStrip({
   photos,
@@ -49,30 +49,59 @@ function PhotoStrip({
 }) {
   const outerRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
-  const [constraints, setConstraints] = useState({ left: 0, right: 0 });
-  const isDragging = useRef(false);
-  const x = useMotionValue(0);
+  const constraints = useRef({ left: 0, right: 0 });
+  const hasDragged = useRef(false);
+  const startX = useRef(0);
+  const startScrollX = useRef(0);
 
   useEffect(() => {
     const calc = () => {
       if (!outerRef.current || !innerRef.current) return;
       const cw = outerRef.current.offsetWidth;
       const iw = innerRef.current.scrollWidth;
-      setConstraints({ left: Math.min(0, -(iw - cw)), right: 0 });
+      constraints.current = { left: Math.min(0, -(iw - cw)), right: 0 };
     };
     calc();
     window.addEventListener("resize", calc);
     return () => window.removeEventListener("resize", calc);
   }, [photos]);
 
+  const getCurrentX = () =>
+    (gsap.getProperty(innerRef.current!, "x") as number) || 0;
+
   const scrollPrev = () => {
-    const target = Math.min(0, x.get() + CARD_STEP * 2);
-    animate(x, target, { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] });
+    const target = Math.min(0, getCurrentX() + CARD_STEP * 2);
+    gsap.to(innerRef.current, { x: target, duration: 0.4, ease: "power2.out" });
   };
 
   const scrollNext = () => {
-    const target = Math.max(constraints.left, x.get() - CARD_STEP * 2);
-    animate(x, target, { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] });
+    const target = Math.max(constraints.current.left, getCurrentX() - CARD_STEP * 2);
+    gsap.to(innerRef.current, { x: target, duration: 0.4, ease: "power2.out" });
+  };
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    hasDragged.current = false;
+    startX.current = e.clientX;
+    startScrollX.current = getCurrentX();
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!e.buttons) return;
+    hasDragged.current = true;
+    const diff = e.clientX - startX.current;
+    const newX = Math.max(
+      constraints.current.left,
+      Math.min(0, startScrollX.current + diff)
+    );
+    gsap.set(innerRef.current, { x: newX });
+  };
+
+  const handlePointerUp = () => {
+    const cur = getCurrentX();
+    const clamped = Math.max(constraints.current.left, Math.min(0, cur));
+    gsap.to(innerRef.current, { x: clamped, duration: 0.3, ease: "power2.out" });
+    setTimeout(() => { hasDragged.current = false; }, 60);
   };
 
   return (
@@ -96,56 +125,31 @@ function PhotoStrip({
         <div
           ref={outerRef}
           className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
         >
-        <motion.div
-          ref={innerRef}
-          className="flex gap-2 px-6 lg:px-16"
-          drag="x"
-          dragConstraints={constraints}
-          dragElastic={0.06}
-          dragMomentum={true}
-          style={{ x }}
-          onDragStart={() => {
-            isDragging.current = false;
-          }}
-          onDrag={() => {
-            isDragging.current = true;
-          }}
-          onDragEnd={() => {
-            setTimeout(() => {
-              isDragging.current = false;
-            }, 60);
-          }}
-        >
-          {photos.map((photo, i) => (
-            <motion.button
-              key={photo.src}
-              onClick={() => {
-                if (!isDragging.current) onSelect(i);
-              }}
-              className="relative shrink-0 overflow-hidden"
-              style={{ width: 260, height: 340 }}
-              whileHover={{ scale: 1.015 }}
-              transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                draggable={false}
-                className="object-cover pointer-events-none"
-              />
-              <motion.div
-                className="absolute inset-0 bg-black"
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 0.08 }}
-                transition={{ duration: 0.4 }}
-              />
-            </motion.button>
-          ))}
-          <div className="shrink-0 w-6 lg:w-10" />
-        </motion.div>
-      </div>
+          <div ref={innerRef} className="flex gap-2 px-6 lg:px-16">
+            {photos.map((photo, i) => (
+              <button
+                key={photo.src}
+                onClick={() => { if (!hasDragged.current) onSelect(i); }}
+                className="relative shrink-0 overflow-hidden group transition-transform duration-[350ms] hover:scale-[1.015]"
+                style={{ width: 260, height: 340 }}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  draggable={false}
+                  className="object-cover pointer-events-none"
+                />
+                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-[0.08] transition-opacity duration-400" />
+              </button>
+            ))}
+            <div className="shrink-0 w-6 lg:w-10" />
+          </div>
+        </div>
 
         {/* Next */}
         <button
@@ -162,12 +166,26 @@ function PhotoStrip({
 
 export default function GaleriePage() {
   const [modal, setModal] = useState<ModalState | null>(null);
+  const backdropRef = useRef<HTMLDivElement>(null);
+  const imageWrapRef = useRef<HTMLDivElement>(null);
 
-  const openModal = useCallback(
-    (photos: Photo[], index: number) => setModal({ photos, index }),
-    []
-  );
-  const closeModal = useCallback(() => setModal(null), []);
+  const openModal = useCallback((photos: Photo[], index: number) => {
+    setModal({ photos, index });
+    gsap.set(backdropRef.current, { pointerEvents: "auto" });
+    gsap.to(backdropRef.current, { opacity: 1, duration: 0.2 });
+  }, []);
+
+  const closeModal = useCallback(() => {
+    gsap.to(backdropRef.current, {
+      opacity: 0,
+      duration: 0.2,
+      onComplete: () => {
+        setModal(null);
+        gsap.set(backdropRef.current, { pointerEvents: "none" });
+      },
+    });
+  }, []);
+
   const prev = useCallback(
     () =>
       setModal((m) =>
@@ -183,6 +201,17 @@ export default function GaleriePage() {
     []
   );
 
+  // Animate image on index change
+  useEffect(() => {
+    if (!modal || !imageWrapRef.current) return;
+    gsap.fromTo(
+      imageWrapRef.current,
+      { opacity: 0, scale: 0.96 },
+      { opacity: 1, scale: 1, duration: 0.25, ease: "power2.out" }
+    );
+  }, [modal?.index]);
+
+  // Keyboard nav
   useEffect(() => {
     if (!modal) return;
     const handler = (e: KeyboardEvent) => {
@@ -280,82 +309,68 @@ export default function GaleriePage() {
         </FadeUp>
       </section>
 
-      {/* Modal */}
-      <AnimatePresence>
+      {/* Modal — always in DOM, opacity controlled by GSAP */}
+      <div
+        ref={backdropRef}
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/92"
+        style={{ opacity: 0, pointerEvents: "none" }}
+        onClick={closeModal}
+      >
+        {/* Close */}
+        <button
+          onClick={(e) => { e.stopPropagation(); closeModal(); }}
+          className="absolute top-6 right-6 text-white/40 hover:text-white transition-colors z-20"
+          aria-label="Fermer"
+        >
+          <X size={18} strokeWidth={1.5} />
+        </button>
+
+        {/* Counter */}
         {modal && (
-          <motion.div
-            key="modal-backdrop"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/92"
-            onClick={closeModal}
-          >
-            {/* Close */}
-            <button
-              onClick={closeModal}
-              className="absolute top-6 right-6 text-white/40 hover:text-white transition-colors z-20"
-              aria-label="Fermer"
-            >
-              <X size={18} strokeWidth={1.5} />
-            </button>
-
-            {/* Counter */}
-            <p className="absolute top-6 left-1/2 -translate-x-1/2 font-glacial text-[10px] tracking-[0.25em] uppercase text-white/30 z-20 select-none">
-              {modal.index + 1} / {modal.photos.length}
-            </p>
-
-            {/* Prev */}
-            {modal.photos.length > 1 && (
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  prev();
-                }}
-                className="absolute left-4 lg:left-8 text-white/30 hover:text-white transition-colors z-20 p-3"
-                aria-label="Photo précédente"
-              >
-                <ChevronLeft size={24} strokeWidth={1} />
-              </button>
-            )}
-
-            {/* Image */}
-            <motion.div
-              key={modal.index}
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative"
-              style={{ maxHeight: "82vh", maxWidth: "min(520px, 90vw)", width: "100%", aspectRatio: "3/4" }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={modal.photos[modal.index].src}
-                alt={modal.photos[modal.index].alt}
-                fill
-                className="object-contain"
-              />
-            </motion.div>
-
-            {/* Next */}
-            {modal.photos.length > 1 && (
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  next();
-                }}
-                className="absolute right-4 lg:right-8 text-white/30 hover:text-white transition-colors z-20 p-3"
-                aria-label="Photo suivante"
-              >
-                <ChevronRight size={24} strokeWidth={1} />
-              </button>
-            )}
-
-          </motion.div>
+          <p className="absolute top-6 left-1/2 -translate-x-1/2 font-glacial text-[10px] tracking-[0.25em] uppercase text-white/30 z-20 select-none">
+            {modal.index + 1} / {modal.photos.length}
+          </p>
         )}
-      </AnimatePresence>
+
+        {/* Prev */}
+        {modal && modal.photos.length > 1 && (
+          <button
+            onClick={(e) => { e.stopPropagation(); prev(); }}
+            className="absolute left-4 lg:left-8 text-white/30 hover:text-white transition-colors z-20 p-3"
+            aria-label="Photo précédente"
+          >
+            <ChevronLeft size={24} strokeWidth={1} />
+          </button>
+        )}
+
+        {/* Image */}
+        {modal && (
+          <div
+            ref={imageWrapRef}
+            className="relative"
+            style={{ maxHeight: "82vh", maxWidth: "min(520px, 90vw)", width: "100%", aspectRatio: "3/4" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={modal.photos[modal.index].src}
+              alt={modal.photos[modal.index].alt}
+              fill
+              className="object-contain"
+            />
+          </div>
+        )}
+
+        {/* Next */}
+        {modal && modal.photos.length > 1 && (
+          <button
+            onClick={(e) => { e.stopPropagation(); next(); }}
+            className="absolute right-4 lg:right-8 text-white/30 hover:text-white transition-colors z-20 p-3"
+            aria-label="Photo suivante"
+          >
+            <ChevronRight size={24} strokeWidth={1} />
+          </button>
+        )}
+      </div>
     </>
   );
 }

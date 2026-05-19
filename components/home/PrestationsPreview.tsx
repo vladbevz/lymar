@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { gsap } from "gsap";
 import { StaggerWrapper, StaggerItem, FadeUp } from "@/components/AnimatedSection";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -45,53 +45,47 @@ const categories = [
   },
 ];
 
-const cardVariants = {
-  rest: { backgroundColor: "#ffffff", y: 0 },
-  hover: { backgroundColor: "#f7f7f7", y: -3 },
-};
-const titleVariants = { rest: { scale: 1 }, hover: { scale: 1.04 } };
-const arrowVariants = { rest: { x: 0 }, hover: { x: 5 } };
-const transition = { duration: 0.35, ease: [0.25, 0.1, 0.25, 1] as const };
-
 function Card({ cat }: { cat: (typeof categories)[0] }) {
   return (
-    <motion.div
-      variants={cardVariants}
-      initial="rest"
-      whileHover="hover"
-      transition={transition}
-      className="h-full border border-zinc-100"
-    >
+    <div className="h-full border border-zinc-100 group transition-all duration-300 hover:bg-[#f7f7f7] hover:-translate-y-[3px]">
       <Link href={cat.href} className="block p-8 h-full">
-        <motion.h3
-          variants={titleVariants}
-          transition={transition}
-          className="font-(family-name:--font-playfair) text-2xl font-bold text-black mb-2 origin-left"
-        >
+        <h3 className="font-(family-name:--font-playfair) text-2xl font-bold text-black mb-2 origin-left transition-transform duration-300 group-hover:scale-[1.04]">
           {cat.title}
-        </motion.h3>
+        </h3>
         <p className="font-(family-name:--font-inter) text-xs text-zinc-400 mb-3">{cat.prix}</p>
         <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed mb-6">
           {cat.description}
         </p>
         <span className="inline-flex items-center gap-1.5 font-glacial text-xs tracking-widest uppercase text-black">
           Découvrir
-          <motion.span variants={arrowVariants} transition={transition}>
+          <span className="transition-transform duration-300 group-hover:translate-x-1.5">
             <ArrowRight size={12} />
-          </motion.span>
+          </span>
         </span>
       </Link>
-    </motion.div>
+    </div>
   );
 }
 
 export default function PrestationsPreview() {
   const [idx, setIdx] = useState(0);
   const dragStartX = useRef(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
   const maxIdx = categories.length - 1;
 
   const prev = () => setIdx((i) => Math.max(0, i - 1));
   const next = () => setIdx((i) => Math.min(maxIdx, i + 1));
+
+  useEffect(() => {
+    if (!trackRef.current || !containerRef.current) return;
+    const w = containerRef.current.offsetWidth;
+    gsap.to(trackRef.current, {
+      x: -(idx * w),
+      duration: 0.4,
+      ease: "power2.out",
+    });
+  }, [idx]);
 
   return (
     <section className="py-12 lg:py-32 bg-white border-t border-zinc-100">
@@ -140,6 +134,7 @@ export default function PrestationsPreview() {
 
           {/* Track */}
           <div
+            ref={containerRef}
             className="overflow-hidden"
             onPointerDown={(e) => { dragStartX.current = e.clientX; }}
             onPointerUp={(e) => {
@@ -148,17 +143,13 @@ export default function PrestationsPreview() {
               else if (diff > 40) prev();
             }}
           >
-            <motion.div
-              className="flex"
-              animate={{ x: `${-idx * 100}%` }}
-              transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <div ref={trackRef} className="flex">
               {categories.map((cat) => (
                 <div key={cat.href} className="w-full shrink-0">
                   <Card cat={cat} />
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* Next */}

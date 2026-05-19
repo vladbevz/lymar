@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { motion } from "framer-motion";
+import { gsap } from "gsap";
 import { ChevronLeft, ChevronRight, User } from "lucide-react";
 import { FadeUp } from "@/components/AnimatedSection";
 
@@ -37,6 +37,7 @@ export default function AvisSection() {
   const [perView, setPerView] = useState(3);
   const [cardWidth, setCardWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
   const dragStartX = useRef(0);
 
   useEffect(() => {
@@ -51,6 +52,15 @@ export default function AvisSection() {
     if (containerRef.current) ro.observe(containerRef.current);
     return () => ro.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!trackRef.current || !cardWidth) return;
+    gsap.to(trackRef.current, {
+      x: -(idx * cardWidth),
+      duration: 0.45,
+      ease: "power2.out",
+    });
+  }, [idx, cardWidth]);
 
   const maxIdx = Math.max(0, avis.length - perView);
   const prev = useCallback(() => setIdx((i) => Math.max(0, i - 1)), []);
@@ -109,11 +119,7 @@ export default function AvisSection() {
               else if (diff > 40) prev();
             }}
           >
-            <motion.div
-              className="flex"
-              animate={{ x: cardWidth ? -(idx * cardWidth) : 0 }}
-              transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
-            >
+            <div ref={trackRef} className="flex">
               {avis.map((a) => (
                 <div
                   key={a.nom}
@@ -121,7 +127,6 @@ export default function AvisSection() {
                   style={{ width: cardWidth || `${100 / perView}%` }}
                 >
                   <div className="bg-white border border-zinc-100 p-7 h-full select-none">
-                    {/* Avatar + nom + étoiles */}
                     <div className="flex items-center gap-3 mb-5">
                       <div className="w-9 h-9 rounded-full bg-zinc-100 flex items-center justify-center shrink-0">
                         <User size={15} strokeWidth={1.5} className="text-zinc-400" />
@@ -137,15 +142,13 @@ export default function AvisSection() {
                         </div>
                       </div>
                     </div>
-
-                    {/* Texte */}
                     <p className="font-baskerville text-sm text-zinc-600 leading-relaxed">
                       &ldquo;{a.texte}&rdquo;
                     </p>
                   </div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           {/* Next */}
