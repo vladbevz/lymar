@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "À propos — Anastasiia Lymar · Maquillage Permanent",
   description:
     "Découvrez Anastasiia Lymar, experte en maquillage permanent formée à l'international. Précision, personnalisation et résultats naturels à Saint-Georges-de-Didonne.",
+  alternates: { canonical: "https://lymar-dermo-esthetic.fr/a-propos" },
 };
 
 const valeurs = [

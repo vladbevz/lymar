@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Prestations — Maquillage Permanent & Pigmentation · Lymar Dermo-Esthetic",
   description: "Toutes les prestations de maquillage permanent : sourcils, lèvres, tricopigmentation, taches de rousseur, soins cils/sourcils, corrections. Saint-Georges-de-Didonne et Beaune.",
+  alternates: { canonical: "https://lymar-dermo-esthetic.fr/prestations" },
 };
 
 const categories = [

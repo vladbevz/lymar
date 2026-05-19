@@ -1,7 +1,9 @@
 import { FadeUp } from "@/components/AnimatedSection";
+import { JsonLd } from "@/components/JsonLd";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { ReactNode } from "react";
+import { SITE_URL, SITE_NAME } from "@/lib/site";
 
 interface Service {
   nom: string;
@@ -22,6 +24,7 @@ interface Props {
   heroImageAlt?: string;
   heroImageFit?: "cover" | "contain";
   heroImagePosition?: string;
+  slug?: string;
 }
 
 const PLANITY = "https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne";
@@ -39,9 +42,57 @@ export default function PrestaPageLayout({
   heroImageAlt = "Maquillage permanent — Lymar Dermo-Esthetic",
   heroImageFit = "cover",
   heroImagePosition = "object-bottom",
+  slug,
 }: Props) {
+  const pageName = breadcrumb.split("·").pop()?.trim() ?? titre;
+
+  const serviceSchema = slug
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: titre,
+        description: intro,
+        url: `${SITE_URL}/prestations/${slug}`,
+        provider: {
+          "@type": "BeautySalon",
+          "@id": `${SITE_URL}/#business`,
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+        areaServed: [
+          { "@type": "City", "name": "Saint-Georges-de-Didonne" },
+          { "@type": "City", "name": "Beaune" },
+        ],
+        offers: services.map((s) => ({
+          "@type": "Offer",
+          name: s.nom,
+          description: s.duree,
+          priceCurrency: "EUR",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: s.prix,
+          },
+        })),
+      }
+    : null;
+
+  const breadcrumbSchema = slug
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Accueil", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Prestations", item: `${SITE_URL}/prestations` },
+          { "@type": "ListItem", position: 3, name: pageName, item: `${SITE_URL}/prestations/${slug}` },
+        ],
+      }
+    : null;
+
   return (
     <>
+      {serviceSchema && <JsonLd data={serviceSchema} />}
+      {breadcrumbSchema && <JsonLd data={breadcrumbSchema} />}
+
       {/* Hero — split like home hero */}
       <section className="relative mt-16 overflow-hidden bg-white lg:flex lg:h-[calc(100svh-64px)]">
 

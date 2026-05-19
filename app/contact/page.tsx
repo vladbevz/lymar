@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Contact & Rendez-vous — Lymar Dermo-Esthetic · Saint-Georges-de-Didonne",
   description:
     "Prenez rendez-vous avec Anastasiia Lymar. Cabinet de maquillage permanent à Saint-Georges-de-Didonne et Beaune. Réservation en ligne via Planity.",
+  alternates: { canonical: "https://lymar-dermo-esthetic.fr/contact" },
 };
 
 const PLANITY = "https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne";

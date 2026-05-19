@@ -4,11 +4,13 @@ import PrestaPageLayout from "@/components/PrestaPageLayout";
 export const metadata: Metadata = {
   title: "Taches de rousseur semi-permanentes · Lymar Dermo-Esthetic",
   description: "Taches de rousseur semi-permanentes à Saint-Georges-de-Didonne. Effet naturel, soleil ou intense. Cabinet Anastasiia Lymar.",
+  alternates: { canonical: "https://lymar-dermo-esthetic.fr/prestations/taches-rousseur" },
 };
 
 export default function TachesRousseursPage() {
   return (
     <PrestaPageLayout
+      slug="taches-rousseur"
       breadcrumb="Prestations · Taches de rousseur"
       titre="Taches de rousseur semi-permanentes"
       sousTitre="Pour une peau vivante et ensoleillée — effet naturel, soleil ou intense."

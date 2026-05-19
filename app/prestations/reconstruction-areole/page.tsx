@@ -4,11 +4,13 @@ import PrestaPageLayout from "@/components/PrestaPageLayout";
 export const metadata: Metadata = {
   title: "Reconstruction aréole 3D post-mastectomie · Lymar Dermo-Esthetic",
   description: "Reconstruction aréole 3D après mastectomie à Saint-Georges-de-Didonne. Technique spécialisée par Anastasiia Lymar.",
+  alternates: { canonical: "https://lymar-dermo-esthetic.fr/prestations/reconstruction-areole" },
 };
 
 export default function ReconstructionAreolesPage() {
   return (
     <PrestaPageLayout
+      slug="reconstruction-areole"
       breadcrumb="Prestations · Reconstruction aréole"
       titre="Reconstruction aréole 3D"
       sousTitre="Technique spécialisée pour la reconstruction aréolaire post-mastectomie."

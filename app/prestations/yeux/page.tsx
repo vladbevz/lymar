@@ -4,11 +4,13 @@ import PrestaPageLayout from "@/components/PrestaPageLayout";
 export const metadata: Metadata = {
   title: "Retouche yeux — Eyeliner permanent · Lymar Dermo-Esthetic",
   description: "Retouche eyeliner permanent à Saint-Georges-de-Didonne. Lash liner, eyeliner et cat eyes par Anastasiia Lymar.",
+  alternates: { canonical: "https://lymar-dermo-esthetic.fr/prestations/yeux" },
 };
 
 export default function YeuxPage() {
   return (
     <PrestaPageLayout
+      slug="yeux"
       breadcrumb="Prestations · Yeux"
       titre="Retouche eyeliner permanent"
       sousTitre="Lash liner, eyeliner classique ou cat eyes — un regard intense et raffiné au quotidien."

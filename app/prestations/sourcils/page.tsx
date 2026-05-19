@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export const metadata: Metadata = {
   title: "Maquillage permanent sourcils à Saint-Georges-de-Didonne — Lymar Dermo-Esthetic",
   description: "Microblading et microshading à Saint-Georges-de-Didonne. Sourcils redessinés, naturels et durables par Anastasiia Lymar. À partir de 250 €, retouche incluse.",
+  alternates: { canonical: "https://lymar-dermo-esthetic.fr/prestations/sourcils" },
 };
 
 const faq = [
@@ -30,6 +31,7 @@ const faq = [
 export default function SourcilsPage() {
   return (
     <PrestaPageLayout
+      slug="sourcils"
       breadcrumb="Prestations · Sourcils"
       titre="Maquillage permanent sourcils"
       sousTitre="Microblading & microshading à Saint-Georges-de-Didonne — résultats naturels et durables."
