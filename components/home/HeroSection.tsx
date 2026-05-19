@@ -29,11 +29,8 @@ export default function HeroSection() {
         .from(".hero-desc", { opacity: 0, y: 12, duration: 0.6 }, "-=0.45")
         .from(".hero-cta", { opacity: 0, y: 12, duration: 0.6 }, "-=0.4")
         .from(".hero-rating", { opacity: 0, duration: 0.5 }, "-=0.3")
-        .from(
-          ".hero-img-desktop",
-          { clipPath: "inset(0 0 100% 0)", duration: 1.4, ease: "power3.inOut" },
-          0
-        );
+        .from(".hero-img-desktop", { opacity: 0, duration: 1.4, ease: "power2.out" }, 0)
+        .from(".hero-img-desktop img", { scale: 1.08, duration: 2.2, ease: "power2.out" }, 0);
     },
     { scope: sectionRef }
   );
@@ -105,11 +102,8 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Right — full-height photo with clip-path reveal */}
-      <div
-        className="hero-img-desktop hidden lg:block relative flex-1 self-stretch"
-        style={{ clipPath: "inset(0 0 0% 0)" }}
-      >
+      {/* Right — full-height photo with zoom-out reveal */}
+      <div className="hero-img-desktop hidden lg:block relative flex-1 self-stretch overflow-hidden">
         <Image
           src="/images/hero.webp"
           alt="Anastasiia Lymar — maquillage permanent au cabinet"
