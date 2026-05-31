@@ -142,17 +142,17 @@ export default function PrestaPageLayout({
       {/* Intro + Services */}
       <section className="py-10 lg:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 items-start">
-            {/* Intro */}
-            <FadeUp>
-              <p className="font-(family-name:--font-inter) text-base text-zinc-500 leading-relaxed">
-                {intro}
-              </p>
-              {info && <div className="mt-6">{info}</div>}
-            </FadeUp>
+          <FadeUp>
+            <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 items-start">
+              {/* Intro */}
+              <div>
+                <p className="font-(family-name:--font-inter) text-base text-zinc-500 leading-relaxed">
+                  {intro}
+                </p>
+                {info && <div className="mt-6">{info}</div>}
+              </div>
 
-            {/* Tableau services */}
-            <FadeUp delay={0.1}>
+              {/* Tableau services */}
               <div className="divide-y divide-zinc-100">
                 {services.map((s) => (
                   <div key={s.nom} className="py-5 flex items-center justify-between gap-4">
@@ -167,8 +167,8 @@ export default function PrestaPageLayout({
                   </div>
                 ))}
               </div>
-            </FadeUp>
-          </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
