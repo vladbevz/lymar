@@ -73,45 +73,51 @@ const categories = [
 export default function PrestationsPage() {
   return (
     <>
-      {/* Hero — stack on mobile, 2-col on desktop */}
-      <section className="relative mt-16 bg-white border-b border-zinc-100 overflow-hidden lg:h-[calc(100svh-64px)]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full lg:h-full lg:flex lg:items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 lg:items-center w-full">
+      {/* Hero */}
+      <section className="relative mt-16 bg-white border-b border-zinc-100 lg:flex lg:h-[calc(100svh-64px)]">
 
-            {/* Text */}
-            <div className="pt-14 pb-8 lg:py-0">
-              <FadeUp>
-                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
-                  Nos prestations
-                </p>
-                <h1 className="font-logo text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] mb-5">
-                  Expertise
-                  <br />
-                  & précision
-                </h1>
-                <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
-                  Consultation personnalisée incluse (20 €, déduits si la prestation est confirmée). Sur rendez-vous uniquement — Saint-Georges-de-Didonne et Beaune.
-                </p>
-                <p className="font-(family-name:--font-inter) text-xs tracking-[0.2em] uppercase text-zinc-400">
-                  {categories.length} catégories de prestations
-                </p>
-              </FadeUp>
-            </div>
-
-            {/* Image — h-64 on mobile, fills column on desktop */}
-            <div className="relative h-64 lg:h-[calc(100svh-64px-80px)]">
-              <div className="relative w-full h-full overflow-hidden bg-zinc-100">
-                <Image
-                  src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=900&q=85&fit=crop"
-                  alt="Maquillage permanent — prestations Lymar Dermo-Esthetic"
-                  fill
-                  priority
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
+        {/* Mobile image */}
+        <div className="relative h-72 w-full lg:hidden">
+          <Image
+            src="/images/prestations.webp"
+            alt="Maquillage permanent — prestations Lymar Dermo-Esthetic"
+            fill
+            priority
+            className="object-cover"
+          />
         </div>
+
+        {/* Left — text */}
+        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-10 lg:py-14">
+          <FadeUp>
+            <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
+              Nos prestations
+            </p>
+            <h1 className="font-logo text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] mb-5">
+              Expertise
+              <br />
+              & précision
+            </h1>
+            <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
+              Consultation personnalisée incluse (20 €, déduits si la prestation est confirmée). Sur rendez-vous uniquement — Saint-Georges-de-Didonne et Beaune.
+            </p>
+            <p className="font-(family-name:--font-inter) text-xs tracking-[0.2em] uppercase text-zinc-400">
+              {categories.length} catégories de prestations
+            </p>
+          </FadeUp>
+        </div>
+
+        {/* Right — full-height photo */}
+        <div className="hidden lg:block relative flex-1 self-stretch overflow-hidden">
+          <Image
+            src="/images/prestations.webp"
+            alt="Maquillage permanent — prestations Lymar Dermo-Esthetic"
+            fill
+            priority
+            className="object-cover"
+          />
+        </div>
+
       </section>
 
       {/* Grille */}

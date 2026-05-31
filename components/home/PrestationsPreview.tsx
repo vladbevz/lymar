@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { StaggerWrapper, StaggerItem, FadeUp } from "@/components/AnimatedSection";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
@@ -9,61 +10,82 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 const categories = [
   {
     title: "Sourcils",
-    description: "Effet poil à poil ou effet poudré — sourcils redessinés, naturels et durables.",
     href: "/prestations/sourcils",
     prix: "À partir de 250 €",
+    image: "/images/sourcils.webp",
+    imagePosition: "object-center",
   },
   {
     title: "Lèvres",
-    description: "Candy Lips dégradé ou effet aquarelle — couleur, volume et définition en toute délicatesse.",
     href: "/prestations/levres",
     prix: "300 €",
+    image: "/images/levres.webp",
+    imagePosition: "object-center",
   },
   {
     title: "Yeux",
-    description: "Liner classique, poudré ou ras-de-cils — 1ère retouche incluse pour un regard défini et durable.",
     href: "/prestations/yeux",
     prix: "À partir de 150 €",
+    image: "/images/yeux.webp",
+    imagePosition: "object-top",
   },
   {
     title: "Tricopigmentation",
-    description: "Micropigmentation du cuir chevelu pour redonner densité et uniformité aux zones clairsemées.",
     href: "/prestations/tricopigmentation",
     prix: "À partir de 350 €",
+    image: "/images/tricopegmitantion.webp",
+    imagePosition: "object-center",
   },
   {
     title: "Taches de rousseur",
-    description: "Taches de rousseur semi-permanentes — effet naturel, soleil ou intense — pour une peau vivante.",
     href: "/prestations/taches-rousseur",
     prix: "À partir de 150 €",
+    image: "/images/taches.webp",
+    imagePosition: "object-bottom",
   },
   {
     title: "Soins cils & sourcils",
-    description: "Lashlift, browlift, teinture — des soins express pour sublimer votre regard au quotidien.",
     href: "/prestations/soins-cils-sourcils",
     prix: "À partir de 10 €",
+    image: "/images/soins-cils.webp",
+    imagePosition: "object-center",
   },
 ];
 
 function Card({ cat }: { cat: (typeof categories)[0] }) {
   return (
-    <div className="h-full border border-zinc-100 group transition-all duration-300 hover:bg-[#f7f7f7] hover:-translate-y-[3px]">
-      <Link href={cat.href} className="block p-8 h-full">
-        <h3 className="font-logo text-2xl font-bold text-black mb-2 origin-left transition-transform duration-300 group-hover:scale-[1.04]">
+    <Link
+      href={cat.href}
+      className="group relative block w-full overflow-hidden"
+      style={{ aspectRatio: "3/4" }}
+    >
+      {/* Photo */}
+      <Image
+        src={cat.image}
+        alt={cat.title}
+        fill
+        className={`object-cover ${cat.imagePosition} transition-transform duration-700 ease-out group-hover:scale-105`}
+      />
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
+
+      {/* Text */}
+      <div className="absolute bottom-0 left-0 right-0 p-6">
+        <h3 className="font-logo text-2xl text-white mb-1 leading-tight">
           {cat.title}
         </h3>
-        <p className="font-(family-name:--font-inter) text-xs text-zinc-400 mb-3">{cat.prix}</p>
-        <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed mb-6">
-          {cat.description}
+        <p className="font-(family-name:--font-inter) text-xs text-white/50 mb-4">
+          {cat.prix}
         </p>
-        <span className="inline-flex items-center gap-1.5 font-(family-name:--font-inter) text-xs tracking-widest uppercase text-black">
+        <span className="inline-flex items-center gap-1.5 font-(family-name:--font-inter) text-xs tracking-widest uppercase text-white/70 group-hover:text-white transition-colors duration-300">
           Découvrir
-          <span className="transition-transform duration-300 group-hover:translate-x-1.5">
-            <ArrowRight size={12} />
+          <span className="transition-transform duration-300 group-hover:translate-x-1">
+            <ArrowRight size={11} />
           </span>
         </span>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
 
@@ -103,7 +125,7 @@ export default function PrestationsPreview() {
 
         {/* Desktop grid */}
         <div className="hidden lg:block">
-          <StaggerWrapper className="grid grid-cols-3 gap-px bg-zinc-100">
+          <StaggerWrapper className="grid grid-cols-3 gap-3">
             {categories.map((cat) => (
               <StaggerItem key={cat.href}>
                 <Card cat={cat} />
@@ -114,7 +136,6 @@ export default function PrestationsPreview() {
 
         {/* Mobile slider */}
         <div className="lg:hidden relative">
-          {/* Prev */}
           <button
             onClick={prev}
             disabled={idx === 0}
@@ -124,7 +145,6 @@ export default function PrestationsPreview() {
             <ChevronLeft size={16} strokeWidth={1.5} />
           </button>
 
-          {/* Track */}
           <div
             ref={containerRef}
             className="overflow-hidden"
@@ -144,7 +164,6 @@ export default function PrestationsPreview() {
             </div>
           </div>
 
-          {/* Next */}
           <button
             onClick={next}
             disabled={idx === maxIdx}
@@ -154,7 +173,6 @@ export default function PrestationsPreview() {
             <ChevronRight size={16} strokeWidth={1.5} />
           </button>
 
-          {/* Dots */}
           <div className="flex justify-center gap-2 mt-6">
             {categories.map((_, i) => (
               <button
@@ -168,7 +186,7 @@ export default function PrestationsPreview() {
           </div>
         </div>
 
-        {/* Voir toutes — centré, tous écrans */}
+        {/* Voir toutes */}
         <FadeUp delay={0.2}>
           <div className="text-center mt-10">
             <Link
