@@ -110,7 +110,7 @@ export default function PrestationsPage() {
         {/* Right — full-height photo */}
         <div className="hidden lg:block relative flex-1 self-stretch overflow-hidden">
           <Image
-            src="/images/prestations.webp"
+            src="/images/prestations2.webp"
             alt="Maquillage permanent — prestations Lymar Dermo-Esthetic"
             fill
             priority
