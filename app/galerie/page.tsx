@@ -15,6 +15,8 @@ const sourcilsPhotos: Photo[] = [
   { src: "/images/sourcils-4.webp", alt: "Sourcils — effet poudré" },
   { src: "/images/sourcils-5.webp", alt: "Sourcils — résultat final" },
   { src: "/images/sourcils-6.webp", alt: "Sourcils — maquillage permanent" },
+  { src: "/images/sourcils-7.webp", alt: "Sourcils — avant/après" },
+  { src: "/images/sourcils-8.webp", alt: "Sourcils — résultat naturel" },
 ];
 
 const levresPhotos: Photo[] = [
@@ -27,6 +29,8 @@ const levresPhotos: Photo[] = [
   { src: "/images/levres-7.webp", alt: "Lèvres — résultat final" },
   { src: "/images/levres-8.webp", alt: "Lèvres — définition et couleur" },
   { src: "/images/levres-9.webp", alt: "Lèvres — aquarelle fondu" },
+  { src: "/images/levres-10.webp", alt: "Lèvres — résultat avant/après" },
+  { src: "/images/levres-11.webp", alt: "Lèvres — maquillage permanent" },
 ];
 
 const cilsPhotos: Photo[] = [
@@ -35,6 +39,7 @@ const cilsPhotos: Photo[] = [
   { src: "/images/cils-3.webp", alt: "Soins cils / yeux — Browlift" },
   { src: "/images/cils-4.webp", alt: "Soins cils / yeux — avant/après" },
   { src: "/images/cils-5.webp", alt: "Soins cils / yeux — résultat" },
+  { src: "/images/cils-6.jpg",  alt: "Soins cils / yeux — Lashlift résultat" },
 ];
 
 const heroPhotos: Photo[] = [
@@ -96,13 +101,16 @@ function PhotoStrip({
     hasDragged.current = false;
     startX.current = e.clientX;
     startScrollX.current = getCurrentX();
-    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
   };
 
   const handlePointerMove = (e: React.PointerEvent) => {
     if (!e.buttons) return;
-    hasDragged.current = true;
     const diff = e.clientX - startX.current;
+    if (!hasDragged.current && Math.abs(diff) > 5) {
+      hasDragged.current = true;
+      (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    }
+    if (!hasDragged.current) return;
     const newX = Math.max(
       constraints.current.left,
       Math.min(0, startScrollX.current + diff)
@@ -147,7 +155,7 @@ function PhotoStrip({
               <button
                 key={photo.src}
                 onClick={() => { if (!hasDragged.current) onSelect(i); }}
-                className="relative shrink-0 overflow-hidden group transition-transform duration-[350ms] hover:scale-[1.015]"
+                className="relative shrink-0 overflow-hidden group transition-transform duration-350 hover:scale-[1.015]"
                 style={{ width: 260, height: 340 }}
               >
                 <Image
@@ -181,6 +189,8 @@ export default function GaleriePage() {
   const [modal, setModal] = useState<ModalState | null>(null);
   const backdropRef = useRef<HTMLDivElement>(null);
   const imageWrapRef = useRef<HTMLDivElement>(null);
+  const modalSwipeStart = useRef(0);
+  const modalDidSwipe = useRef(false);
 
   const openModal = useCallback((photos: Photo[], index: number) => {
     setModal({ photos, index });
@@ -333,7 +343,12 @@ export default function GaleriePage() {
         ref={backdropRef}
         className="fixed inset-0 z-50 flex items-center justify-center bg-black/92"
         style={{ opacity: 0, pointerEvents: "none" }}
-        onClick={closeModal}
+        onPointerDown={(e) => { modalSwipeStart.current = e.clientX; modalDidSwipe.current = false; }}
+        onPointerUp={(e) => {
+          const diff = e.clientX - modalSwipeStart.current;
+          if (Math.abs(diff) > 50) { modalDidSwipe.current = true; diff < 0 ? next() : prev(); }
+        }}
+        onClick={() => { if (!modalDidSwipe.current) closeModal(); }}
       >
         {/* Close */}
         <button
@@ -368,6 +383,8 @@ export default function GaleriePage() {
             ref={imageWrapRef}
             className="relative"
             style={{ maxHeight: "82vh", maxWidth: "min(520px, 90vw)", width: "100%", aspectRatio: "3/4" }}
+            onPointerDown={(e) => e.stopPropagation()}
+            onPointerUp={(e) => e.stopPropagation()}
             onClick={(e) => e.stopPropagation()}
           >
             <Image
