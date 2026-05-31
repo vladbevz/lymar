@@ -33,7 +33,7 @@ const categories = [
     title: "Tricopigmentation",
     href: "/prestations/tricopigmentation",
     prix: "À partir de 350 €",
-    image: "/images/tricopegmitantion.webp",
+    image: "/images/tricopigmentation.webp",
     imagePosition: "object-center",
   },
   {
