@@ -161,7 +161,7 @@ export default function PrestaPageLayout({
                       {s.note && <p className="font-(family-name:--font-inter) text-xs text-zinc-400 mt-0.5">{s.note}</p>}
                       <p className="font-(family-name:--font-inter) text-xs text-zinc-400 mt-0.5">{s.duree}</p>
                     </div>
-                    <p className="font-logo text-lg font-bold text-black whitespace-nowrap shrink-0">
+                    <p className="font-logo text-lg font-bold text-black whitespace-nowrap shrink-0 bg-warm px-4 py-1.5">
                       {s.prix}
                     </p>
                   </div>

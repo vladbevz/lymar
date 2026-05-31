@@ -144,7 +144,7 @@ export default function PrestationsPage() {
                     </p>
                   </div>
                   <div className="flex items-center gap-6 shrink-0">
-                    <span className="font-logo text-xl font-bold text-black hidden sm:block">
+                    <span className="font-logo text-xl font-bold text-black hidden sm:block bg-warm px-4 py-1.5">
                       {cat.prix}
                     </span>
                     <ArrowRight size={18} className="text-zinc-300 group-hover:text-black group-hover:translate-x-1 transition-all" />
