@@ -142,7 +142,7 @@ export default function PrestaPageLayout({
       {/* Intro + Services */}
       <section className="py-10 lg:py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-16 items-start">
             {/* Intro */}
             <FadeUp>
               <p className="font-(family-name:--font-inter) text-base text-zinc-500 leading-relaxed">
