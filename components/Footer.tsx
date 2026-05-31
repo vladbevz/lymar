@@ -97,7 +97,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="font-(family-name:--font-inter) text-xs text-zinc-600 hover:text-white transition-colors text-center"
           >
-            Conçu par AtelierCode.fr
+            Site conçu et développé par AtelierCode.fr
           </a>
           <div className="flex justify-center md:justify-end gap-6">
             <Link href="/mentions-legales" className="font-(family-name:--font-inter) text-xs text-zinc-600 hover:text-white transition-colors">
