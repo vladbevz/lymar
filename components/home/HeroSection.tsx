@@ -31,7 +31,7 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative mt-16 overflow-hidden bg-white lg:flex lg:h-[calc(100svh-64px)]"
+      className="relative mt-16 bg-white lg:flex lg:h-[calc(100svh-64px)]"
     >
       {/* Mobile image */}
       <div className="relative h-95 w-full lg:hidden">
@@ -45,7 +45,7 @@ export default function HeroSection() {
       </div>
 
       {/* Left — text */}
-      <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-10 lg:py-14 overflow-hidden">
+      <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-10 lg:py-14">
         <p className="hero-eyebrow text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-5">
           Saint-Georges-de-Didonne · Beaune
         </p>
@@ -63,12 +63,12 @@ export default function HeroSection() {
           pigmentation correctrice.
         </p>
 
-        <div className="hero-cta flex flex-col gap-3">
-          <BookingButtons size="sm" />
+        <div className="hero-cta relative z-10 flex flex-wrap items-center gap-3">
+          <BookingButtons />
           <Button
             asChild
             variant="outline"
-            className="border-black text-black hover:bg-black hover:text-white rounded-none px-7 py-2.5 h-auto tracking-widest uppercase text-xs font-glacial transition-colors self-start"
+            className="border-black text-black hover:bg-black hover:text-white rounded-none px-7 py-2.5 h-auto tracking-widest uppercase text-xs font-glacial transition-colors"
           >
             <Link href="/prestations">Voir les prestations</Link>
           </Button>

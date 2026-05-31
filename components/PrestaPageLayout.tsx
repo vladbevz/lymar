@@ -178,7 +178,10 @@ export default function PrestaPageLayout({
       {/* CTA */}
       <section className="py-10 lg:py-20 bg-zinc-50 border-t border-zinc-100 text-center">
         <FadeUp>
-          <BookingButtons size="sm" className="justify-center" />
+          <p className="font-glacial text-xs tracking-[0.25em] uppercase text-zinc-400 mb-4">
+            Réserver sur Planity
+          </p>
+          <BookingButtons className="mx-auto" />
           <p className="mt-4 font-(family-name:--font-inter) text-xs text-zinc-400">
             Paiement : chèque · espèces · Wero
           </p>

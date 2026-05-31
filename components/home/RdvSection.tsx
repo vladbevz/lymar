@@ -13,7 +13,7 @@ export default function RdvSection() {
 
         <FadeUp delay={0.1}>
           <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-semibold text-black mb-6 leading-tight">
-            Prête à vous sublimer ?
+            Prêt(e) à vous sublimer ?
           </h2>
         </FadeUp>
 
@@ -24,7 +24,7 @@ export default function RdvSection() {
         </FadeUp>
 
         <FadeUp delay={0.3}>
-          <BookingButtons size="sm" className="justify-center" />
+          <BookingButtons className="mx-auto" />
         </FadeUp>
 
         <FadeUp delay={0.4}>

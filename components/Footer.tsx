@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="flex flex-col leading-tight mb-3">
+            <div className="flex flex-col items-center w-fit leading-tight mb-3">
               <span className="font-(family-name:--font-playfair) text-xl font-light tracking-[0.25em] uppercase text-white">
                 Lymar
               </span>

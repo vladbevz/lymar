@@ -43,7 +43,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative mt-16 overflow-hidden bg-white lg:flex lg:h-[calc(100svh-64px)]">
+      <section className="relative mt-16 bg-white lg:flex lg:h-[calc(100svh-64px)]">
 
         {/* Mobile image */}
         <div className="relative h-100 w-full lg:hidden">
@@ -51,7 +51,7 @@ export default function ContactPage() {
         </div>
 
         {/* Left — text */}
-        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-10 lg:py-14 overflow-hidden">
+        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-10 lg:py-14">
           <FadeUp>
             <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-4">
               Contact
@@ -89,7 +89,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <BookingButtons size="sm" />
+              <BookingButtons />
               <a
                 href="https://www.instagram.com/lymar.dermo.esthetic/"
                 target="_blank"

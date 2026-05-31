@@ -43,12 +43,6 @@ const categories = [
     href: "/prestations/soins-cils-sourcils",
     prix: "À partir de 10 €",
   },
-  {
-    title: "Pigmentation correctrice",
-    description: "Camouflage dermique de cicatrices (blépharoplastie, lifting, petites cicatrices) et reconstruction aréole.",
-    href: "/prestations/pigmentation-correctrice",
-    prix: "À partir de 150 €",
-  },
 ];
 
 function Card({ cat }: { cat: (typeof categories)[0] }) {
@@ -97,21 +91,13 @@ export default function PrestationsPreview() {
     <section className="py-12 lg:py-32 bg-white border-t border-zinc-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <FadeUp>
-          <div className="flex items-end justify-between mb-10 lg:mb-14">
-            <div>
-              <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-3">
-                Prestations
-              </p>
-              <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-semibold text-black leading-tight">
-                Notre expertise
-              </h2>
-            </div>
-            <Link
-              href="/prestations"
-              className="hidden lg:flex items-center gap-2 font-glacial text-xs tracking-widest uppercase text-zinc-500 hover:text-black transition-colors"
-            >
-              Tout voir <ArrowRight size={12} />
-            </Link>
+          <div className="mb-10 lg:mb-14">
+            <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-3">
+              Prestations
+            </p>
+            <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-semibold text-black leading-tight">
+              Notre expertise
+            </h2>
           </div>
         </FadeUp>
 
@@ -182,9 +168,9 @@ export default function PrestationsPreview() {
           </div>
         </div>
 
-        {/* Mobile — voir toutes */}
+        {/* Voir toutes — centré, tous écrans */}
         <FadeUp delay={0.2}>
-          <div className="text-center mt-8 lg:hidden">
+          <div className="text-center mt-10">
             <Link
               href="/prestations"
               className="inline-flex items-center gap-2 font-glacial text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"

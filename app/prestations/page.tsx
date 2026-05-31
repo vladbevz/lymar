@@ -159,7 +159,7 @@ export default function PrestationsPage() {
           <p className="font-(family-name:--font-inter) text-sm text-zinc-500 mb-8">
             30 minutes · déduits de votre prestation si vous confirmez un rendez-vous
           </p>
-          <BookingButtons size="sm" className="justify-center" />
+          <BookingButtons className="mx-auto" />
         </FadeUp>
       </section>
     </>
