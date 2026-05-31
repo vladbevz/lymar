@@ -109,10 +109,10 @@ export default function PrestaPageLayout({
         {/* Left — text */}
         <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-10 lg:py-14 overflow-hidden">
           <FadeUp>
-            <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-4">
+            <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
               {breadcrumb}
             </p>
-            <h1 className="font-(family-name:--font-playfair) text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] max-w-lg mb-5">
+            <h1 className="font-logo text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] max-w-lg mb-5">
               {titre}
             </h1>
             {sousTitre && (
@@ -120,7 +120,7 @@ export default function PrestaPageLayout({
                 {sousTitre}
               </p>
             )}
-            <p className="font-glacial text-xs tracking-[0.2em] uppercase text-zinc-400">
+            <p className="font-(family-name:--font-inter) text-xs tracking-[0.2em] uppercase text-zinc-400">
               À partir de {services[0]?.prix ?? "—"} · {services[0]?.duree ?? ""}
             </p>
           </FadeUp>
@@ -161,7 +161,7 @@ export default function PrestaPageLayout({
                       {s.note && <p className="font-(family-name:--font-inter) text-xs text-zinc-400 mt-0.5">{s.note}</p>}
                       <p className="font-(family-name:--font-inter) text-xs text-zinc-400 mt-0.5">{s.duree}</p>
                     </div>
-                    <p className="font-(family-name:--font-playfair) text-lg font-bold text-black whitespace-nowrap shrink-0">
+                    <p className="font-logo text-lg font-bold text-black whitespace-nowrap shrink-0">
                       {s.prix}
                     </p>
                   </div>
@@ -178,7 +178,7 @@ export default function PrestaPageLayout({
       {/* CTA */}
       <section className="py-10 lg:py-20 bg-zinc-50 border-t border-zinc-100 text-center">
         <FadeUp>
-          <p className="font-glacial text-xs tracking-[0.25em] uppercase text-zinc-400 mb-4">
+          <p className="font-(family-name:--font-inter) text-xs tracking-[0.25em] uppercase text-zinc-400 mb-4">
             Réserver sur Planity
           </p>
           <BookingButtons className="mx-auto" />

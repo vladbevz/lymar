@@ -128,7 +128,7 @@ function PhotoStrip({
   return (
     <div className="py-10">
       <FadeUp>
-        <p className="font-glacial text-xs tracking-[0.28em] uppercase text-zinc-400 mb-6 px-6 lg:px-16">
+        <p className="font-(family-name:--font-inter) text-xs tracking-[0.28em] uppercase text-zinc-400 mb-6 px-6 lg:px-16">
           {label}
         </p>
       </FadeUp>
@@ -254,16 +254,16 @@ export default function GaleriePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 lg:items-center w-full">
             <div className="pt-14 pb-8 lg:py-0">
               <FadeUp>
-                <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-4">
+                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
                   Galerie
                 </p>
-                <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold text-black leading-[1.05] mb-5">
+                <h1 className="font-logo text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] mb-5">
                   Nos réalisations
                 </h1>
                 <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
                   Sourcils, lèvres, soins cils & yeux — chaque résultat révèle une beauté unique.
                 </p>
-                <p className="font-glacial text-xs tracking-[0.2em] uppercase text-zinc-400">
+                <p className="font-(family-name:--font-inter) text-xs tracking-[0.2em] uppercase text-zinc-400">
                   {sourcilsPhotos.length + levresPhotos.length + cilsPhotos.length} réalisations
                 </p>
               </FadeUp>
@@ -306,7 +306,7 @@ export default function GaleriePage() {
       {/* Instagram */}
       <section className="py-16 bg-white border-t border-zinc-100 text-center">
         <FadeUp>
-          <p className="font-glacial text-xs tracking-[0.25em] uppercase text-zinc-400 mb-4">
+          <p className="font-(family-name:--font-inter) text-xs tracking-[0.25em] uppercase text-zinc-400 mb-4">
             Retrouvez plus de réalisations
           </p>
           <a
@@ -331,7 +331,7 @@ export default function GaleriePage() {
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
               <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
             </svg>
-            <span className="font-glacial text-xs tracking-widest uppercase text-zinc-500 group-hover:text-black transition-colors">
+            <span className="font-(family-name:--font-inter) text-xs tracking-widest uppercase text-zinc-500 group-hover:text-black transition-colors">
               Voir sur Instagram
             </span>
           </a>
@@ -361,7 +361,7 @@ export default function GaleriePage() {
 
         {/* Counter */}
         {modal && (
-          <p className="absolute top-6 left-1/2 -translate-x-1/2 font-glacial text-[10px] tracking-[0.25em] uppercase text-white/30 z-20 select-none">
+          <p className="absolute top-6 left-1/2 -translate-x-1/2 font-(family-name:--font-inter) text-[10px] tracking-[0.25em] uppercase text-white/30 z-20 select-none">
             {modal.index + 1} / {modal.photos.length}
           </p>
         )}

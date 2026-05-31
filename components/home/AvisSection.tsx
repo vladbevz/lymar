@@ -74,15 +74,15 @@ export default function AvisSection() {
         <FadeUp>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
             <div>
-              <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-3">
+              <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-3">
                 Avis clients
               </p>
-              <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-semibold text-black leading-tight">
+              <h2 className="font-logo text-4xl lg:text-5xl font-semibold text-black leading-tight">
                 Elles nous font confiance
               </h2>
             </div>
             <div className="flex items-center gap-3 shrink-0">
-              <span className="font-(family-name:--font-playfair) text-5xl font-light text-black">5.0</span>
+              <span className="font-logo text-5xl font-light text-black">5.0</span>
               <div>
                 <div className="flex gap-0.5 mb-1">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -132,7 +132,7 @@ export default function AvisSection() {
                         <User size={15} strokeWidth={1.5} className="text-zinc-400" />
                       </div>
                       <div>
-                        <p className="font-glacial text-xs tracking-widest uppercase text-black leading-none mb-1">
+                        <p className="font-(family-name:--font-inter) text-xs tracking-widest uppercase text-black leading-none mb-1">
                           {a.nom}
                         </p>
                         <div className="flex gap-0.5">
@@ -142,7 +142,7 @@ export default function AvisSection() {
                         </div>
                       </div>
                     </div>
-                    <p className="font-baskerville text-sm text-zinc-600 leading-relaxed">
+                    <p className="font-(family-name:--font-inter) text-sm text-zinc-600 leading-relaxed">
                       &ldquo;{a.texte}&rdquo;
                     </p>
                   </div>

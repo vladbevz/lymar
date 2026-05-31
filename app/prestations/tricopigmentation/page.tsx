@@ -14,7 +14,7 @@ export default function TricopigmentationPage() {
       breadcrumb="Prestations · Tricopigmentation"
       titre="Tricopigmentation"
       sousTitre="Micropigmentation du cuir chevelu pour redonner densité et uniformité aux zones clairsemées."
-      heroImage="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=900&q=85&fit=crop"
+      heroImage="/images/tricopigmentation.webp"
       heroImageAlt="Tricopigmentation — micropigmentation cuir chevelu"
       intro="La tricopigmentation reproduit l'apparence de poils rasés sur le cuir chevelu par des micro-points de pigment. Elle est indiquée pour les zones de calvitie, de clairsemement ou après certaines interventions médicales. Le traitement se déroule en 1 à 3 séances selon les zones à traiter."
       services={[

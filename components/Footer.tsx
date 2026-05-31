@@ -9,10 +9,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex flex-col items-center w-fit leading-tight mb-3">
-              <span className="font-(family-name:--font-playfair) text-xl font-light tracking-[0.25em] uppercase text-white">
+              <span className="font-logo text-xl font-light tracking-[0.25em] uppercase text-white">
                 Lymar
               </span>
-              <span className="font-glacial text-[9px] tracking-[0.3em] uppercase text-zinc-500">
+              <span className="font-(family-name:--font-inter) text-[9px] tracking-[0.3em] uppercase text-zinc-500">
                 Dermo-Esthetic
               </span>
             </div>
@@ -23,7 +23,7 @@ export default function Footer() {
 
           {/* Cabinet 1 */}
           <div>
-            <h4 className="font-glacial text-xs tracking-widest uppercase text-zinc-500 mb-4">
+            <h4 className="font-(family-name:--font-inter) text-xs tracking-widest uppercase text-zinc-500 mb-4">
               Saint-Georges-de-Didonne
             </h4>
             <div className="space-y-2">
@@ -42,7 +42,7 @@ export default function Footer() {
 
           {/* Cabinet 2 */}
           <div>
-            <h4 className="font-glacial text-xs tracking-widest uppercase text-zinc-500 mb-4">
+            <h4 className="font-(family-name:--font-inter) text-xs tracking-widest uppercase text-zinc-500 mb-4">
               Beaune
             </h4>
             <div className="space-y-2">
@@ -61,7 +61,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="font-glacial text-xs tracking-widest uppercase text-zinc-500 mb-4">
+            <h4 className="font-(family-name:--font-inter) text-xs tracking-widest uppercase text-zinc-500 mb-4">
               Navigation
             </h4>
             <ul className="space-y-2">
@@ -87,11 +87,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-zinc-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-zinc-800 pt-8 grid grid-cols-1 md:grid-cols-3 items-center gap-4 text-center md:text-left">
           <p className="font-(family-name:--font-inter) text-xs text-zinc-600">
             © {new Date().getFullYear()} Lymar Dermo-Esthetic · Anastasiia Lymar
           </p>
-          <div className="flex gap-6">
+          <a
+            href="https://ateliercode.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-(family-name:--font-inter) text-xs text-zinc-600 hover:text-white transition-colors text-center"
+          >
+            Conçu par AtelierCode.fr
+          </a>
+          <div className="flex justify-center md:justify-end gap-6">
             <Link href="/mentions-legales" className="font-(family-name:--font-inter) text-xs text-zinc-600 hover:text-white transition-colors">
               Mentions légales
             </Link>

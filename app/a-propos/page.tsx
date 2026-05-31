@@ -37,10 +37,10 @@ export default function AProposPage() {
         </div>
         <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-10 lg:py-14 overflow-hidden">
           <FadeUp>
-            <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-4">
+            <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
               À propos
             </p>
-            <h1 className="font-(family-name:--font-playfair) text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] max-w-lg mb-5">
+            <h1 className="font-logo text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] max-w-lg mb-5">
               Anastasiia Lymar
             </h1>
             <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
@@ -55,7 +55,7 @@ export default function AProposPage() {
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-400 group-hover:text-black transition-colors">
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
               </svg>
-              <span className="font-glacial text-xs tracking-widest uppercase text-zinc-400 group-hover:text-black transition-colors">
+              <span className="font-(family-name:--font-inter) text-xs tracking-widest uppercase text-zinc-400 group-hover:text-black transition-colors">
                 Voir sur Instagram
               </span>
             </a>
@@ -91,7 +91,7 @@ export default function AProposPage() {
 
             <div>
               <FadeUp delay={0.1}>
-                <p className="font-(family-name:--font-playfair) text-2xl text-black mb-8 leading-relaxed">
+                <p className="font-logo text-2xl text-black mb-8 leading-relaxed">
                   &ldquo;Chaque visage est une toile unique. Mon rôle est de révéler sa beauté propre, avec précision et bienveillance.&rdquo;
                 </p>
               </FadeUp>
@@ -122,10 +122,10 @@ export default function AProposPage() {
       <section className="py-12 lg:py-24 bg-zinc-50">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <FadeUp>
-            <p className="text-xs tracking-[0.3em] uppercase font-glacial text-zinc-500 mb-4">
+            <p className="text-xs tracking-[0.3em] uppercase font-(family-name:--font-inter) text-zinc-500 mb-4">
               Formation
             </p>
-            <h2 className="font-(family-name:--font-playfair) text-4xl font-light text-black mb-4">
+            <h2 className="font-logo text-4xl font-light text-black mb-4">
               Une expertise forgée à l&apos;international
             </h2>
             <Separator className="w-12 mx-auto bg-black mb-10" />
@@ -141,10 +141,10 @@ export default function AProposPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeUp>
             <div className="text-center mb-16">
-              <p className="text-xs tracking-[0.3em] uppercase font-glacial text-zinc-500 mb-4">
+              <p className="text-xs tracking-[0.3em] uppercase font-(family-name:--font-inter) text-zinc-500 mb-4">
                 Mes valeurs
               </p>
-              <h2 className="font-(family-name:--font-playfair) text-4xl font-light text-black">
+              <h2 className="font-logo text-4xl font-light text-black">
                 Ce qui guide mon travail
               </h2>
             </div>
@@ -155,7 +155,7 @@ export default function AProposPage() {
               <FadeUp key={v.titre} delay={i * 0.15}>
                 <div className="text-center px-6">
                   <div className="w-px h-12 bg-black mx-auto mb-6" />
-                  <h3 className="font-(family-name:--font-playfair) text-2xl text-black mb-4">
+                  <h3 className="font-logo text-2xl text-black mb-4">
                     {v.titre}
                   </h3>
                   <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed">

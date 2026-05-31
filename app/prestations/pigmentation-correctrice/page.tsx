@@ -14,7 +14,7 @@ export default function PigmentationCorrectricePage() {
       breadcrumb="Prestations · Corrections"
       titre="Pigmentation correctrice"
       sousTitre="Camouflage dermique de cicatrices — blépharoplastie, lifting, cicatrices diverses."
-      heroImage="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&q=85&fit=crop"
+      heroImage="/images/pigment-correct.webp"
       heroImageAlt="Pigmentation correctrice — camouflage cicatrices"
       intro="La dermopigmentation correctrice permet d'atténuer visuellement certaines cicatrices en rééquilibrant la couleur de la peau grâce à une pigmentation sur mesure. Chaque prise en charge est réalisée avec précision et délicatesse afin d'obtenir un résultat discret, fondu et adapté à la zone traitée. Une consultation préalable est indispensable pour évaluer la faisabilité du traitement et définir le protocole le plus adapté."
       services={[

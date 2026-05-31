@@ -6,13 +6,13 @@ export default function RdvSection() {
     <section className="py-12 lg:py-32 bg-white border-t border-zinc-100">
       <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
         <FadeUp>
-          <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-5">
+          <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-5">
             Réservation
           </p>
         </FadeUp>
 
         <FadeUp delay={0.1}>
-          <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-semibold text-black mb-6 leading-tight">
+          <h2 className="font-logo text-4xl lg:text-5xl font-semibold text-black mb-6 leading-tight">
             Prêt(e) à vous sublimer ?
           </h2>
         </FadeUp>
@@ -23,7 +23,7 @@ export default function RdvSection() {
           </p>
         </FadeUp>
 
-        <FadeUp delay={0.3}>
+        <FadeUp delay={0.3} className="relative z-10">
           <BookingButtons className="mx-auto" />
         </FadeUp>
 

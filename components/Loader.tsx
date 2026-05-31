@@ -61,13 +61,13 @@ export default function Loader() {
       className="fixed inset-0 z-200 bg-black flex flex-col items-center justify-center"
     >
       <h1
-        className="loader-title font-(family-name:--font-playfair) text-white text-4xl md:text-5xl font-light uppercase mb-3 not-italic"
+        className="loader-title font-logo text-white text-4xl md:text-5xl font-light uppercase mb-3 not-italic"
         style={{ opacity: 0, letterSpacing: "0.4em" }}
       >
         Lymar
       </h1>
       <p
-        className="loader-subtitle font-glacial text-white text-xs uppercase"
+        className="loader-subtitle font-(family-name:--font-inter) text-white text-xs uppercase"
         style={{ opacity: 0, letterSpacing: "0.35em" }}
       >
         Dermo-Esthetic

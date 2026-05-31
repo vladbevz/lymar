@@ -1,31 +1,18 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Montserrat, Libre_Baskerville } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import ScrollToTop from "@/components/ScrollToTop";
+import CookieBanner from "@/components/CookieBanner";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL, SITE_NAME, PLANITY, INSTAGRAM } from "@/lib/site";
-
-const playfair = Cormorant_Garamond({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  style: ["normal"],
-});
 
 const inter = Montserrat({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
-});
-
-const baskerville = Libre_Baskerville({
-  variable: "--font-libre",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
 });
 
 const description =
@@ -130,7 +117,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${playfair.variable} ${inter.variable} ${baskerville.variable} h-full antialiased`}
+      className={`${inter.variable} h-full antialiased`}
     >
       <head>
         <script
@@ -147,6 +134,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <ScrollToTop />
+        <CookieBanner />
       </body>
     </html>
   );

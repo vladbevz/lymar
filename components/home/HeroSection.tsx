@@ -46,11 +46,11 @@ export default function HeroSection() {
 
       {/* Left — text */}
       <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-10 lg:py-14">
-        <p className="hero-eyebrow text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-5">
+        <p className="hero-eyebrow text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-5">
           Saint-Georges-de-Didonne · Beaune
         </p>
 
-        <h1 className="hero-title font-(family-name:--font-playfair) text-[2.8rem] sm:text-5xl lg:text-[4.5rem] xl:text-[5rem] font-light leading-[1.05] text-black mb-5">
+        <h1 className="hero-title font-logo text-[2.8rem] sm:text-5xl lg:text-[4.5rem] xl:text-[5rem] font-light leading-[1.05] text-black mb-5">
           L&apos;art du
           <br />
           maquillage
@@ -68,7 +68,7 @@ export default function HeroSection() {
           <Button
             asChild
             variant="outline"
-            className="border-black text-black hover:bg-black hover:text-white rounded-none px-7 py-2.5 h-auto tracking-widest uppercase text-xs font-glacial transition-colors"
+            className="border-black text-black hover:bg-black hover:text-white rounded-none px-7 py-2.5 h-auto tracking-widest uppercase text-xs font-(family-name:--font-inter) transition-colors"
           >
             <Link href="/prestations">Voir les prestations</Link>
           </Button>

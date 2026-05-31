@@ -53,10 +53,10 @@ export default function ContactPage() {
         {/* Left — text */}
         <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-10 lg:py-14">
           <FadeUp>
-            <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-4">
+            <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
               Contact
             </p>
-            <h1 className="font-(family-name:--font-playfair) text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] max-w-lg mb-8">
+            <h1 className="font-logo text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] max-w-lg mb-8">
               Prenons contact
             </h1>
 
@@ -99,7 +99,7 @@ export default function ContactPage() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-400 group-hover:text-black transition-colors">
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                 </svg>
-                <span className="font-glacial text-xs tracking-widest uppercase text-zinc-400 group-hover:text-black transition-colors">
+                <span className="font-(family-name:--font-inter) text-xs tracking-widest uppercase text-zinc-400 group-hover:text-black transition-colors">
                   Voir sur Instagram
                 </span>
               </a>
@@ -124,10 +124,10 @@ export default function ContactPage() {
       <section className="py-12 lg:py-24 bg-white border-t border-zinc-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeUp>
-            <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-3">
+            <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-3">
               Nos cabinets
             </p>
-            <h2 className="font-(family-name:--font-playfair) text-4xl font-semibold text-black mb-14">
+            <h2 className="font-logo text-4xl font-semibold text-black mb-14">
               Deux adresses, une expertise
             </h2>
           </FadeUp>
@@ -145,7 +145,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="font-(family-name:--font-playfair) text-xl font-bold text-black mb-3">
+                    <h3 className="font-logo text-2xl font-bold text-black mb-3">
                       {c.ville}
                     </h3>
                     <div className="flex items-start gap-3 mb-4">
@@ -159,7 +159,7 @@ export default function ContactPage() {
                         href={c.maps}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 font-glacial text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
+                        className="inline-flex items-center gap-1.5 font-(family-name:--font-inter) text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
                       >
                         Voir sur Google Maps
                       </a>
@@ -167,7 +167,7 @@ export default function ContactPage() {
                         href={c.planity}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 font-glacial text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
+                        className="inline-flex items-center gap-1.5 font-(family-name:--font-inter) text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
                       >
                         Réserver sur Planity
                       </a>
@@ -184,10 +184,10 @@ export default function ContactPage() {
       <section className="py-12 lg:py-24 bg-zinc-50 border-t border-zinc-100">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <FadeUp>
-            <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-3">
+            <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-3">
               Message
             </p>
-            <h2 className="font-(family-name:--font-playfair) text-4xl font-light text-black mb-12">
+            <h2 className="font-logo text-4xl font-light text-black mb-12">
               Envoyer un message
             </h2>
           </FadeUp>
@@ -196,7 +196,7 @@ export default function ContactPage() {
             <form className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs tracking-widest uppercase font-glacial text-zinc-500 mb-2 block">
+                  <label className="text-xs tracking-widest uppercase font-(family-name:--font-inter) text-zinc-500 mb-2 block">
                     Prénom
                   </label>
                   <Input
@@ -205,7 +205,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label className="text-xs tracking-widest uppercase font-glacial text-zinc-500 mb-2 block">
+                  <label className="text-xs tracking-widest uppercase font-(family-name:--font-inter) text-zinc-500 mb-2 block">
                     Nom
                   </label>
                   <Input
@@ -215,7 +215,7 @@ export default function ContactPage() {
                 </div>
               </div>
               <div>
-                <label className="text-xs tracking-widest uppercase font-glacial text-zinc-500 mb-2 block">
+                <label className="text-xs tracking-widest uppercase font-(family-name:--font-inter) text-zinc-500 mb-2 block">
                   Email
                 </label>
                 <Input
@@ -225,7 +225,7 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label className="text-xs tracking-widest uppercase font-glacial text-zinc-500 mb-2 block">
+                <label className="text-xs tracking-widest uppercase font-(family-name:--font-inter) text-zinc-500 mb-2 block">
                   Message
                 </label>
                 <Textarea
@@ -234,10 +234,14 @@ export default function ContactPage() {
                   className="rounded-none border-zinc-200 bg-white font-(family-name:--font-inter) text-sm focus-visible:ring-0 focus-visible:border-black resize-none"
                 />
               </div>
+              <p className="font-(family-name:--font-inter) text-[11px] text-zinc-400 leading-relaxed">
+                En soumettant ce formulaire, vous acceptez que vos données soient utilisées pour répondre à votre demande, conformément à notre{" "}
+                <a href="/politique-confidentialite" className="underline hover:text-black transition-colors">politique de confidentialité</a>.
+              </p>
               <div className="flex flex-col sm:flex-row gap-4 items-center">
                 <Button
                   type="submit"
-                  className="w-full sm:w-auto bg-black text-white hover:bg-zinc-700 rounded-none px-12 py-3 tracking-widest uppercase text-xs font-glacial"
+                  className="w-full sm:w-auto bg-black text-white hover:bg-zinc-700 rounded-none px-12 py-3 tracking-widest uppercase text-xs font-(family-name:--font-inter)"
                 >
                   Envoyer
                 </Button>

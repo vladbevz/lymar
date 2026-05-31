@@ -9,7 +9,7 @@ export default function IntroSection() {
 
         {/* Label */}
         <FadeUp>
-          <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-12">
+          <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-12">
             Le cabinet
           </p>
         </FadeUp>
@@ -32,7 +32,7 @@ export default function IntroSection() {
           {/* Text */}
           <div className="flex flex-col justify-between h-full">
             <FadeUp delay={0.15}>
-              <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-semibold leading-tight text-black mb-8">
+              <h2 className="font-logo text-4xl lg:text-5xl font-semibold leading-tight text-black mb-8">
                 Un regard expert au service de votre beauté naturelle
               </h2>
             </FadeUp>
@@ -46,7 +46,7 @@ export default function IntroSection() {
             <FadeUp delay={0.35}>
               <Link
                 href="/a-propos"
-                className="inline-flex items-center gap-2 font-glacial text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
+                className="inline-flex items-center gap-2 font-(family-name:--font-inter) text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
               >
                 En savoir plus sur Anastasiia
               </Link>

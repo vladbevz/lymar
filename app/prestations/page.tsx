@@ -81,10 +81,10 @@ export default function PrestationsPage() {
             {/* Text */}
             <div className="pt-14 pb-8 lg:py-0">
               <FadeUp>
-                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-glacial) text-zinc-400 mb-4">
+                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
                   Nos prestations
                 </p>
-                <h1 className="font-(family-name:--font-playfair) text-[2.6rem] sm:text-5xl lg:text-[4.5rem] font-semibold text-black leading-[1.05] mb-5">
+                <h1 className="font-logo text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] mb-5">
                   Expertise
                   <br />
                   & précision
@@ -92,7 +92,7 @@ export default function PrestationsPage() {
                 <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
                   Consultation personnalisée incluse (20 €, déduits si la prestation est confirmée). Sur rendez-vous uniquement — Saint-Georges-de-Didonne et Beaune.
                 </p>
-                <p className="font-(family-name:--font-glacial) text-xs tracking-[0.2em] uppercase text-zinc-400">
+                <p className="font-(family-name:--font-inter) text-xs tracking-[0.2em] uppercase text-zinc-400">
                   {categories.length} catégories de prestations
                 </p>
               </FadeUp>
@@ -126,7 +126,7 @@ export default function PrestationsPage() {
                 >
                   <div className="flex-1 min-w-0">
                     <div className="flex items-baseline gap-4 mb-1">
-                      <h2 className="font-(family-name:--font-playfair) text-2xl font-bold text-black group-hover:opacity-60 transition-opacity">
+                      <h2 className="font-logo text-2xl font-bold text-black group-hover:opacity-60 transition-opacity">
                         {cat.titre}
                       </h2>
                       <span className="font-(family-name:--font-inter) text-xs text-zinc-400 hidden sm:block">
@@ -138,7 +138,7 @@ export default function PrestationsPage() {
                     </p>
                   </div>
                   <div className="flex items-center gap-6 shrink-0">
-                    <span className="font-(family-name:--font-playfair) text-xl font-bold text-black hidden sm:block">
+                    <span className="font-logo text-xl font-bold text-black hidden sm:block">
                       {cat.prix}
                     </span>
                     <ArrowRight size={18} className="text-zinc-300 group-hover:text-black group-hover:translate-x-1 transition-all" />
@@ -153,7 +153,7 @@ export default function PrestationsPage() {
       {/* CTA */}
       <section className="py-10 lg:py-20 bg-zinc-50 border-t border-zinc-100 text-center">
         <FadeUp>
-          <p className="font-(family-name:--font-playfair) text-3xl font-semibold text-black mb-4">
+          <p className="font-logo text-4xl font-semibold text-black mb-4">
             Consultation — 20 €
           </p>
           <p className="font-(family-name:--font-inter) text-sm text-zinc-500 mb-8">

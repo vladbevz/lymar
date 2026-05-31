@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Bauer Bodoni Std';
+    src: url('BauerBodoniStd-BlackItalic.eot');
+    src: local('Bauer Bodoni Std Black Italic'), local('BauerBodoniStd-BlackItalic'),
+        url('BauerBodoniStd-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('BauerBodoniStd-BlackItalic.woff2') format('woff2'),
+        url('BauerBodoniStd-BlackItalic.woff') format('woff'),
+        url('BauerBodoniStd-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bauer Bodoni Std';
+    src: url('BauerBodoniStd-BoldItalic.eot');
+    src: local('Bauer Bodoni Std Bold Italic'), local('BauerBodoniStd-BoldItalic'),
+        url('BauerBodoniStd-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('BauerBodoniStd-BoldItalic.woff2') format('woff2'),
+        url('BauerBodoniStd-BoldItalic.woff') format('woff'),
+        url('BauerBodoniStd-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bauer Bodoni Std';
+    src: url('BauerBodoniStd-BlackCondensed.eot');
+    src: local('Bauer Bodoni Std Black Condensed'), local('BauerBodoniStd-BlackCondensed'),
+        url('BauerBodoniStd-BlackCondensed.eot?#iefix') format('embedded-opentype'),
+        url('BauerBodoniStd-BlackCondensed.woff2') format('woff2'),
+        url('BauerBodoniStd-BlackCondensed.woff') format('woff'),
+        url('BauerBodoniStd-BlackCondensed.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bauer Bodoni Std';
+    src: url('BauerBodoniStd-Bold.eot');
+    src: local('Bauer Bodoni Std Bold'), local('BauerBodoniStd-Bold'),
+        url('BauerBodoniStd-Bold.eot?#iefix') format('embedded-opentype'),
+        url('BauerBodoniStd-Bold.woff2') format('woff2'),
+        url('BauerBodoniStd-Bold.woff') format('woff'),
+        url('BauerBodoniStd-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bauer Bodoni Std';
+    src: url('BauerBodoniStd-Black.eot');
+    src: local('Bauer Bodoni Std Black'), local('BauerBodoniStd-Black'),
+        url('BauerBodoniStd-Black.eot?#iefix') format('embedded-opentype'),
+        url('BauerBodoniStd-Black.woff2') format('woff2'),
+        url('BauerBodoniStd-Black.woff') format('woff'),
+        url('BauerBodoniStd-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bauer Bodoni Std';
+    src: url('BauerBodoniStd-BoldCondensed.eot');
+    src: local('Bauer Bodoni Std Bold Condensed'), local('BauerBodoniStd-BoldCondensed'),
+        url('BauerBodoniStd-BoldCondensed.eot?#iefix') format('embedded-opentype'),
+        url('BauerBodoniStd-BoldCondensed.woff2') format('woff2'),
+        url('BauerBodoniStd-BoldCondensed.woff') format('woff'),
+        url('BauerBodoniStd-BoldCondensed.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bauer Bodoni Std';
+    src: url('BauerBodoniStd-RomanItalic.eot');
+    src: local('Bauer Bodoni Std Roman Italic'), local('BauerBodoniStd-RomanItalic'),
+        url('BauerBodoniStd-RomanItalic.eot?#iefix') format('embedded-opentype'),
+        url('BauerBodoniStd-RomanItalic.woff2') format('woff2'),
+        url('BauerBodoniStd-RomanItalic.woff') format('woff'),
+        url('BauerBodoniStd-RomanItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Bauer Bodoni Std';
+    src: url('BauerBodoniStd-Roman.eot');
+    src: local('Bauer Bodoni Std Roman'), local('BauerBodoniStd-Roman'),
+        url('BauerBodoniStd-Roman.eot?#iefix') format('embedded-opentype'),
+        url('BauerBodoniStd-Roman.woff2') format('woff2'),
+        url('BauerBodoniStd-Roman.woff') format('woff'),
+        url('BauerBodoniStd-Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

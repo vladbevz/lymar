@@ -23,10 +23,10 @@ export default function BookingButtons({ className }: Props) {
   }, []);
 
   return (
-    <div className={`relative w-fit ${className ?? ""}`} ref={ref}>
+    <div className={`relative z-10 w-fit ${className ?? ""}`} ref={ref}>
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1.5 bg-black text-white hover:bg-zinc-800 transition-colors font-glacial text-xs tracking-widest uppercase px-7 py-2.5"
+        className="flex items-center gap-1.5 bg-black text-white hover:bg-zinc-800 transition-colors font-(family-name:--font-inter) text-xs tracking-widest uppercase px-7 py-2.5"
       >
         Réserver
         <ChevronDown
@@ -45,7 +45,7 @@ export default function BookingButtons({ className }: Props) {
               onClick={() => setOpen(false)}
               className="flex flex-col px-4 py-3 hover:bg-zinc-50 transition-colors"
             >
-              <span className="font-glacial text-xs tracking-widest uppercase text-black">
+              <span className="font-(family-name:--font-inter) text-xs tracking-widest uppercase text-black">
                 {loc.city}
               </span>
               <span className="font-(family-name:--font-inter) text-[10px] text-zinc-400 mt-0.5">

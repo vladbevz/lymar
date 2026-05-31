@@ -49,14 +49,14 @@ function Card({ cat }: { cat: (typeof categories)[0] }) {
   return (
     <div className="h-full border border-zinc-100 group transition-all duration-300 hover:bg-[#f7f7f7] hover:-translate-y-[3px]">
       <Link href={cat.href} className="block p-8 h-full">
-        <h3 className="font-(family-name:--font-playfair) text-2xl font-bold text-black mb-2 origin-left transition-transform duration-300 group-hover:scale-[1.04]">
+        <h3 className="font-logo text-2xl font-bold text-black mb-2 origin-left transition-transform duration-300 group-hover:scale-[1.04]">
           {cat.title}
         </h3>
         <p className="font-(family-name:--font-inter) text-xs text-zinc-400 mb-3">{cat.prix}</p>
         <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed mb-6">
           {cat.description}
         </p>
-        <span className="inline-flex items-center gap-1.5 font-glacial text-xs tracking-widest uppercase text-black">
+        <span className="inline-flex items-center gap-1.5 font-(family-name:--font-inter) text-xs tracking-widest uppercase text-black">
           Découvrir
           <span className="transition-transform duration-300 group-hover:translate-x-1.5">
             <ArrowRight size={12} />
@@ -92,10 +92,10 @@ export default function PrestationsPreview() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <FadeUp>
           <div className="mb-10 lg:mb-14">
-            <p className="text-xs tracking-[0.25em] uppercase font-glacial text-zinc-400 mb-3">
+            <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-3">
               Prestations
             </p>
-            <h2 className="font-(family-name:--font-playfair) text-4xl lg:text-5xl font-semibold text-black leading-tight">
+            <h2 className="font-logo text-4xl lg:text-5xl font-semibold text-black leading-tight">
               Notre expertise
             </h2>
           </div>
@@ -173,7 +173,7 @@ export default function PrestationsPreview() {
           <div className="text-center mt-10">
             <Link
               href="/prestations"
-              className="inline-flex items-center gap-2 font-glacial text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
+              className="inline-flex items-center gap-2 font-(family-name:--font-inter) text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
             >
               Voir toutes les prestations <ArrowRight size={12} />
             </Link>
