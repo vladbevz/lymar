@@ -137,7 +137,7 @@ export default function AProposPage() {
       </section>
 
       {/* Valeurs */}
-      <section className="py-12 lg:py-24 bg-white">
+      <section className="py-12 lg:py-24 bg-warm">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeUp>
             <div className="text-center mb-16">

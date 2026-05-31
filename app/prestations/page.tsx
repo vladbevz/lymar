@@ -157,7 +157,7 @@ export default function PrestationsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-10 lg:py-20 bg-warm border-t border-zinc-100 text-center">
+      <section className="py-10 lg:py-20 bg-white border-t border-zinc-100 text-center">
         <FadeUp>
           <p className="font-logo text-4xl font-semibold text-black mb-4">
             Consultation — 20 €

@@ -4,7 +4,7 @@ import { FadeUp } from "@/components/AnimatedSection";
 
 export default function IntroSection() {
   return (
-    <section className="py-12 lg:py-32 bg-warm border-t border-zinc-100">
+    <section className="py-12 lg:py-32 bg-white border-t border-zinc-100">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
 
         {/* Label */}
