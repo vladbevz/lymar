@@ -46,7 +46,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-zinc-100">
-      <div className="pl-8 lg:pl-16 xl:pl-24 pr-6 lg:pr-8 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between w-full">
         {/* Logo */}
         <Link href="/" className="flex flex-col items-center leading-tight hover:opacity-70 transition-opacity">
           <span className="font-logo text-xl font-light tracking-[0.25em] uppercase text-black">
