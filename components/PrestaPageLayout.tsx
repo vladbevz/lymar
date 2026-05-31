@@ -155,7 +155,7 @@ export default function PrestaPageLayout({
             <FadeUp delay={0.1}>
               <div className="divide-y divide-zinc-100">
                 {services.map((s) => (
-                  <div key={s.nom} className="py-5 flex items-start justify-between gap-4">
+                  <div key={s.nom} className="py-5 flex items-center justify-between gap-4">
                     <div>
                       <p className="font-(family-name:--font-inter) text-sm font-medium text-black">{s.nom}</p>
                       {s.note && <p className="font-(family-name:--font-inter) text-xs text-zinc-400 mt-0.5">{s.note}</p>}
