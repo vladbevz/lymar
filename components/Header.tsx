@@ -46,19 +46,21 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-zinc-100">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between w-full">
-        {/* Logo */}
-        <Link href="/" className="flex flex-col items-center leading-tight hover:opacity-70 transition-opacity">
-          <span className="font-logo text-xl font-light tracking-[0.25em] uppercase text-black">
-            Lymar
-          </span>
-          <span className="font-glacial text-[9px] tracking-[0.3em] uppercase text-zinc-500">
-            Dermo-Esthetic
-          </span>
-        </Link>
+      <div className="h-16 flex items-center">
+        {/* Logo — same column as hero text: w-1/2 + matching padding */}
+        <div className="w-auto lg:w-1/2 shrink-0 flex items-center px-6 lg:px-16 xl:px-24">
+          <Link href="/" className="flex flex-col items-center leading-tight hover:opacity-70 transition-opacity">
+            <span className="font-logo text-xl font-light tracking-[0.25em] uppercase text-black">
+              Lymar
+            </span>
+            <span className="font-glacial text-[9px] tracking-[0.3em] uppercase text-zinc-500">
+              Dermo-Esthetic
+            </span>
+          </Link>
+        </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6">
+        {/* Desktop Nav — right side */}
+        <nav className="hidden lg:flex flex-1 items-center justify-end gap-6 pr-6 lg:pr-8">
           <div className="relative" ref={prestationsRef}>
             <button
               onClick={() => setPrestationsOpen((v) => !v)}
@@ -125,10 +127,11 @@ export default function Header() {
           </div>
         </nav>
 
-        {/* Mobile Menu */}
+        {/* Mobile burger — far right */}
+        <div className="lg:hidden ml-auto pr-6">
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger
-            className="lg:hidden p-2 text-black"
+            className="p-2 text-black"
             aria-label="Ouvrir le menu"
           >
             <Menu size={22} />
@@ -177,6 +180,7 @@ export default function Header() {
             </nav>
           </SheetContent>
         </Sheet>
+        </div>
       </div>
     </header>
   );
