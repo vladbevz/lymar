@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FadeUp, StaggerWrapper, StaggerItem } from "@/components/AnimatedSection";
 import { ArrowRight } from "lucide-react";
+import BookingButtons from "@/components/BookingButtons";
 
 export const metadata: Metadata = {
   title: "Prestations — Maquillage Permanent & Pigmentation · Lymar Dermo-Esthetic",
@@ -14,7 +15,7 @@ const categories = [
   {
     slug: "sourcils",
     titre: "Sourcils",
-    sous: "Microblading & Microshading",
+    sous: "Effet poil à poil & Effet poudré",
     prix: "250 €",
     desc: "Effet poil à poil ou poudré — retouche incluse. 1h40 par séance.",
   },
@@ -24,6 +25,13 @@ const categories = [
     sous: "Candy Lips & Aquarelle",
     prix: "300 €",
     desc: "Dégradé ou effet aquarelle — 1ère retouche incluse. 2h par séance.",
+  },
+  {
+    slug: "yeux",
+    titre: "Yeux",
+    sous: "Eyeliner permanent",
+    prix: "150 €",
+    desc: "Liner classique (250 €), poudré (280 €), ras-de-cils (150 €) — 1ère retouche incluse. 1h30–2h.",
   },
   {
     slug: "tricopigmentation",
@@ -85,7 +93,7 @@ export default function PrestationsPage() {
                   Consultation personnalisée incluse (20 €, déduits si la prestation est confirmée). Sur rendez-vous uniquement — Saint-Georges-de-Didonne et Beaune.
                 </p>
                 <p className="font-(family-name:--font-glacial) text-xs tracking-[0.2em] uppercase text-zinc-400">
-                  {categories.length} prestations disponibles
+                  {categories.length} catégories de prestations
                 </p>
               </FadeUp>
             </div>
@@ -151,14 +159,7 @@ export default function PrestationsPage() {
           <p className="font-(family-name:--font-inter) text-sm text-zinc-500 mb-8">
             30 minutes · déduits de votre prestation si vous confirmez un rendez-vous
           </p>
-          <a
-            href="https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block font-(family-name:--font-glacial) text-xs tracking-widest uppercase bg-black text-white px-10 py-3 hover:bg-zinc-800 transition-colors"
-          >
-            Réserver sur Planity
-          </a>
+          <BookingButtons size="sm" className="justify-center" />
         </FadeUp>
       </section>
     </>

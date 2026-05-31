@@ -9,7 +9,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 const categories = [
   {
     title: "Sourcils",
-    description: "Effet poil à poil (microblading) ou poudré (microshading) — sourcils redessinés, naturels et durables.",
+    description: "Effet poil à poil ou effet poudré — sourcils redessinés, naturels et durables.",
     href: "/prestations/sourcils",
     prix: "À partir de 250 €",
   },
@@ -18,6 +18,12 @@ const categories = [
     description: "Candy Lips dégradé ou effet aquarelle — couleur, volume et définition en toute délicatesse.",
     href: "/prestations/levres",
     prix: "300 €",
+  },
+  {
+    title: "Yeux",
+    description: "Liner classique, poudré ou ras-de-cils — 1ère retouche incluse pour un regard défini et durable.",
+    href: "/prestations/yeux",
+    prix: "À partir de 150 €",
   },
   {
     title: "Tricopigmentation",

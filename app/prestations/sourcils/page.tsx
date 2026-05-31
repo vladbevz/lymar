@@ -5,14 +5,14 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 export const metadata: Metadata = {
   title: "Maquillage permanent sourcils à Saint-Georges-de-Didonne — Lymar Dermo-Esthetic",
-  description: "Microblading et microshading à Saint-Georges-de-Didonne. Sourcils redessinés, naturels et durables par Anastasiia Lymar. À partir de 250 €, retouche incluse.",
+  description: "Maquillage permanent sourcils à Saint-Georges-de-Didonne. Effet poil à poil et effet poudré par Anastasiia Lymar. À partir de 250 €, retouche incluse.",
   alternates: { canonical: "https://lymar-dermo-esthetic.fr/prestations/sourcils" },
 };
 
 const faq = [
   {
-    q: "Quelle est la différence entre microblading et microshading ?",
-    a: "Le microblading (effet poil à poil) reproduit des poils individuels à l'aide d'une lame fine pour un rendu très naturel. Le microshading (effet poudré) crée un dégradé vaporeux semblable à un sourcil maquillé. Les deux techniques peuvent être combinées.",
+    q: "Quelle est la différence entre l'effet poil à poil et l'effet poudré ?",
+    a: "L'effet poil à poil reproduit des poils individuels à l'aide d'une lame fine pour un rendu très naturel et aérien. L'effet poudré crée un dégradé vaporeux semblable à un sourcil maquillé. Les deux techniques peuvent être combinées.",
   },
   {
     q: "Combien de temps dure le maquillage permanent des sourcils ?",
@@ -34,14 +34,14 @@ export default function SourcilsPage() {
       slug="sourcils"
       breadcrumb="Prestations · Sourcils"
       titre="Maquillage permanent sourcils"
-      sousTitre="Microblading & microshading à Saint-Georges-de-Didonne — résultats naturels et durables."
+      sousTitre="Effet poil à poil & effet poudré à Saint-Georges-de-Didonne — résultats naturels et durables."
       heroImage="/images/sourcils.webp"
-      heroImageAlt="Microblading sourcils — résultat naturel Lymar Dermo-Esthetic"
+      heroImageAlt="Maquillage permanent sourcils — résultat naturel Lymar Dermo-Esthetic"
       heroImageFit="contain"
-      intro="Technique poil à poil ou effet poudré — chaque paire de sourcils est redessinée selon la morphologie du visage, les poils naturels et les souhaits de la cliente. La 1ère retouche est incluse dans le tarif."
+      intro="Le maquillage permanent des sourcils permet de rééquilibrer les volumes, corriger les asymétries et redonner du caractère au regard sans effet figé. Le poil à poil imite avec précision l'implantation naturelle du sourcil pour un résultat aérien et ultra réaliste. Le sourcil poudré apporte une ligne plus présente et veloutée, avec un dégradé délicat inspiré de l'effet d'un crayon ou d'une poudre appliquée avec légèreté. Chaque création est pensée pour s'intégrer naturellement aux traits du visage et révéler l'expression du regard."
       services={[
-        { nom: "Effet poil à poil (microblading) + 1ère retouche", duree: "1h 40 min", prix: "250 €" },
-        { nom: "Effet poudré (microshading) + 1ère retouche", duree: "1h 40 min", prix: "250 €" },
+        { nom: "Effet poil à poil + 1ère retouche", duree: "1h 40 min", prix: "250 €" },
+        { nom: "Effet poudré + 1ère retouche", duree: "1h 40 min", prix: "250 €" },
         { nom: "Retouche sourcils (6–7 mois)", duree: "1h", prix: "120–150 €" },
         { nom: "Retouche sourcils (1 an)", duree: "1h", prix: "150–180 €" },
         { nom: "Consultation maquillage permanent", duree: "30 min", prix: "20 €", note: "Déduits si prestation confirmée" },

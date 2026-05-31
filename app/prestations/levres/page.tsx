@@ -16,7 +16,7 @@ export default function LevresPage() {
       sousTitre="Candy Lips dégradé & effet aquarelle — couleur, volume et définition en toute délicatesse."
       heroImage="/images/levres.webp"
       heroImageAlt="Maquillage permanent lèvres — Lymar Dermo-Esthetic"
-      intro="Redéfinissez vos lèvres avec les techniques Candy Lips (dégradé du contour vers le centre, effet gourmand) ou aquarelle (fondu vaporeux ultra-naturel). La 1ère retouche est incluse. Si vous êtes sujette aux herpès labiaux, un traitement antiviral préventif est recommandé avant la séance."
+      intro="Redonnez éclat, définition et harmonie à vos lèvres grâce au maquillage permanent. La technique « Candy Lips » offre un effet dégradé plus sophistiqué, avec des contours subtilement redessinés et un rendu légèrement plus maquillé pour apporter volume et effet 3D. L'effet « Aquarelle », quant à lui, mise sur la transparence et la douceur avec un résultat plus naturel, fondu et lumineux. Chaque prestation est entièrement personnalisée pour s'adapter parfaitement à votre visage et à l'intensité souhaitée."
       services={[
         { nom: "Lèvres dégradé (Candy Lips) + 1ère retouche", duree: "2h", prix: "300 €" },
         { nom: "Lèvres effet aquarelle + 1ère retouche", duree: "2h", prix: "300 €" },
@@ -26,7 +26,7 @@ export default function LevresPage() {
       info={
         <div className="border-l-2 border-black pl-4">
           <p className="font-(family-name:--font-inter) text-xs text-zinc-500 leading-relaxed">
-            <strong className="text-black">Herpès :</strong> si vous êtes sujette aux poussées d&apos;herpès labiaux, consultez votre médecin pour un traitement antiviral préventif avant la séance.
+            <strong className="text-black">Herpès labial :</strong> si vous êtes sujette aux boutons de fièvre, un traitement antiviral préventif est recommandé avant la séance. Consultez votre médecin traitant.
           </p>
         </div>
       }

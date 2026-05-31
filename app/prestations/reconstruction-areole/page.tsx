@@ -16,7 +16,7 @@ export default function ReconstructionAreolesPage() {
       sousTitre="Technique spécialisée pour la reconstruction aréolaire post-mastectomie."
       heroImage="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=900&q=85&fit=crop"
       heroImageAlt="Reconstruction aréole 3D — post-mastectomie"
-      intro="La reconstruction aréolaire par dermopigmentation est une technique médicale esthétique qui recrée l'apparence de l'aréole et du mamelon après une mastectomie. Elle peut également inclure le camouflage de cicatrices blanches. Une consultation préalable est obligatoire."
+      intro="La reconstruction aréolaire par dermopigmentation permet de recréer visuellement le mamelon après une mastectomie grâce à un travail de pigmentation entièrement personnalisé. Chaque réalisation est pensée avec précision afin de retrouver un résultat réaliste, harmonieux et adapté à la morphologie de chacune. Cette prestation peut également être associée au camouflage de certaines cicatrices dans une approche douce, bienveillante et confidentielle."
       services={[
         { nom: "Consultation aréole 3D", duree: "30 min", prix: "20 €", note: "Remboursée si traitement réservé" },
         { nom: "Aréole unique — création complète", duree: "2h", prix: "350 €" },
@@ -27,7 +27,7 @@ export default function ReconstructionAreolesPage() {
       info={
         <div className="border-l-2 border-black pl-4">
           <p className="font-(family-name:--font-inter) text-xs text-zinc-500 leading-relaxed">
-            <strong className="text-black">Note :</strong> cette prestation est réalisée dans un cadre bienveillant et confidentiel. La consultation préalable est un moment d&apos;échange pour définir le projet ensemble.
+            <strong className="text-black">Note :</strong> une consultation préalable est indispensable afin d&apos;échanger ensemble sur votre projet et d&apos;évaluer les possibilités de prise en charge.
           </p>
         </div>
       }

@@ -22,7 +22,7 @@ const valeurs = [
   },
   {
     titre: "Naturel",
-    texte: "Le maquillage permanent doit sublimer, jamais trahir. Le résultat ? On ne sait pas que c'est fait.",
+    texte: "Le plus beau maquillage permanent est celui qu’on ne remarque pas",
   },
 ];
 

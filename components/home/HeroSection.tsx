@@ -6,10 +6,9 @@ import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import BookingButtons from "@/components/BookingButtons";
 
 gsap.registerPlugin(useGSAP);
-
-const PLANITY = "https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -64,19 +63,12 @@ export default function HeroSection() {
           pigmentation correctrice.
         </p>
 
-        <div className="hero-cta flex flex-col sm:flex-row gap-3">
-          <Button
-            asChild
-            className="bg-black text-white hover:bg-zinc-800 rounded-none px-7 py-2.5 h-auto tracking-widest uppercase text-xs font-glacial"
-          >
-            <a href={PLANITY} target="_blank" rel="noopener noreferrer">
-              Prendre rendez-vous
-            </a>
-          </Button>
+        <div className="hero-cta flex flex-col gap-3">
+          <BookingButtons size="sm" />
           <Button
             asChild
             variant="outline"
-            className="border-black text-black hover:bg-black hover:text-white rounded-none px-7 py-2.5 h-auto tracking-widest uppercase text-xs font-glacial transition-colors"
+            className="border-black text-black hover:bg-black hover:text-white rounded-none px-7 py-2.5 h-auto tracking-widest uppercase text-xs font-glacial transition-colors self-start"
           >
             <Link href="/prestations">Voir les prestations</Link>
           </Button>

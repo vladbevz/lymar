@@ -1,6 +1,6 @@
 import { FadeUp } from "@/components/AnimatedSection";
 import { JsonLd } from "@/components/JsonLd";
-import { Button } from "@/components/ui/button";
+import BookingButtons from "@/components/BookingButtons";
 import Image from "next/image";
 import { ReactNode } from "react";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
@@ -27,7 +27,6 @@ interface Props {
   slug?: string;
 }
 
-const PLANITY = "https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne";
 const DEFAULT_IMG = "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&q=85&fit=crop";
 
 export default function PrestaPageLayout({
@@ -179,14 +178,7 @@ export default function PrestaPageLayout({
       {/* CTA */}
       <section className="py-10 lg:py-20 bg-zinc-50 border-t border-zinc-100 text-center">
         <FadeUp>
-          <Button
-            asChild
-            className="bg-black text-white hover:bg-zinc-800 rounded-none px-12 py-4 h-auto tracking-widest uppercase text-xs font-glacial"
-          >
-            <a href={PLANITY} target="_blank" rel="noopener noreferrer">
-              Réserver sur Planity
-            </a>
-          </Button>
+          <BookingButtons size="sm" className="justify-center" />
           <p className="mt-4 font-(family-name:--font-inter) text-xs text-zinc-400">
             Paiement : chèque · espèces · Wero
           </p>

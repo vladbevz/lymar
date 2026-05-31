@@ -1,7 +1,5 @@
 import { FadeUp } from "@/components/AnimatedSection";
-import { Button } from "@/components/ui/button";
-
-const PLANITY = "https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne";
+import BookingButtons from "@/components/BookingButtons";
 
 export default function RdvSection() {
   return (
@@ -26,14 +24,7 @@ export default function RdvSection() {
         </FadeUp>
 
         <FadeUp delay={0.3}>
-          <Button
-            asChild
-            className="bg-black text-white hover:bg-zinc-800 rounded-none px-12 py-4 h-auto tracking-widest uppercase text-xs font-(family-name:--font-glacial)"
-          >
-            <a href={PLANITY} target="_blank" rel="noopener noreferrer">
-              Réserver sur Planity
-            </a>
-          </Button>
+          <BookingButtons size="sm" className="justify-center" />
         </FadeUp>
 
         <FadeUp delay={0.4}>

@@ -9,19 +9,32 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 type Photo = { src: string; alt: string };
 
 const sourcilsPhotos: Photo[] = [
-  { src: "/images/gallery5.webp",  alt: "Sourcils — résultat naturel" },
-  { src: "/images/gallery7.webp",  alt: "Sourcils — microblading" },
-  { src: "/images/gallery8.webp",  alt: "Sourcils — effet poil à poil" },
-  { src: "/images/gallery11.webp", alt: "Sourcils — microshading" },
-  { src: "/images/gallery13.webp", alt: "Sourcils — avant/après" },
-  { src: "/images/gallery14.webp", alt: "Sourcils — résultat final" },
+  { src: "/images/sourcils-1.webp", alt: "Sourcils — effet poil à poil" },
+  { src: "/images/sourcils-2.webp", alt: "Sourcils — résultat naturel" },
+  { src: "/images/sourcils-3.webp", alt: "Sourcils — avant/après" },
+  { src: "/images/sourcils-4.webp", alt: "Sourcils — effet poudré" },
+  { src: "/images/sourcils-5.webp", alt: "Sourcils — résultat final" },
+  { src: "/images/sourcils-6.webp", alt: "Sourcils — maquillage permanent" },
 ];
 
 const levresPhotos: Photo[] = [
-  { src: "/images/gallery4.webp",  alt: "Lèvres — Candy Lips avant/après" },
-  { src: "/images/gallery6.webp",  alt: "Lèvres — effet aquarelle" },
-  { src: "/images/gallery10.webp", alt: "Lèvres — résultat naturel" },
-  { src: "/images/gallery12.webp", alt: "Lèvres — maquillage permanent" },
+  { src: "/images/levres-1.webp", alt: "Lèvres — Candy Lips" },
+  { src: "/images/levres-2.webp", alt: "Lèvres — effet aquarelle" },
+  { src: "/images/levres-3.webp", alt: "Lèvres — résultat naturel" },
+  { src: "/images/levres-4.webp", alt: "Lèvres — avant/après" },
+  { src: "/images/levres-5.webp", alt: "Lèvres — maquillage permanent" },
+  { src: "/images/levres-6.webp", alt: "Lèvres — Candy Lips dégradé" },
+  { src: "/images/levres-7.webp", alt: "Lèvres — résultat final" },
+  { src: "/images/levres-8.webp", alt: "Lèvres — définition et couleur" },
+  { src: "/images/levres-9.webp", alt: "Lèvres — aquarelle fondu" },
+];
+
+const cilsPhotos: Photo[] = [
+  { src: "/images/cils-1.webp", alt: "Soins cils / yeux — Lashlift" },
+  { src: "/images/cils-2.webp", alt: "Soins cils / yeux — résultat naturel" },
+  { src: "/images/cils-3.webp", alt: "Soins cils / yeux — Browlift" },
+  { src: "/images/cils-4.webp", alt: "Soins cils / yeux — avant/après" },
+  { src: "/images/cils-5.webp", alt: "Soins cils / yeux — résultat" },
 ];
 
 const heroPhotos: Photo[] = [
@@ -238,10 +251,10 @@ export default function GaleriePage() {
                   Nos réalisations
                 </h1>
                 <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
-                  Sourcils et lèvres — chaque résultat révèle une beauté unique.
+                  Sourcils, lèvres, soins cils & yeux — chaque résultat révèle une beauté unique.
                 </p>
                 <p className="font-glacial text-xs tracking-[0.2em] uppercase text-zinc-400">
-                  {sourcilsPhotos.length + levresPhotos.length} réalisations
+                  {sourcilsPhotos.length + levresPhotos.length + cilsPhotos.length} réalisations
                 </p>
               </FadeUp>
             </div>
@@ -271,6 +284,12 @@ export default function GaleriePage() {
           label="Lèvres"
           photos={levresPhotos}
           onSelect={(i) => openModal(levresPhotos, i)}
+        />
+        <div className="border-t border-zinc-100 mx-6 lg:mx-16" />
+        <PhotoStrip
+          label="Soins cils / yeux"
+          photos={cilsPhotos}
+          onSelect={(i) => openModal(cilsPhotos, i)}
         />
       </section>
 

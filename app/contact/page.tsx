@@ -6,6 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Clock, CreditCard } from "lucide-react";
 import Image from "next/image";
 import MapboxMap from "@/components/MapboxMap";
+import BookingButtons from "@/components/BookingButtons";
+import { PLANITY_LOCATIONS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact & Rendez-vous — Lymar Dermo-Esthetic · Saint-Georges-de-Didonne",
@@ -14,14 +16,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://lymar-dermo-esthetic.fr/contact" },
 };
 
-const PLANITY = "https://www.planity.com/lymar-dermo-esthetic-17110-saint-georges-de-didonne";
-
 const cabinets = [
   {
     ville: "Saint-Georges-de-Didonne",
     adresse: "34 Rue Henri Collignon",
     cp: "17110",
     maps: "https://maps.google.com/?q=34+Rue+Henri+Collignon,+17110+Saint-Georges-de-Didonne",
+    planity: PLANITY_LOCATIONS[0].href,
     lng: -1.0008,
     lat: 45.6025,
     zoom: 16,
@@ -31,6 +32,7 @@ const cabinets = [
     adresse: "3 Rue du Moulin Noizé",
     cp: "21200",
     maps: "https://maps.google.com/?q=3+Rue+du+Moulin+Noizé,+21200+Beaune",
+    planity: PLANITY_LOCATIONS[1].href,
     lng: 4.8378,
     lat: 47.0221,
     zoom: 16,
@@ -87,14 +89,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <a
-                href={PLANITY}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block font-glacial text-xs tracking-widest uppercase bg-black text-white px-10 py-3 hover:bg-zinc-800 transition-colors"
-              >
-                Réserver sur Planity
-              </a>
+              <BookingButtons size="sm" />
               <a
                 href="https://www.instagram.com/lymar.dermo.esthetic/"
                 target="_blank"
@@ -159,14 +154,24 @@ export default function ContactPage() {
                         {c.adresse}<br />{c.cp} {c.ville}
                       </p>
                     </div>
-                    <a
-                      href={c.maps}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-glacial text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
-                    >
-                      Voir sur Google Maps
-                    </a>
+                    <div className="flex items-center gap-4 flex-wrap">
+                      <a
+                        href={c.maps}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 font-glacial text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
+                      >
+                        Voir sur Google Maps
+                      </a>
+                      <a
+                        href={c.planity}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 font-glacial text-xs tracking-widest uppercase text-black border-b border-black pb-0.5 hover:opacity-50 transition-opacity"
+                      >
+                        Réserver sur Planity
+                      </a>
+                    </div>
                   </div>
                 </div>
               </FadeUp>
@@ -237,10 +242,15 @@ export default function ContactPage() {
                   Envoyer
                 </Button>
                 <p className="font-(family-name:--font-inter) text-xs text-zinc-400">
-                  Pour une réservation rapide, privilégiez{" "}
-                  <a href={PLANITY} target="_blank" rel="noopener noreferrer" className="underline hover:text-black transition-colors">
-                    Planity
-                  </a>.
+                  Pour une réservation rapide, privilégiez Planity —{" "}
+                  {PLANITY_LOCATIONS.map((loc, i) => (
+                    <span key={loc.href}>
+                      <a href={loc.href} target="_blank" rel="noopener noreferrer" className="underline hover:text-black transition-colors">
+                        {loc.city}
+                      </a>
+                      {i < PLANITY_LOCATIONS.length - 1 && " · "}
+                    </span>
+                  ))}
                 </p>
               </div>
             </form>
