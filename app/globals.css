@@ -60,6 +60,7 @@ html.lymar-loading body > *:not(#lymar-loader) {
   --font-sans: var(--font-inter);
   --font-heading: "BauerBodoni", serif;
   --font-logo: "BauerBodoni", serif;
+  --font-glacial: "Glacial Indifference", sans-serif;
   --font-mono: monospace;
   --color-ring: var(--ring);
   --color-input: var(--input);

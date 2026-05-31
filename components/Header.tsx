@@ -52,7 +52,7 @@ export default function Header() {
           <span className="font-logo text-xl font-light tracking-[0.25em] uppercase text-black">
             Lymar
           </span>
-          <span className="font-(family-name:--font-inter) text-[9px] tracking-[0.3em] uppercase text-zinc-500">
+          <span className="font-glacial text-[9px] tracking-[0.3em] uppercase text-zinc-500">
             Dermo-Esthetic
           </span>
         </Link>
