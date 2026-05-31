@@ -110,7 +110,7 @@ export default function PrestationsPage() {
         {/* Right — full-height photo */}
         <div className="hidden lg:block relative flex-1 self-stretch overflow-hidden">
           <Image
-            src="/images/prestations2.webp"
+            src="/images/prestations.webp"
             alt="Maquillage permanent — prestations Lymar Dermo-Esthetic"
             fill
             priority
@@ -157,7 +157,7 @@ export default function PrestationsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-10 lg:py-20 bg-zinc-50 border-t border-zinc-100 text-center">
+      <section className="py-10 lg:py-20 bg-warm border-t border-zinc-100 text-center">
         <FadeUp>
           <p className="font-logo text-4xl font-semibold text-black mb-4">
             Consultation — 20 €

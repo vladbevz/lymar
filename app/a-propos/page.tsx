@@ -119,7 +119,7 @@ export default function AProposPage() {
       </section>
 
       {/* Formation */}
-      <section className="py-12 lg:py-24 bg-zinc-50">
+      <section className="py-12 lg:py-24 bg-warm">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <FadeUp>
             <p className="text-xs tracking-[0.3em] uppercase font-(family-name:--font-inter) text-zinc-500 mb-4">

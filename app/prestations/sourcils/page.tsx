@@ -48,7 +48,7 @@ export default function SourcilsPage() {
       ]}
     >
       {/* FAQ */}
-      <section className="py-8 lg:py-16 bg-zinc-50 border-t border-zinc-100">
+      <section className="py-8 lg:py-16 bg-warm border-t border-zinc-100">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <FadeUp>
             <h2 className="font-logo text-4xl font-semibold text-black mb-8">

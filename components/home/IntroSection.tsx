@@ -4,7 +4,7 @@ import { FadeUp } from "@/components/AnimatedSection";
 
 export default function IntroSection() {
   return (
-    <section className="py-12 lg:py-32 bg-zinc-50 border-t border-zinc-100">
+    <section className="py-12 lg:py-32 bg-warm border-t border-zinc-100">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
 
         {/* Label */}
@@ -15,17 +15,19 @@ export default function IntroSection() {
         </FadeUp>
 
         {/* Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 lg:gap-16 items-center">
 
           {/* Photo */}
           <FadeUp delay={0.1}>
-            <div className="relative w-full aspect-[3/4] overflow-hidden">
+            <div className="relative w-full aspect-[3/4] mb-4 mr-4">
               <Image
                 src="/images/cabinet.webp"
                 alt="Cabinet Lymar Dermo-Esthetic"
                 fill
                 className="object-cover object-top"
               />
+              <div className="absolute inset-0 border border-zinc-200" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full border border-black opacity-25 -z-10" />
             </div>
           </FadeUp>
 

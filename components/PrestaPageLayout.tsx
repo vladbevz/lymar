@@ -176,7 +176,7 @@ export default function PrestaPageLayout({
       {children}
 
       {/* CTA */}
-      <section className="py-10 lg:py-20 bg-zinc-50 border-t border-zinc-100 text-center">
+      <section className="py-10 lg:py-20 bg-warm border-t border-zinc-100 text-center">
         <FadeUp>
           <p className="font-(family-name:--font-inter) text-xs tracking-[0.25em] uppercase text-zinc-400 mb-4">
             Réserver sur Planity

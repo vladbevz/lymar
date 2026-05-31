@@ -47,7 +47,7 @@ export default function ContactPage() {
 
         {/* Mobile image */}
         <div className="relative h-100 w-full lg:hidden">
-          <Image src="/images/contact.webp" alt="Cabinet Lymar Dermo-Esthetic" fill priority className="object-cover object-top" />
+          <Image src="/images/contact.webp" alt="Cabinet Lymar Dermo-Esthetic" fill priority className="object-cover object-center" />
         </div>
 
         {/* Left — text */}
@@ -56,7 +56,7 @@ export default function ContactPage() {
             <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
               Contact
             </p>
-            <h1 className="font-logo text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] max-w-lg mb-8">
+            <h1 className="font-logo text-[2.8rem] sm:text-5xl lg:text-[3.8rem] font-light text-black leading-[1.05] mb-8 lg:whitespace-nowrap">
               Prenons contact
             </h1>
 
@@ -114,7 +114,7 @@ export default function ContactPage() {
             alt="Cabinet Lymar Dermo-Esthetic"
             fill
             priority
-            className="object-cover object-top"
+            className="object-cover object-center"
           />
         </div>
 
@@ -181,7 +181,7 @@ export default function ContactPage() {
       </section>
 
       {/* Formulaire */}
-      <section className="py-12 lg:py-24 bg-zinc-50 border-t border-zinc-100">
+      <section className="py-12 lg:py-24 bg-warm border-t border-zinc-100">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <FadeUp>
             <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-3">

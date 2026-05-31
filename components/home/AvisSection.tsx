@@ -67,7 +67,7 @@ export default function AvisSection() {
   const next = useCallback(() => setIdx((i) => Math.min(maxIdx, i + 1)), [maxIdx]);
 
   return (
-    <section className="py-12 lg:py-32 bg-zinc-50 border-t border-zinc-100">
+    <section className="py-12 lg:py-32 bg-warm border-t border-zinc-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Header */}
