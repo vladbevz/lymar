@@ -21,7 +21,7 @@ export default function IntroSection() {
           <FadeUp delay={0.1}>
             <div className="relative w-full aspect-[3/4] mb-4 mr-4">
               <Image
-                src="/images/cabinet.webp"
+                src="/images/newcabinet.webp"
                 alt="Cabinet Lymar Dermo-Esthetic"
                 fill
                 className="object-cover object-top"

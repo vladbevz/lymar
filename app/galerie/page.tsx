@@ -42,12 +42,6 @@ const cilsPhotos: Photo[] = [
   { src: "/images/cils-6.jpg",  alt: "Soins cils / yeux — Lashlift résultat" },
 ];
 
-const heroPhotos: Photo[] = [
-  { src: "/images/gallery1.webp", alt: "Galerie Lymar — réalisation 1" },
-  { src: "/images/gallery2.webp", alt: "Galerie Lymar — réalisation 2" },
-  { src: "/images/gallery3.webp", alt: "Galerie Lymar — réalisation 3" },
-  { src: "/images/gallery4.webp", alt: "Galerie Lymar — réalisation 4" },
-];
 
 interface ModalState {
   photos: Photo[];
@@ -249,37 +243,48 @@ export default function GaleriePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative mt-16 bg-white border-b border-zinc-100 overflow-hidden lg:h-[calc(100svh-64px)]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full lg:h-full lg:flex lg:items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 lg:items-center w-full">
-            <div className="pt-14 pb-8 lg:py-0">
-              <FadeUp>
-                <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
-                  Galerie
-                </p>
-                <h1 className="font-logo text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] mb-5">
-                  Nos réalisations
-                </h1>
-                <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
-                  Sourcils, lèvres, soins cils & yeux — chaque résultat révèle une beauté unique.
-                </p>
-                <p className="font-(family-name:--font-inter) text-xs tracking-[0.2em] uppercase text-zinc-400">
-                  {sourcilsPhotos.length + levresPhotos.length + cilsPhotos.length} réalisations
-                </p>
-              </FadeUp>
-            </div>
+      <section className="relative mt-16 overflow-hidden bg-white border-b border-zinc-100 lg:flex lg:h-[calc(100svh-64px)]">
 
-            <div className="relative h-72 lg:h-[calc(100svh-64px-80px)]">
-              <div className="grid grid-cols-2 gap-1 lg:gap-2 w-full h-full">
-                {heroPhotos.map((photo) => (
-                  <div key={photo.src} className="relative overflow-hidden bg-zinc-100">
-                    <Image src={photo.src} alt={photo.alt} fill priority className="object-cover" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+        {/* Mobile image */}
+        <div className="relative h-100 w-full lg:hidden">
+          <Image
+            src="/images/gallery-hero.webp"
+            alt="Galerie Lymar Dermo-Esthetic — réalisations maquillage permanent"
+            fill
+            priority
+            className="object-cover object-top"
+          />
         </div>
+
+        {/* Left — text */}
+        <div className="flex flex-col justify-center px-8 lg:px-16 xl:px-24 w-full lg:w-1/2 shrink-0 py-10 lg:py-14 overflow-hidden">
+          <FadeUp>
+            <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-4">
+              Galerie
+            </p>
+            <h1 className="font-logo text-[2.8rem] sm:text-5xl lg:text-[4.5rem] font-light text-black leading-[1.05] mb-5">
+              Nos réalisations
+            </h1>
+            <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
+              Sourcils, lèvres, soins cils & yeux — chaque résultat révèle une beauté unique.
+            </p>
+            <p className="font-(family-name:--font-inter) text-xs tracking-[0.2em] uppercase text-zinc-400">
+              {sourcilsPhotos.length + levresPhotos.length + cilsPhotos.length} réalisations
+            </p>
+          </FadeUp>
+        </div>
+
+        {/* Right — edge-to-edge photo */}
+        <div className="hidden lg:block relative flex-1">
+          <Image
+            src="/images/gallery-hero.webp"
+            alt="Galerie Lymar Dermo-Esthetic — réalisations maquillage permanent"
+            fill
+            priority
+            className="object-cover object-top"
+          />
+        </div>
+
       </section>
 
       {/* Sliders */}
