@@ -5,6 +5,12 @@ import { gsap } from "gsap";
 import { FadeUp } from "@/components/AnimatedSection";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, EffectCards, EffectCreative, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/effect-cards";
+import "swiper/css/effect-creative";
 
 type Photo = { src: string; alt: string };
 
@@ -17,6 +23,8 @@ const sourcilsPhotos: Photo[] = [
   { src: "/images/sourcils-6.webp", alt: "Sourcils — maquillage permanent" },
   { src: "/images/sourcils-7.webp", alt: "Sourcils — avant/après" },
   { src: "/images/sourcils-8.webp", alt: "Sourcils — résultat naturel" },
+  { src: "/images/sourcils-9.webp", alt: "Sourcils — maquillage permanent" },
+  { src: "/images/sourcils-10.webp", alt: "Sourcils — résultat final" },
 ];
 
 const levresPhotos: Photo[] = [
@@ -31,6 +39,8 @@ const levresPhotos: Photo[] = [
   { src: "/images/levres-9.webp", alt: "Lèvres — aquarelle fondu" },
   { src: "/images/levres-10.webp", alt: "Lèvres — résultat avant/après" },
   { src: "/images/levres-11.webp", alt: "Lèvres — maquillage permanent" },
+  { src: "/images/levres-12.webp", alt: "Lèvres — Candy Lips" },
+  { src: "/images/levres-13.webp", alt: "Lèvres — résultat naturel" },
 ];
 
 const cilsPhotos: Photo[] = [
@@ -48,76 +58,27 @@ interface ModalState {
   index: number;
 }
 
-const CARD_STEP = 262;
+type SliderEffect = "coverflow" | "cards" | "creative";
+
+const navId = (label: string) => label.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase();
+
+const btnClass = "absolute top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all duration-200 shadow-sm";
 
 function PhotoStrip({
   photos,
   label,
   onSelect,
+  effect = "coverflow",
 }: {
   photos: Photo[];
   label: string;
   onSelect: (i: number) => void;
+  effect?: SliderEffect;
 }) {
-  const outerRef = useRef<HTMLDivElement>(null);
-  const innerRef = useRef<HTMLDivElement>(null);
-  const constraints = useRef({ left: 0, right: 0 });
-  const hasDragged = useRef(false);
-  const startX = useRef(0);
-  const startScrollX = useRef(0);
+  const prevId = `prev-${navId(label)}`;
+  const nextId = `next-${navId(label)}`;
 
-  useEffect(() => {
-    const calc = () => {
-      if (!outerRef.current || !innerRef.current) return;
-      const cw = outerRef.current.offsetWidth;
-      const iw = innerRef.current.scrollWidth;
-      constraints.current = { left: Math.min(0, -(iw - cw)), right: 0 };
-    };
-    calc();
-    window.addEventListener("resize", calc);
-    return () => window.removeEventListener("resize", calc);
-  }, [photos]);
-
-  const getCurrentX = () =>
-    (gsap.getProperty(innerRef.current!, "x") as number) || 0;
-
-  const scrollPrev = () => {
-    const target = Math.min(0, getCurrentX() + CARD_STEP * 2);
-    gsap.to(innerRef.current, { x: target, duration: 0.4, ease: "power2.out" });
-  };
-
-  const scrollNext = () => {
-    const target = Math.max(constraints.current.left, getCurrentX() - CARD_STEP * 2);
-    gsap.to(innerRef.current, { x: target, duration: 0.4, ease: "power2.out" });
-  };
-
-  const handlePointerDown = (e: React.PointerEvent) => {
-    hasDragged.current = false;
-    startX.current = e.clientX;
-    startScrollX.current = getCurrentX();
-  };
-
-  const handlePointerMove = (e: React.PointerEvent) => {
-    if (!e.buttons) return;
-    const diff = e.clientX - startX.current;
-    if (!hasDragged.current && Math.abs(diff) > 5) {
-      hasDragged.current = true;
-      (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
-    }
-    if (!hasDragged.current) return;
-    const newX = Math.max(
-      constraints.current.left,
-      Math.min(0, startScrollX.current + diff)
-    );
-    gsap.set(innerRef.current, { x: newX });
-  };
-
-  const handlePointerUp = () => {
-    const cur = getCurrentX();
-    const clamped = Math.max(constraints.current.left, Math.min(0, cur));
-    gsap.to(innerRef.current, { x: clamped, duration: 0.3, ease: "power2.out" });
-    setTimeout(() => { hasDragged.current = false; }, 60);
-  };
+  const nav = { prevEl: `#${prevId}`, nextEl: `#${nextId}` };
 
   return (
     <div className="py-10">
@@ -127,54 +88,100 @@ function PhotoStrip({
         </p>
       </FadeUp>
 
-      <div className="relative">
-        {/* Prev */}
-        <button
-          onClick={scrollPrev}
-          aria-label="Précédent"
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all duration-200 shadow-sm ml-1"
-        >
-          <ChevronLeft size={15} strokeWidth={1.5} />
-        </button>
-
-        <div
-          ref={outerRef}
-          className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-        >
-          <div ref={innerRef} className="flex gap-2 px-6 lg:px-16">
+      {/* ── COVERFLOW ── */}
+      {effect === "coverflow" && (
+        <div className="relative">
+          <button id={prevId} aria-label="Précédent" className={`${btnClass} left-1`}>
+            <ChevronLeft size={20} strokeWidth={1.5} />
+          </button>
+          <Swiper
+            modules={[EffectCoverflow, Navigation]}
+            effect="coverflow"
+            centeredSlides
+            slidesPerView="auto"
+            grabCursor
+            initialSlide={Math.floor(photos.length / 2)}
+            coverflowEffect={{ rotate: 18, stretch: 0, depth: 180, modifier: 1, slideShadows: false }}
+            navigation={nav}
+            className="overflow-visible!"
+          >
             {photos.map((photo, i) => (
-              <button
-                key={photo.src}
-                onClick={() => { if (!hasDragged.current) onSelect(i); }}
-                className="relative shrink-0 overflow-hidden group transition-transform duration-350 hover:scale-[1.015]"
-                style={{ width: 260, height: 340 }}
-              >
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  draggable={false}
-                  className="object-cover pointer-events-none"
-                />
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-[0.08] transition-opacity duration-400" />
-              </button>
+              <SwiperSlide key={photo.src} style={{ width: 260 }}>
+                {({ isActive }) => (
+                  <button onClick={() => onSelect(i)} className="relative overflow-hidden block w-full transition-opacity duration-300" style={{ height: 340, opacity: isActive ? 1 : 0.55 }}>
+                    <Image src={photo.src} alt={photo.alt} fill draggable={false} className="object-cover pointer-events-none" />
+                  </button>
+                )}
+              </SwiperSlide>
             ))}
-            <div className="shrink-0 w-6 lg:w-10" />
-          </div>
+          </Swiper>
+          <button id={nextId} aria-label="Suivant" className={`${btnClass} right-1`}>
+            <ChevronRight size={20} strokeWidth={1.5} />
+          </button>
         </div>
+      )}
 
-        {/* Next */}
-        <button
-          onClick={scrollNext}
-          aria-label="Suivant"
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all duration-200 shadow-sm mr-1"
-        >
-          <ChevronRight size={15} strokeWidth={1.5} />
-        </button>
-      </div>
+      {/* ── CARDS ── */}
+      {effect === "cards" && (
+        <div className="relative flex justify-center">
+          <button id={prevId} aria-label="Précédent" className={`${btnClass} left-4 lg:left-16`}>
+            <ChevronLeft size={20} strokeWidth={1.5} />
+          </button>
+          <Swiper
+            modules={[EffectCards, Navigation]}
+            effect="cards"
+            grabCursor
+            cardsEffect={{ slideShadows: false, perSlideOffset: 10, perSlideRotate: 4 }}
+            navigation={nav}
+            style={{ width: 280, height: 370 }}
+          >
+            {photos.map((photo, i) => (
+              <SwiperSlide key={photo.src}>
+                <button onClick={() => onSelect(i)} className="relative overflow-hidden block w-full h-full">
+                  <Image src={photo.src} alt={photo.alt} fill draggable={false} className="object-cover pointer-events-none" />
+                </button>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <button id={nextId} aria-label="Suivant" className={`${btnClass} right-4 lg:right-16`}>
+            <ChevronRight size={20} strokeWidth={1.5} />
+          </button>
+        </div>
+      )}
+
+      {/* ── CREATIVE ── */}
+      {effect === "creative" && (
+        <div className="relative">
+          <button id={prevId} aria-label="Précédent" className={`${btnClass} left-1`}>
+            <ChevronLeft size={20} strokeWidth={1.5} />
+          </button>
+          <Swiper
+            modules={[EffectCreative, Navigation]}
+            effect="creative"
+            centeredSlides
+            slidesPerView="auto"
+            grabCursor
+            initialSlide={Math.floor(photos.length / 2)}
+            creativeEffect={{
+              prev: { shadow: false, translate: ["-110%", 0, -200], opacity: 0 },
+              next: { translate: ["110%", 0, 0], opacity: 0.6 },
+            }}
+            navigation={nav}
+            style={{ overflow: "visible" }}
+          >
+            {photos.map((photo, i) => (
+              <SwiperSlide key={photo.src} style={{ width: 320 }}>
+                <button onClick={() => onSelect(i)} className="relative overflow-hidden block w-full" style={{ height: 400 }}>
+                  <Image src={photo.src} alt={photo.alt} fill draggable={false} className="object-cover pointer-events-none" />
+                </button>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <button id={nextId} aria-label="Suivant" className={`${btnClass} right-1`}>
+            <ChevronRight size={20} strokeWidth={1.5} />
+          </button>
+        </div>
+      )}
     </div>
   );
 }
@@ -293,18 +300,21 @@ export default function GaleriePage() {
           label="Sourcils"
           photos={sourcilsPhotos}
           onSelect={(i) => openModal(sourcilsPhotos, i)}
+          effect="coverflow"
         />
         <div className="border-t border-zinc-100 mx-6 lg:mx-16" />
         <PhotoStrip
           label="Lèvres"
           photos={levresPhotos}
           onSelect={(i) => openModal(levresPhotos, i)}
+          effect="coverflow"
         />
         <div className="border-t border-zinc-100 mx-6 lg:mx-16" />
         <PhotoStrip
           label="Soins cils / yeux"
           photos={cilsPhotos}
           onSelect={(i) => openModal(cilsPhotos, i)}
+          effect="coverflow"
         />
       </section>
 
