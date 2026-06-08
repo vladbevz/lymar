@@ -205,10 +205,12 @@ export default function AvisSection() {
               key={i}
               onClick={() => setIdx(i)}
               aria-label={`Aller à l'avis ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
+              className="min-h-11 min-w-11 flex items-center justify-center"
+            >
+              <span className={`h-1.5 rounded-full transition-all duration-300 block ${
                 i === idx ? "bg-black w-5" : "bg-zinc-300 w-1.5"
-              }`}
-            />
+              }`} />
+            </button>
           ))}
         </div>
 

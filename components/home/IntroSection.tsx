@@ -24,6 +24,7 @@ export default function IntroSection() {
                 src="/images/newcabinet.webp"
                 alt="Cabinet Lymar Dermo Esthetic"
                 fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
                 className="object-cover object-top"
               />
               <div className="absolute inset-0 border border-zinc-200" />

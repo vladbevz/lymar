@@ -40,6 +40,7 @@ export default function HeroSection() {
           alt="Anastasiia Lymar — maquillage permanent"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center"
         />
       </div>
@@ -116,6 +117,7 @@ export default function HeroSection() {
           alt="Anastasiia Lymar — maquillage permanent au cabinet"
           fill
           priority
+          sizes="50vw"
           className="object-cover object-center"
         />
       </div>

@@ -102,6 +102,7 @@ export default function PrestaPageLayout({
             alt={heroImageAlt}
             fill
             priority
+            sizes="100vw"
             className={`object-cover ${heroImagePosition}`}
           />
         </div>
@@ -133,6 +134,7 @@ export default function PrestaPageLayout({
             alt={heroImageAlt}
             fill
             priority
+            sizes="50vw"
             className={`object-cover ${heroImagePosition}`}
           />
         </div>

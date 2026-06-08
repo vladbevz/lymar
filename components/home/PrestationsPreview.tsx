@@ -64,6 +64,7 @@ function Card({ cat }: { cat: (typeof categories)[0] }) {
         src={cat.image}
         alt={cat.title}
         fill
+        sizes="(max-width: 1024px) 100vw, 33vw"
         className={`object-cover ${cat.imagePosition} transition-transform duration-700 ease-out group-hover:scale-105`}
       />
 
@@ -140,7 +141,7 @@ export default function PrestationsPreview() {
             onClick={prev}
             disabled={idx === 0}
             aria-label="Précédent"
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-9 h-9 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all shadow-sm disabled:opacity-20 disabled:pointer-events-none"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-11 h-11 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all shadow-sm disabled:opacity-20 disabled:pointer-events-none"
           >
             <ChevronLeft size={16} strokeWidth={1.5} />
           </button>
@@ -168,7 +169,7 @@ export default function PrestationsPreview() {
             onClick={next}
             disabled={idx === maxIdx}
             aria-label="Suivant"
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-9 h-9 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all shadow-sm disabled:opacity-20 disabled:pointer-events-none"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-11 h-11 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all shadow-sm disabled:opacity-20 disabled:pointer-events-none"
           >
             <ChevronRight size={16} strokeWidth={1.5} />
           </button>
@@ -178,10 +179,13 @@ export default function PrestationsPreview() {
               <button
                 key={i}
                 onClick={() => setIdx(i)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
+                aria-label={`Prestation ${i + 1}`}
+                className="min-h-11 min-w-11 flex items-center justify-center"
+              >
+                <span className={`h-1.5 rounded-full transition-all duration-300 block ${
                   i === idx ? "bg-black w-5" : "bg-zinc-300 w-1.5"
-                }`}
-              />
+                }`} />
+              </button>
             ))}
           </div>
         </div>

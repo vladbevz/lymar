@@ -108,8 +108,8 @@ function PhotoStrip({
             {photos.map((photo, i) => (
               <SwiperSlide key={photo.src} style={{ width: 260 }}>
                 {({ isActive }) => (
-                  <button onClick={() => onSelect(i)} className="relative overflow-hidden block w-full transition-opacity duration-300" style={{ height: 340, opacity: isActive ? 1 : 0.55 }}>
-                    <Image src={photo.src} alt={photo.alt} fill draggable={false} className="object-cover pointer-events-none" />
+                  <button onClick={() => onSelect(i)} aria-label={`Voir ${photo.alt}`} className="relative overflow-hidden block w-full transition-opacity duration-300" style={{ height: 340, opacity: isActive ? 1 : 0.55 }}>
+                    <Image src={photo.src} alt={photo.alt} fill sizes="260px" draggable={false} className="object-cover pointer-events-none" />
                   </button>
                 )}
               </SwiperSlide>
@@ -137,8 +137,8 @@ function PhotoStrip({
           >
             {photos.map((photo, i) => (
               <SwiperSlide key={photo.src}>
-                <button onClick={() => onSelect(i)} className="relative overflow-hidden block w-full h-full">
-                  <Image src={photo.src} alt={photo.alt} fill draggable={false} className="object-cover pointer-events-none" />
+                <button onClick={() => onSelect(i)} aria-label={`Voir ${photo.alt}`} className="relative overflow-hidden block w-full h-full">
+                  <Image src={photo.src} alt={photo.alt} fill sizes="280px" draggable={false} className="object-cover pointer-events-none" />
                 </button>
               </SwiperSlide>
             ))}
@@ -171,8 +171,8 @@ function PhotoStrip({
           >
             {photos.map((photo, i) => (
               <SwiperSlide key={photo.src} style={{ width: 320 }}>
-                <button onClick={() => onSelect(i)} className="relative overflow-hidden block w-full" style={{ height: 400 }}>
-                  <Image src={photo.src} alt={photo.alt} fill draggable={false} className="object-cover pointer-events-none" />
+                <button onClick={() => onSelect(i)} aria-label={`Voir ${photo.alt}`} className="relative overflow-hidden block w-full" style={{ height: 400 }}>
+                  <Image src={photo.src} alt={photo.alt} fill sizes="320px" draggable={false} className="object-cover pointer-events-none" />
                 </button>
               </SwiperSlide>
             ))}

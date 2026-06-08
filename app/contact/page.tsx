@@ -45,7 +45,7 @@ export default function ContactPage() {
 
         {/* Mobile image */}
         <div className="relative h-100 w-full lg:hidden">
-          <Image src="/images/contact.webp" alt="Cabinet Lymar Dermo Esthetic" fill priority className="object-cover object-center" />
+          <Image src="/images/contact.webp" alt="Cabinet Lymar Dermo Esthetic" fill priority sizes="100vw" className="object-cover object-center" />
         </div>
 
         {/* Left — text */}
@@ -112,6 +112,7 @@ export default function ContactPage() {
             alt="Cabinet Lymar Dermo Esthetic"
             fill
             priority
+            sizes="50vw"
             className="object-cover object-center"
           />
         </div>
