@@ -23,29 +23,28 @@ export function FadeUp({
       const el = ref.current;
       if (!el) return;
 
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: 22 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          delay,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 92%",
-            once: true,
-            onEnter: () => ScrollTrigger.refresh(),
-          },
-        }
-      );
+      // Initial state set via JS only — SSR stays visible (SEO + no-JS safe).
+      // If ScrollTrigger never fires, content remains visible (fail-safe).
+      gsap.set(el, { opacity: 0, y: 22 });
+
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 92%",
+          once: true,
+        },
+      });
     },
     { scope: ref, dependencies: [delay] }
   );
 
   return (
-    <div ref={ref} className={className} style={{ opacity: 0 }}>
+    <div ref={ref} className={className}>
       {children}
     </div>
   );
@@ -65,22 +64,20 @@ export function StaggerWrapper({
       const el = ref.current;
       if (!el?.children.length) return;
 
-      gsap.fromTo(
-        el.children,
-        { opacity: 0, y: 22 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          stagger: 0.15,
-          scrollTrigger: {
-            trigger: el,
-            start: "top 92%",
-            once: true,
-          },
-        }
-      );
+      gsap.set(el.children, { opacity: 0, y: 22 });
+
+      gsap.to(el.children, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 92%",
+          once: true,
+        },
+      });
     },
     { scope: ref }
   );
