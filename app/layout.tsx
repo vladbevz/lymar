@@ -3,7 +3,6 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Loader from "@/components/Loader";
 import ScrollToTop from "@/components/ScrollToTop";
 import CookieBanner from "@/components/CookieBanner";
 import { JsonLd } from "@/components/JsonLd";
@@ -121,11 +120,6 @@ export default function RootLayout({
       className={`${inter.variable} h-full antialiased`}
     >
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{if(!sessionStorage.getItem('lymar_loaded'))document.documentElement.classList.add('lymar-loading')}catch(e){}`,
-          }}
-        />
         {/* Preload above-fold fonts to unblock LCP */}
         <link
           rel="preload"
@@ -134,11 +128,12 @@ export default function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        {/* Preconnect to Clarity CDN (saves ~620ms on first load) */}
+        <link rel="preconnect" href="https://scripts.clarity.ms" />
         <JsonLd data={localBusinessSchema} />
         <JsonLd data={personSchema} />
       </head>
       <body className="min-h-full flex flex-col bg-white text-[#0A0A0A]">
-        <Loader />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
