@@ -7,6 +7,10 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+if (typeof window !== "undefined") {
+  window.addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
+}
+
 export function FadeUp({
   children,
   className,
@@ -30,6 +34,7 @@ export function FadeUp({
           trigger: ref.current,
           start: "top 90%",
           once: true,
+          invalidateOnRefresh: true,
         },
       });
     },
@@ -65,6 +70,7 @@ export function StaggerWrapper({
           trigger: ref.current,
           start: "top 90%",
           once: true,
+          invalidateOnRefresh: true,
         },
       });
     },
