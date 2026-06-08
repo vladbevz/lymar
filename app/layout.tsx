@@ -7,6 +7,7 @@ import Loader from "@/components/Loader";
 import ScrollToTop from "@/components/ScrollToTop";
 import CookieBanner from "@/components/CookieBanner";
 import { JsonLd } from "@/components/JsonLd";
+import Script from "next/script";
 import { SITE_URL, SITE_NAME, PLANITY, INSTAGRAM } from "@/lib/site";
 
 const inter = Montserrat({
@@ -135,6 +136,13 @@ export default function RootLayout({
         <Footer />
         <ScrollToTop />
         <CookieBanner />
+        <Script id="clarity" strategy="afterInteractive">{`
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "x3xl18eooc");
+        `}</Script>
       </body>
     </html>
   );
