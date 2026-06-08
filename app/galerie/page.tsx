@@ -259,7 +259,7 @@ export default function GaleriePage() {
             alt="Galerie Lymar Dermo Esthetic — réalisations maquillage permanent"
             fill
             priority
-            className="object-cover object-bottom"
+            className="object-cover object-center"
           />
         </div>
 
@@ -288,7 +288,7 @@ export default function GaleriePage() {
             alt="Galerie Lymar Dermo Esthetic — réalisations maquillage permanent"
             fill
             priority
-            className="object-cover object-bottom"
+            className="object-cover object-center"
           />
         </div>
 
