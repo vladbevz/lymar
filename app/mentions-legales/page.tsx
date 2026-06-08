@@ -30,8 +30,8 @@ export default function MentionsLegalesPage() {
                 <strong className="text-black">Code APE/NAF :</strong> 9602B — Soins de beauté<br />
                 <strong className="text-black">RCS :</strong> Saintes<br />
                 <strong className="text-black">Email :</strong>{" "}
-                <a href="mailto:contact@lymardermoesthetic.fr" className="underline hover:text-black transition-colors">
-                  contact@lymardermoesthetic.fr
+                <a href="mailto:anastasiia.lymar@gmail.com" className="underline hover:text-black transition-colors">
+                  anastasiia.lymar@gmail.com
                 </a>
               </p>
             </div>
