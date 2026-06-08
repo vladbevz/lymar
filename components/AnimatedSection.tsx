@@ -7,6 +7,16 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Refresh ScrollTrigger after full page load so positions account
+// for images/fonts that shift layout after initial mount.
+if (typeof window !== "undefined") {
+  window.addEventListener(
+    "load",
+    () => setTimeout(() => ScrollTrigger.refresh(), 100),
+    { once: true }
+  );
+}
+
 export function FadeUp({
   children,
   className,
@@ -37,6 +47,7 @@ export function FadeUp({
           trigger: el,
           start: "top 92%",
           once: true,
+          invalidateOnRefresh: true,
         },
       });
     },
@@ -76,6 +87,7 @@ export function StaggerWrapper({
           trigger: el,
           start: "top 92%",
           once: true,
+          invalidateOnRefresh: true,
         },
       });
     },
