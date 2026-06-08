@@ -1,21 +1,7 @@
 "use client";
 
-import { useRef, ReactNode } from "react";
+import { useRef, useEffect, ReactNode } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
-
-// Refresh ScrollTrigger after full page load so positions account
-// for images/fonts that shift layout after initial mount.
-if (typeof window !== "undefined") {
-  window.addEventListener(
-    "load",
-    () => setTimeout(() => ScrollTrigger.refresh(), 100),
-    { once: true }
-  );
-}
 
 export function FadeUp({
   children,
@@ -28,31 +14,32 @@ export function FadeUp({
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      const el = ref.current;
-      if (!el) return;
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
 
-      // Initial state set via JS only — SSR stays visible (SEO + no-JS safe).
-      // If ScrollTrigger never fires, content remains visible (fail-safe).
-      gsap.set(el, { opacity: 0, y: 22 });
+    // Hide via JS only — SSR stays visible (SEO + no-JS safe)
+    gsap.set(el, { opacity: 0, y: 22 });
 
-      gsap.to(el, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        delay,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 92%",
-          once: true,
-          invalidateOnRefresh: true,
-        },
-      });
-    },
-    { scope: ref, dependencies: [delay] }
-  );
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        gsap.to(el, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          delay,
+          ease: "power2.out",
+        });
+        observer.disconnect();
+      },
+      // Fire when element enters bottom 8% of viewport
+      { rootMargin: "0px 0px -8% 0px", threshold: 0 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [delay]);
 
   return (
     <div ref={ref} className={className}>
@@ -70,29 +57,30 @@ export function StaggerWrapper({
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      const el = ref.current;
-      if (!el?.children.length) return;
+  useEffect(() => {
+    const el = ref.current;
+    if (!el?.children.length) return;
 
-      gsap.set(el.children, { opacity: 0, y: 22 });
+    gsap.set(el.children, { opacity: 0, y: 22 });
 
-      gsap.to(el.children, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: el,
-          start: "top 92%",
-          once: true,
-          invalidateOnRefresh: true,
-        },
-      });
-    },
-    { scope: ref }
-  );
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        gsap.to(el.children, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          stagger: 0.15,
+        });
+        observer.disconnect();
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div ref={ref} className={className}>
