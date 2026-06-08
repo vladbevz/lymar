@@ -17,7 +17,6 @@ export default function MapboxMap({ lng, lat, zoom = 14, alt = "Carte" }: Props)
     <img
       src={src}
       alt={alt}
-      loading="lazy"
       className="w-full h-full object-cover"
     />
   );
