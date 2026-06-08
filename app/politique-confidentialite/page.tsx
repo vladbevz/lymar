@@ -26,8 +26,8 @@ export default function PolitiqueConfidentialitePage() {
                 60 Avenue de Pontaillac, 17200 Royan<br />
                 SIRET : 902 956 366 00014<br />
                 Email :{" "}
-                <a href="mailto:contact@lymardermoesthetic.fr" className="underline hover:text-black transition-colors">
-                  contact@lymardermoesthetic.fr
+                <a href="mailto:anastasiia.lymar@gmail.com" className="underline hover:text-black transition-colors">
+                  anastasiia.lymar@gmail.com
                 </a>
               </p>
             </div>
@@ -103,8 +103,8 @@ export default function PolitiqueConfidentialitePage() {
               </ul>
               <p className="mt-3">
                 Pour exercer ces droits, contactez-nous à :{" "}
-                <a href="mailto:contact@lymardermoesthetic.fr" className="underline hover:text-black transition-colors">
-                  contact@lymardermoesthetic.fr
+                <a href="mailto:anastasiia.lymar@gmail.com" className="underline hover:text-black transition-colors">
+                  anastasiia.lymar@gmail.com
                 </a>
               </p>
               <p className="mt-3">
