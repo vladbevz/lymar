@@ -132,8 +132,8 @@ export default function ContactPage() {
           </FadeUp>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {cabinets.map((c, i) => (
-              <FadeUp key={c.ville} delay={i * 0.15}>
+            {cabinets.map((c) => (
+              <FadeUp key={c.ville}>
                 <div className="border border-zinc-100 overflow-hidden">
                   <div className="aspect-video relative bg-zinc-100">
                     <MapboxMap

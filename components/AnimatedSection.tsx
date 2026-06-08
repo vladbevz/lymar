@@ -7,10 +7,6 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-if (typeof window !== "undefined") {
-  window.addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
-}
-
 export function FadeUp({
   children,
   className,
@@ -24,25 +20,32 @@ export function FadeUp({
 
   useGSAP(
     () => {
-      gsap.from(ref.current, {
-        opacity: 0,
-        y: 22,
-        duration: 0.8,
-        delay,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top 90%",
-          once: true,
-          invalidateOnRefresh: true,
-        },
-      });
+      const el = ref.current;
+      if (!el) return;
+
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 22 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          delay,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 92%",
+            once: true,
+            onEnter: () => ScrollTrigger.refresh(),
+          },
+        }
+      );
     },
     { scope: ref, dependencies: [delay] }
   );
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref} className={className} style={{ opacity: 0 }}>
       {children}
     </div>
   );
@@ -59,20 +62,25 @@ export function StaggerWrapper({
 
   useGSAP(
     () => {
-      if (!ref.current?.children.length) return;
-      gsap.from(ref.current.children, {
-        opacity: 0,
-        y: 22,
-        duration: 0.8,
-        ease: "power2.out",
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top 90%",
-          once: true,
-          invalidateOnRefresh: true,
-        },
-      });
+      const el = ref.current;
+      if (!el?.children.length) return;
+
+      gsap.fromTo(
+        el.children,
+        { opacity: 0, y: 22 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 92%",
+            once: true,
+          },
+        }
+      );
     },
     { scope: ref }
   );
