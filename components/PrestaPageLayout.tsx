@@ -1,4 +1,4 @@
-import { FadeUp } from "@/components/AnimatedSection";
+﻿import { FadeUp } from "@/components/AnimatedSection";
 import { JsonLd } from "@/components/JsonLd";
 import BookingButtons from "@/components/BookingButtons";
 import Image from "next/image";
@@ -38,7 +38,7 @@ export default function PrestaPageLayout({
   info,
   children,
   heroImage = DEFAULT_IMG,
-  heroImageAlt = "Maquillage permanent — Lymar Dermo-Esthetic",
+  heroImageAlt = "Maquillage permanent — Lymar Dermo Esthetic",
   heroImageFit = "cover",
   heroImagePosition = "object-bottom",
   slug,

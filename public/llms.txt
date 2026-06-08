@@ -1,9 +1,9 @@
-# Lymar Dermo-Esthetic
+﻿# Lymar Dermo Esthetic
 
 ## Identité
-- Nom : Lymar Dermo-Esthetic
+- Nom : Lymar Dermo Esthetic
 - Type : Cabinet de maquillage permanent et pigmentation correctrice
-- Site : https://lymar-dermo-esthetic.fr
+- Site : https://lymardermoesthetic.fr
 
 ## Praticienne
 - Nom : Anastasiia Lymar

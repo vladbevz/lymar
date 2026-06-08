@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { FadeUp } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "Mentions légales — Lymar Dermo-Esthetic",
+  title: "Mentions légales — Lymar Dermo Esthetic",
   robots: { index: false },
 };
 
@@ -30,8 +30,8 @@ export default function MentionsLegalesPage() {
                 <strong className="text-black">Code APE/NAF :</strong> 9602B — Soins de beauté<br />
                 <strong className="text-black">RCS :</strong> Saintes<br />
                 <strong className="text-black">Email :</strong>{" "}
-                <a href="mailto:contact@lymar-dermo-esthetic.fr" className="underline hover:text-black transition-colors">
-                  contact@lymar-dermo-esthetic.fr
+                <a href="mailto:contact@lymardermoesthetic.fr" className="underline hover:text-black transition-colors">
+                  contact@lymardermoesthetic.fr
                 </a>
               </p>
             </div>
@@ -81,7 +81,7 @@ export default function MentionsLegalesPage() {
             <div>
               <h2 className="font-logo text-xl text-black mb-4">Limitation de responsabilité</h2>
               <p>
-                Lymar Dermo-Esthetic s&apos;efforce de maintenir les informations publiées sur ce site aussi exactes et à jour que possible, mais ne peut garantir leur exhaustivité ni leur exactitude à tout moment. Les informations relatives aux tarifs et prestations sont susceptibles d&apos;évoluer sans préavis.
+                Lymar Dermo Esthetic s&apos;efforce de maintenir les informations publiées sur ce site aussi exactes et à jour que possible, mais ne peut garantir leur exhaustivité ni leur exactitude à tout moment. Les informations relatives aux tarifs et prestations sont susceptibles d&apos;évoluer sans préavis.
               </p>
             </div>
 

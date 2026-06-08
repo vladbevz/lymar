@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import { FadeUp } from "@/components/AnimatedSection";
 
@@ -22,7 +22,7 @@ export default function IntroSection() {
             <div className="relative w-full aspect-[3/4] mb-4 mr-4">
               <Image
                 src="/images/newcabinet.webp"
-                alt="Cabinet Lymar Dermo-Esthetic"
+                alt="Cabinet Lymar Dermo Esthetic"
                 fill
                 className="object-cover object-top"
               />

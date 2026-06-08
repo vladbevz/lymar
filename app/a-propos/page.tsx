@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import { FadeUp } from "@/components/AnimatedSection";
 import { Separator } from "@/components/ui/separator";
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "À propos — Anastasiia Lymar · Maquillage Permanent",
   description:
     "Découvrez Anastasiia Lymar, experte en maquillage permanent formée à l'international. Précision, personnalisation et résultats naturels à Saint-Georges-de-Didonne.",
-  alternates: { canonical: "https://lymar-dermo-esthetic.fr/a-propos" },
+  alternates: { canonical: "https://lymardermoesthetic.fr/a-propos" },
 };
 
 const valeurs = [

@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PrestaPageLayout from "@/components/PrestaPageLayout";
 
 export const metadata: Metadata = {
-  title: "Taches de rousseur semi-permanentes · Lymar Dermo-Esthetic",
+  title: "Taches de rousseur semi-permanentes · Lymar Dermo Esthetic",
   description: "Taches de rousseur semi-permanentes à Saint-Georges-de-Didonne. Effet naturel, soleil ou intense. Cabinet Anastasiia Lymar.",
-  alternates: { canonical: "https://lymar-dermo-esthetic.fr/prestations/taches-rousseur" },
+  alternates: { canonical: "https://lymardermoesthetic.fr/prestations/taches-rousseur" },
 };
 
 export default function TachesRousseursPage() {
@@ -15,7 +15,7 @@ export default function TachesRousseursPage() {
       titre="Taches de rousseur semi-permanentes"
       sousTitre="Pour une peau vivante et ensoleillée."
       heroImage="/images/taches.webp"
-      heroImageAlt="Taches de rousseur semi-permanentes — Lymar Dermo-Esthetic"
+      heroImageAlt="Taches de rousseur semi-permanentes — Lymar Dermo Esthetic"
       heroImagePosition="object-bottom"
       intro="Les taches de rousseur semi-permanentes sont dessinées au dermographe une par une pour un résultat qui imite parfaitement le naturel. Elles apportent fraîcheur, douceur et relief au visage tout en donnant cet effet « retour de soleil »."
       services={[

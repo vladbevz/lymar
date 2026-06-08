@@ -1,7 +1,7 @@
-import { ImageResponse } from "next/og";
+﻿import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Lymar Dermo-Esthetic — Maquillage Permanent";
+export const alt = "Lymar Dermo Esthetic — Maquillage Permanent";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -53,7 +53,7 @@ export default function Image() {
             textTransform: "uppercase",
           }}
         >
-          Dermo-Esthetic
+          Dermo Esthetic
         </p>
         <div
           style={{ width: 44, height: 1, background: "#0A0A0A", margin: "44px 0" }}

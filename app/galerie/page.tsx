@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import { gsap } from "gsap";
@@ -256,7 +256,7 @@ export default function GaleriePage() {
         <div className="relative h-100 w-full lg:hidden">
           <Image
             src="/images/gallery-hero.webp"
-            alt="Galerie Lymar Dermo-Esthetic — réalisations maquillage permanent"
+            alt="Galerie Lymar Dermo Esthetic — réalisations maquillage permanent"
             fill
             priority
             className="object-cover object-top"
@@ -285,7 +285,7 @@ export default function GaleriePage() {
         <div className="hidden lg:block relative flex-1">
           <Image
             src="/images/gallery-hero.webp"
-            alt="Galerie Lymar Dermo-Esthetic — réalisations maquillage permanent"
+            alt="Galerie Lymar Dermo Esthetic — réalisations maquillage permanent"
             fill
             priority
             className="object-cover object-top"

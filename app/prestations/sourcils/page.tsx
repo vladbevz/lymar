@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PrestaPageLayout from "@/components/PrestaPageLayout";
 import { FadeUp } from "@/components/AnimatedSection";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
-  title: "Maquillage permanent sourcils à Saint-Georges-de-Didonne — Lymar Dermo-Esthetic",
+  title: "Maquillage permanent sourcils à Saint-Georges-de-Didonne — Lymar Dermo Esthetic",
   description: "Maquillage permanent sourcils à Saint-Georges-de-Didonne. Effet poil à poil et effet poudré par Anastasiia Lymar. À partir de 250 €, retouche incluse.",
-  alternates: { canonical: "https://lymar-dermo-esthetic.fr/prestations/sourcils" },
+  alternates: { canonical: "https://lymardermoesthetic.fr/prestations/sourcils" },
 };
 
 const faq = [
@@ -36,7 +36,7 @@ export default function SourcilsPage() {
       titre="Maquillage permanent sourcils"
       sousTitre="Effet poil à poil & effet poudré à Saint-Georges-de-Didonne — résultats naturels et durables."
       heroImage="/images/sourcils.webp"
-      heroImageAlt="Maquillage permanent sourcils — résultat naturel Lymar Dermo-Esthetic"
+      heroImageAlt="Maquillage permanent sourcils — résultat naturel Lymar Dermo Esthetic"
       heroImageFit="contain"
       intro="Le maquillage permanent des sourcils permet de rééquilibrer les volumes, corriger les asymétries et redonner du caractère au regard sans effet figé. Le poil à poil imite avec précision l'implantation naturelle du sourcil pour un résultat aérien et ultra réaliste. Le sourcil poudré apporte une ligne plus présente et veloutée, avec un dégradé délicat inspiré de l'effet d'un crayon ou d'une poudre appliquée avec légèreté. Chaque création est pensée pour s'intégrer naturellement aux traits du visage et révéler l'expression du regard."
       services={[

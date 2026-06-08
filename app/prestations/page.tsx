@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { FadeUp, StaggerWrapper, StaggerItem } from "@/components/AnimatedSection";
@@ -6,9 +6,9 @@ import { ArrowRight } from "lucide-react";
 import BookingButtons from "@/components/BookingButtons";
 
 export const metadata: Metadata = {
-  title: "Prestations — Maquillage Permanent & Pigmentation · Lymar Dermo-Esthetic",
+  title: "Prestations — Maquillage Permanent & Pigmentation · Lymar Dermo Esthetic",
   description: "Toutes les prestations de maquillage permanent : sourcils, lèvres, tricopigmentation, taches de rousseur, soins cils/sourcils, corrections. Saint-Georges-de-Didonne et Beaune.",
-  alternates: { canonical: "https://lymar-dermo-esthetic.fr/prestations" },
+  alternates: { canonical: "https://lymardermoesthetic.fr/prestations" },
 };
 
 const categories = [
@@ -80,7 +80,7 @@ export default function PrestationsPage() {
         <div className="relative h-72 w-full lg:hidden">
           <Image
             src="/images/prestations.webp"
-            alt="Maquillage permanent — prestations Lymar Dermo-Esthetic"
+            alt="Maquillage permanent — prestations Lymar Dermo Esthetic"
             fill
             priority
             className="object-cover"
@@ -111,7 +111,7 @@ export default function PrestationsPage() {
         <div className="hidden lg:block relative flex-1 self-stretch overflow-hidden">
           <Image
             src="/images/prestations.webp"
-            alt="Maquillage permanent — prestations Lymar Dermo-Esthetic"
+            alt="Maquillage permanent — prestations Lymar Dermo Esthetic"
             fill
             priority
             className="object-cover"

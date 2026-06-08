@@ -1,19 +1,17 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { FadeUp } from "@/components/AnimatedSection";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Clock, CreditCard } from "lucide-react";
 import Image from "next/image";
 import MapboxMap from "@/components/MapboxMap";
 import BookingButtons from "@/components/BookingButtons";
 import { PLANITY_LOCATIONS } from "@/lib/site";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact & Rendez-vous — Lymar Dermo-Esthetic · Saint-Georges-de-Didonne",
+  title: "Contact & Rendez-vous — Lymar Dermo Esthetic · Saint-Georges-de-Didonne",
   description:
     "Prenez rendez-vous avec Anastasiia Lymar. Cabinet de maquillage permanent à Saint-Georges-de-Didonne et Beaune. Réservation en ligne via Planity.",
-  alternates: { canonical: "https://lymar-dermo-esthetic.fr/contact" },
+  alternates: { canonical: "https://lymardermoesthetic.fr/contact" },
 };
 
 const cabinets = [
@@ -47,7 +45,7 @@ export default function ContactPage() {
 
         {/* Mobile image */}
         <div className="relative h-100 w-full lg:hidden">
-          <Image src="/images/contact.webp" alt="Cabinet Lymar Dermo-Esthetic" fill priority className="object-cover object-center" />
+          <Image src="/images/contact.webp" alt="Cabinet Lymar Dermo Esthetic" fill priority className="object-cover object-center" />
         </div>
 
         {/* Left — text */}
@@ -111,7 +109,7 @@ export default function ContactPage() {
         <div className="hidden lg:block relative flex-1">
           <Image
             src="/images/contact.webp"
-            alt="Cabinet Lymar Dermo-Esthetic"
+            alt="Cabinet Lymar Dermo Esthetic"
             fill
             priority
             className="object-cover object-center"
@@ -181,86 +179,7 @@ export default function ContactPage() {
       </section>
 
       {/* Formulaire */}
-      <section className="py-12 lg:py-24 bg-warm border-t border-zinc-100">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <FadeUp>
-            <p className="text-xs tracking-[0.25em] uppercase font-(family-name:--font-inter) text-zinc-400 mb-3">
-              Message
-            </p>
-            <h2 className="font-logo text-4xl font-light text-black mb-12">
-              Envoyer un message
-            </h2>
-          </FadeUp>
-
-          <FadeUp delay={0.1}>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-xs tracking-widest uppercase font-(family-name:--font-inter) text-zinc-500 mb-2 block">
-                    Prénom
-                  </label>
-                  <Input
-                    placeholder="Votre prénom"
-                    className="rounded-none border-zinc-200 bg-white font-(family-name:--font-inter) text-sm focus-visible:ring-0 focus-visible:border-black"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs tracking-widest uppercase font-(family-name:--font-inter) text-zinc-500 mb-2 block">
-                    Nom
-                  </label>
-                  <Input
-                    placeholder="Votre nom"
-                    className="rounded-none border-zinc-200 bg-white font-(family-name:--font-inter) text-sm focus-visible:ring-0 focus-visible:border-black"
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="text-xs tracking-widest uppercase font-(family-name:--font-inter) text-zinc-500 mb-2 block">
-                  Email
-                </label>
-                <Input
-                  type="email"
-                  placeholder="votre@email.fr"
-                  className="rounded-none border-zinc-200 bg-white font-(family-name:--font-inter) text-sm focus-visible:ring-0 focus-visible:border-black"
-                />
-              </div>
-              <div>
-                <label className="text-xs tracking-widest uppercase font-(family-name:--font-inter) text-zinc-500 mb-2 block">
-                  Message
-                </label>
-                <Textarea
-                  placeholder="Votre message, la prestation souhaitée..."
-                  rows={6}
-                  className="rounded-none border-zinc-200 bg-white font-(family-name:--font-inter) text-sm focus-visible:ring-0 focus-visible:border-black resize-none"
-                />
-              </div>
-              <p className="font-(family-name:--font-inter) text-[11px] text-zinc-400 leading-relaxed">
-                En soumettant ce formulaire, vous acceptez que vos données soient utilisées pour répondre à votre demande, conformément à notre{" "}
-                <a href="/politique-confidentialite" className="underline hover:text-black transition-colors">politique de confidentialité</a>.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 items-center">
-                <Button
-                  type="submit"
-                  className="w-full sm:w-auto bg-black text-white hover:bg-zinc-700 rounded-none px-12 py-3 tracking-widest uppercase text-xs font-(family-name:--font-inter)"
-                >
-                  Envoyer
-                </Button>
-                <p className="font-(family-name:--font-inter) text-xs text-zinc-400">
-                  Pour une réservation rapide, privilégiez Planity —{" "}
-                  {PLANITY_LOCATIONS.map((loc, i) => (
-                    <span key={loc.href}>
-                      <a href={loc.href} target="_blank" rel="noopener noreferrer" className="underline hover:text-black transition-colors">
-                        {loc.city}
-                      </a>
-                      {i < PLANITY_LOCATIONS.length - 1 && " · "}
-                    </span>
-                  ))}
-                </p>
-              </div>
-            </form>
-          </FadeUp>
-        </div>
-      </section>
+      <ContactForm />
     </>
   );
 }

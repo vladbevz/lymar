@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { MapPin, Clock } from "lucide-react";
 
 export default function Footer() {
@@ -89,7 +89,7 @@ export default function Footer() {
 
         <div className="border-t border-zinc-800 pt-8 grid grid-cols-1 md:grid-cols-3 items-center gap-4 text-center md:text-left">
           <p className="font-(family-name:--font-inter) text-xs text-zinc-600">
-            © {new Date().getFullYear()} Lymar Dermo-Esthetic · Anastasiia Lymar
+            © {new Date().getFullYear()} Lymar Dermo Esthetic · Anastasiia Lymar
           </p>
           <a
             href="https://ateliercode.fr"

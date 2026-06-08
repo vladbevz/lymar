@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PrestaPageLayout from "@/components/PrestaPageLayout";
 
 export const metadata: Metadata = {
-  title: "Tricopigmentation — Micropigmentation du cuir chevelu · Lymar Dermo-Esthetic",
+  title: "Tricopigmentation — Micropigmentation du cuir chevelu · Lymar Dermo Esthetic",
   description: "Tricopigmentation (micropigmentation du cuir chevelu) à Saint-Georges-de-Didonne. Densité et uniformité retrouvées. Cabinet Anastasiia Lymar.",
-  alternates: { canonical: "https://lymar-dermo-esthetic.fr/prestations/tricopigmentation" },
+  alternates: { canonical: "https://lymardermoesthetic.fr/prestations/tricopigmentation" },
 };
 
 export default function TricopigmentationPage() {

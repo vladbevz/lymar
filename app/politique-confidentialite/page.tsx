@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { FadeUp } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "Politique de confidentialité — Lymar Dermo-Esthetic",
+  title: "Politique de confidentialité — Lymar Dermo Esthetic",
   robots: { index: false },
 };
 
@@ -26,8 +26,8 @@ export default function PolitiqueConfidentialitePage() {
                 60 Avenue de Pontaillac, 17200 Royan<br />
                 SIRET : 902 956 366 00014<br />
                 Email :{" "}
-                <a href="mailto:contact@lymar-dermo-esthetic.fr" className="underline hover:text-black transition-colors">
-                  contact@lymar-dermo-esthetic.fr
+                <a href="mailto:contact@lymardermoesthetic.fr" className="underline hover:text-black transition-colors">
+                  contact@lymardermoesthetic.fr
                 </a>
               </p>
             </div>
@@ -103,8 +103,8 @@ export default function PolitiqueConfidentialitePage() {
               </ul>
               <p className="mt-3">
                 Pour exercer ces droits, contactez-nous à :{" "}
-                <a href="mailto:contact@lymar-dermo-esthetic.fr" className="underline hover:text-black transition-colors">
-                  contact@lymar-dermo-esthetic.fr
+                <a href="mailto:contact@lymardermoesthetic.fr" className="underline hover:text-black transition-colors">
+                  contact@lymardermoesthetic.fr
                 </a>
               </p>
               <p className="mt-3">
