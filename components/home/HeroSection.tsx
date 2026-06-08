@@ -39,7 +39,6 @@ export default function HeroSection() {
           src="/images/hero.webp"
           alt="Anastasiia Lymar — maquillage permanent"
           fill
-          priority
           sizes="100vw"
           className="object-cover object-center"
         />
@@ -117,6 +116,7 @@ export default function HeroSection() {
           alt="Anastasiia Lymar — maquillage permanent au cabinet"
           fill
           priority
+          fetchPriority="high"
           sizes="50vw"
           className="object-cover object-center"
         />
