@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 interface Props {
   lng: number;
   lat: number;
@@ -15,13 +13,12 @@ export default function MapboxMap({ lng, lat, zoom = 14, alt = "Carte" }: Props)
   const src = `https://api.mapbox.com/styles/v1/${STYLE}/static/${pin}/${lng},${lat},${zoom},0/800x450?access_token=${TOKEN}`;
 
   return (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
       src={src}
       alt={alt}
-      fill
       loading="lazy"
-      sizes="(max-width: 1023px) 100vw, 50vw"
-      className="object-cover"
+      className="w-full h-full object-cover"
     />
   );
 }
