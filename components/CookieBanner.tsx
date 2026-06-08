@@ -26,7 +26,7 @@ export default function CookieBanner() {
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-zinc-200 shadow-lg">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <p className="font-(family-name:--font-inter) text-xs text-zinc-500 leading-relaxed max-w-2xl">
-          Ce site ne place aucun cookie de suivi. Les données saisies dans le formulaire de contact sont utilisées uniquement pour répondre à vos demandes.{" "}
+          Ce site utilise des cookies analytiques (Google Analytics, Microsoft Clarity) pour mesurer l&apos;audience et améliorer votre expérience. Aucune donnée personnelle n&apos;est vendue.{" "}
           <Link href="/politique-confidentialite" className="underline hover:text-black transition-colors">
             En savoir plus
           </Link>

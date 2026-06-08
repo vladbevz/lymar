@@ -15,7 +15,7 @@ export default function PolitiqueConfidentialitePage() {
             Politique de confidentialité
           </h1>
           <p className="font-(family-name:--font-inter) text-xs text-zinc-400 mb-12">
-            Dernière mise à jour : juin 2025
+            Dernière mise à jour : juin 2026
           </p>
           <div className="space-y-10 font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed">
 
@@ -35,15 +35,17 @@ export default function PolitiqueConfidentialitePage() {
             <div>
               <h2 className="font-logo text-xl text-black mb-4">Données collectées</h2>
               <p>
-                Ce site collecte uniquement les données que vous nous communiquez volontairement via le formulaire de contact :
+                Ce site collecte deux catégories de données :
               </p>
-              <ul className="list-disc list-inside mt-3 space-y-1 text-zinc-500">
+              <p className="mt-3 font-medium text-black">1. Données transmises volontairement (formulaire de contact) :</p>
+              <ul className="list-disc list-inside mt-2 space-y-1 text-zinc-500">
                 <li>Prénom et nom</li>
                 <li>Adresse email</li>
                 <li>Message libre</li>
               </ul>
-              <p className="mt-3">
-                Aucune autre donnée n&apos;est collectée à votre insu. Ce site ne recourt à aucun outil d&apos;analyse statistique (Google Analytics, etc.) ni à aucun pixel de suivi publicitaire.
+              <p className="mt-3 font-medium text-black">2. Données de navigation (analytics) :</p>
+              <p className="mt-2">
+                Ce site utilise <strong className="text-black">Google Analytics</strong> (Google LLC) et <strong className="text-black">Microsoft Clarity</strong> (Microsoft Corp.) pour mesurer l&apos;audience et améliorer l&apos;expérience utilisateur. Ces outils collectent des données anonymisées : pages visitées, durée de session, pays d&apos;origine, type d&apos;appareil. Aucune donnée personnelle identifiable n&apos;est transmise à ces services.
               </p>
             </div>
 
@@ -57,7 +59,10 @@ export default function PolitiqueConfidentialitePage() {
             <div>
               <h2 className="font-logo text-xl text-black mb-4">Base légale</h2>
               <p>
-                Le traitement est fondé sur votre consentement (article 6.1.a du RGPD), exprimé par l&apos;envoi volontaire du formulaire de contact.
+                Le traitement des données du formulaire de contact est fondé sur votre consentement (article 6.1.a du RGPD), exprimé par l&apos;envoi volontaire du formulaire.
+              </p>
+              <p className="mt-3">
+                L&apos;utilisation des outils d&apos;analyse (Google Analytics, Microsoft Clarity) est fondée sur notre intérêt légitime à comprendre l&apos;utilisation du site (article 6.1.f du RGPD), les données étant anonymisées et non utilisées à des fins publicitaires.
               </p>
             </div>
 
@@ -71,17 +76,39 @@ export default function PolitiqueConfidentialitePage() {
             <div>
               <h2 className="font-logo text-xl text-black mb-4">Destinataires des données</h2>
               <p>
-                Vos données ne sont jamais vendues, cédées ou transmises à des tiers à des fins commerciales. Elles peuvent être transmises à des prestataires techniques strictement nécessaires au fonctionnement du service (hébergeur Vercel), dans le respect du RGPD.
+                Vos données ne sont jamais vendues ni cédées à des fins commerciales. Elles peuvent être partagées avec les prestataires techniques suivants, dans le strict cadre de leurs missions :
+              </p>
+              <ul className="list-disc list-inside mt-3 space-y-1 text-zinc-500">
+                <li><strong className="text-black">Vercel</strong> — hébergement du site</li>
+                <li><strong className="text-black">Resend</strong> — acheminement des messages du formulaire de contact</li>
+                <li><strong className="text-black">Google LLC</strong> — mesure d&apos;audience (Google Analytics)</li>
+                <li><strong className="text-black">Microsoft Corp.</strong> — analyse comportementale anonymisée (Microsoft Clarity)</li>
+              </ul>
+              <p className="mt-3">
+                Ces prestataires sont soumis à leurs propres politiques de confidentialité et, pour Google et Microsoft, au Privacy Shield ou mécanismes équivalents assurant un niveau de protection adéquat.
               </p>
             </div>
 
             <div>
               <h2 className="font-logo text-xl text-black mb-4">Cookies</h2>
               <p>
-                Ce site n&apos;utilise aucun cookie de suivi, de publicité ou d&apos;analyse. Aucune donnée de navigation n&apos;est collectée à des fins de traçage.
+                Ce site utilise des cookies techniques et analytiques :
               </p>
+              <ul className="list-disc list-inside mt-3 space-y-2 text-zinc-500">
+                <li>
+                  <strong className="text-black">Cookies de préférence</strong> — mémorisation de votre consentement au bandeau cookie (stockage local, non transmis à des tiers).
+                </li>
+                <li>
+                  <strong className="text-black">Google Analytics</strong> — cookies <code className="text-xs bg-zinc-100 px-1">_ga</code>, <code className="text-xs bg-zinc-100 px-1">_ga_*</code> déposés par Google LLC pour mesurer l&apos;audience. Durée : 13 mois.{" "}
+                  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-black transition-colors">Politique Google</a>.
+                </li>
+                <li>
+                  <strong className="text-black">Microsoft Clarity</strong> — cookies <code className="text-xs bg-zinc-100 px-1">_clck</code>, <code className="text-xs bg-zinc-100 px-1">_clsk</code> déposés par Microsoft Corp. pour l&apos;analyse du comportement de navigation (heatmaps, sessions). Durée : 1 an.{" "}
+                  <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer" className="underline hover:text-black transition-colors">Politique Microsoft</a>.
+                </li>
+              </ul>
               <p className="mt-3">
-                L&apos;hébergeur Vercel peut collecter des données techniques de journalisation (adresse IP, date et heure de connexion) à des fins de sécurité et de performance, conformément à sa propre{" "}
+                L&apos;hébergeur Vercel peut également collecter des données techniques de journalisation (adresse IP, horodatage) à des fins de sécurité, conformément à sa{" "}
                 <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline hover:text-black transition-colors">
                   politique de confidentialité
                 </a>.
