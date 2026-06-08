@@ -54,7 +54,7 @@ export default function Header() {
               Lymar
             </span>
             <span className="font-glacial text-[9px] tracking-[0.3em] uppercase text-zinc-500">
-              Dermo-Esthetic
+              Dermo Esthetic
             </span>
           </Link>
         </div>

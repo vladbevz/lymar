@@ -13,7 +13,7 @@ export default function Footer() {
                 Lymar
               </span>
               <span className="font-glacial text-[9px] tracking-[0.3em] uppercase text-zinc-500">
-                Dermo-Esthetic
+                Dermo Esthetic
               </span>
             </div>
             <p className="text-xs font-(family-name:--font-inter) text-zinc-500 leading-relaxed">
