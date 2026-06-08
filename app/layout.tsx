@@ -120,14 +120,6 @@ export default function RootLayout({
       className={`${inter.variable} h-full antialiased`}
     >
       <head>
-        {/* Preload above-fold fonts to unblock LCP */}
-        <link
-          rel="preload"
-          href="/fonts/font (1)/BauerBodoniStd-Roman.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
         {/* Preconnect to Clarity CDN (saves ~620ms on first load) */}
         <link rel="preconnect" href="https://scripts.clarity.ms" />
         <JsonLd data={localBusinessSchema} />
