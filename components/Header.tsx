@@ -49,7 +49,7 @@ export default function Header() {
       <div className="h-16 flex items-center">
         {/* Logo — same column as hero text: w-1/2 + matching padding */}
         <div className="w-auto lg:w-1/2 shrink-0 flex items-center px-6 lg:px-16 xl:px-24">
-          <Link href="/" className="flex flex-col items-center leading-tight hover:opacity-70 transition-opacity">
+          <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex flex-col items-center leading-tight hover:opacity-70 transition-opacity">
             <span className="font-logo text-xl font-light tracking-[0.25em] uppercase text-black">
               Lymar
             </span>
