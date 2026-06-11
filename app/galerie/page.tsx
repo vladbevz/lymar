@@ -7,7 +7,7 @@ import { FadeUp } from "@/components/AnimatedSection";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Navigation } from "swiper/modules";
+import { EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
@@ -54,7 +54,7 @@ interface ModalState {
   index: number;
 }
 
-const btnClass = "absolute top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all duration-200 shadow-sm";
+const btnClass = "absolute top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all duration-200 shadow-sm";
 
 function PhotoStrip({
   photos,
@@ -65,15 +65,7 @@ function PhotoStrip({
   label: string;
   onSelect: (i: number) => void;
 }) {
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
-
-  const onBeforeInit = (swiper: SwiperType) => {
-    if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
-      swiper.params.navigation.prevEl = prevRef.current;
-      swiper.params.navigation.nextEl = nextRef.current;
-    }
-  };
+  const swiperRef = useRef<SwiperType | null>(null);
 
   return (
     <div className="py-10">
@@ -84,19 +76,18 @@ function PhotoStrip({
       </FadeUp>
 
       <div className="relative">
-        <button ref={prevRef} aria-label="Précédent" className={`${btnClass} left-1`}>
+        <button onClick={() => swiperRef.current?.slidePrev()} aria-label="Précédent" className={`${btnClass} left-1`}>
           <ChevronLeft size={20} strokeWidth={1.5} />
         </button>
         <Swiper
-          modules={[EffectCoverflow, Navigation]}
+          modules={[EffectCoverflow]}
           effect="coverflow"
           centeredSlides
           centeredSlidesBounds
           slidesPerView="auto"
           grabCursor
           coverflowEffect={{ rotate: 18, stretch: 0, depth: 180, modifier: 1, slideShadows: false }}
-          navigation
-          onBeforeInit={onBeforeInit}
+          onSwiper={(s) => { swiperRef.current = s; }}
           className="overflow-visible!"
         >
           {photos.map((photo, i) => (
@@ -109,7 +100,7 @@ function PhotoStrip({
             </SwiperSlide>
           ))}
         </Swiper>
-        <button ref={nextRef} aria-label="Suivant" className={`${btnClass} right-1`}>
+        <button onClick={() => swiperRef.current?.slideNext()} aria-label="Suivant" className={`${btnClass} right-1`}>
           <ChevronRight size={20} strokeWidth={1.5} />
         </button>
       </div>
