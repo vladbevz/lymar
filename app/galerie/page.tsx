@@ -91,9 +91,9 @@ function PhotoStrip({
           modules={[EffectCoverflow, Navigation]}
           effect="coverflow"
           centeredSlides
+          centeredSlidesBounds
           slidesPerView="auto"
           grabCursor
-          loop
           coverflowEffect={{ rotate: 18, stretch: 0, depth: 180, modifier: 1, slideShadows: false }}
           navigation
           onBeforeInit={onBeforeInit}
