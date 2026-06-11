@@ -94,7 +94,6 @@ function PhotoStrip({
           slidesPerView="auto"
           grabCursor
           loop
-          initialSlide={Math.floor(photos.length / 2)}
           coverflowEffect={{ rotate: 18, stretch: 0, depth: 180, modifier: 1, slideShadows: false }}
           navigation
           onBeforeInit={onBeforeInit}
