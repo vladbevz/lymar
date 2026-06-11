@@ -1,15 +1,10 @@
-﻿"use client";
+"use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
-import type { Swiper as SwiperType } from "swiper";
 import { gsap } from "gsap";
 import { FadeUp } from "@/components/AnimatedSection";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
 
 type Photo = { src: string; alt: string };
 
@@ -48,13 +43,10 @@ const cilsPhotos: Photo[] = [
   { src: "/images/cils-7.webp", alt: "Soins cils / yeux — avant/après" },
 ];
 
-
 interface ModalState {
   photos: Photo[];
   index: number;
 }
-
-const btnClass = "absolute top-1/2 -translate-y-1/2 z-50 w-12 h-12 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all duration-200 shadow-sm";
 
 function PhotoStrip({
   photos,
@@ -65,7 +57,19 @@ function PhotoStrip({
   label: string;
   onSelect: (i: number) => void;
 }) {
-  const swiperRef = useRef<SwiperType | null>(null);
+  const [active, setActive] = useState(0);
+  const total = photos.length;
+
+  const prev = () => setActive((a) => (a - 1 + total) % total);
+  const next = () => setActive((a) => (a + 1) % total);
+
+  const swipeStart = useRef(0);
+  const onPointerDown = (e: React.PointerEvent) => { swipeStart.current = e.clientX; };
+  const onPointerUp = (e: React.PointerEvent) => {
+    const diff = e.clientX - swipeStart.current;
+    if (diff > 50) prev();
+    else if (diff < -50) next();
+  };
 
   return (
     <div className="py-10">
@@ -75,33 +79,81 @@ function PhotoStrip({
         </p>
       </FadeUp>
 
-      <div className="relative">
-        <button onClick={() => swiperRef.current?.slidePrev()} aria-label="Précédent" className={`${btnClass} left-1`}>
-          <ChevronLeft size={20} strokeWidth={1.5} />
-        </button>
-        <Swiper
-          modules={[EffectCoverflow]}
-          effect="coverflow"
-          centeredSlides
-          centeredSlidesBounds
-          slidesPerView="auto"
-          grabCursor
-          coverflowEffect={{ rotate: 18, stretch: 0, depth: 180, modifier: 1, slideShadows: false }}
-          onSwiper={(s) => { swiperRef.current = s; }}
-          className="overflow-visible!"
+      {/* Slider */}
+      <div
+        className="relative overflow-hidden"
+        onPointerDown={onPointerDown}
+        onPointerUp={onPointerUp}
+      >
+        <div
+          className="flex"
+          style={{
+            transform: `translateX(calc(14% - ${active * 74}%))`,
+            transition: "transform 0.5s cubic-bezier(0.4,0,0.2,1)",
+          }}
         >
-          {photos.map((photo, i) => (
-            <SwiperSlide key={photo.src} style={{ width: 260 }}>
-              {({ isActive }) => (
-                <button onClick={() => onSelect(i)} aria-label={`Voir ${photo.alt}`} className="relative overflow-hidden block w-full transition-opacity duration-300" style={{ height: 340, opacity: isActive ? 1 : 0.55 }}>
-                  <Image src={photo.src} alt={photo.alt} fill sizes="260px" draggable={false} className="object-cover pointer-events-none" />
-                </button>
-              )}
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <button onClick={() => swiperRef.current?.slideNext()} aria-label="Suivant" className={`${btnClass} right-1`}>
-          <ChevronRight size={20} strokeWidth={1.5} />
+          {photos.map((photo, i) => {
+            const isActive = i === active;
+            return (
+              <div
+                key={photo.src}
+                style={{
+                  flex: "0 0 72%",
+                  marginRight: "2%",
+                  transform: isActive ? "scale(1)" : "scale(0.95)",
+                  opacity: isActive ? 1 : 0.5,
+                  filter: isActive ? "brightness(1)" : "brightness(0.85)",
+                  transition: "transform 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.5s, filter 0.5s",
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  if (isActive) onSelect(i);
+                  else setActive(i);
+                }}
+              >
+                <div className="relative overflow-hidden" style={{ height: 340 }}>
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="72vw"
+                    className="object-cover pointer-events-none"
+                    draggable={false}
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Controls */}
+      <div className="flex items-center mt-4 px-[14%] gap-4">
+        <button
+          onClick={prev}
+          aria-label="Précédent"
+          className="w-9 h-9 rounded-full border border-zinc-200 flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all shrink-0"
+        >
+          <ChevronLeft size={16} strokeWidth={1.5} />
+        </button>
+
+        <div className="flex-1 h-px bg-zinc-100 relative">
+          <div
+            className="absolute left-0 top-0 h-full bg-zinc-800 transition-all duration-500"
+            style={{ width: `${((active + 1) / total) * 100}%` }}
+          />
+        </div>
+
+        <span className="font-(family-name:--font-inter) text-[10px] tracking-[0.2em] text-zinc-400 shrink-0 min-w-[36px] text-right">
+          {active + 1} / {total}
+        </span>
+
+        <button
+          onClick={next}
+          aria-label="Suivant"
+          className="w-9 h-9 rounded-full border border-zinc-200 flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all shrink-0"
+        >
+          <ChevronRight size={16} strokeWidth={1.5} />
         </button>
       </div>
     </div>
@@ -147,7 +199,6 @@ export default function GaleriePage() {
     []
   );
 
-  // Animate image on index change
   useEffect(() => {
     if (!modal || !imageWrapRef.current) return;
     gsap.fromTo(
@@ -157,7 +208,6 @@ export default function GaleriePage() {
     );
   }, [modal?.index]);
 
-  // Keyboard nav
   useEffect(() => {
     if (!modal) return;
     const handler = (e: KeyboardEvent) => {
@@ -284,7 +334,6 @@ export default function GaleriePage() {
         }}
         onClick={() => { if (!modalDidSwipe.current) closeModal(); }}
       >
-        {/* Close */}
         <button
           onClick={(e) => { e.stopPropagation(); closeModal(); }}
           className="absolute top-6 right-6 text-white/40 hover:text-white transition-colors z-20"
@@ -293,14 +342,12 @@ export default function GaleriePage() {
           <X size={18} strokeWidth={1.5} />
         </button>
 
-        {/* Counter */}
         {modal && (
           <p className="absolute top-6 left-1/2 -translate-x-1/2 font-(family-name:--font-inter) text-[10px] tracking-[0.25em] uppercase text-white/30 z-20 select-none">
             {modal.index + 1} / {modal.photos.length}
           </p>
         )}
 
-        {/* Prev */}
         {modal && modal.photos.length > 1 && (
           <button
             onClick={(e) => { e.stopPropagation(); prev(); }}
@@ -311,7 +358,6 @@ export default function GaleriePage() {
           </button>
         )}
 
-        {/* Image */}
         {modal && (
           <div
             ref={imageWrapRef}
@@ -330,7 +376,6 @@ export default function GaleriePage() {
           </div>
         )}
 
-        {/* Next */}
         {modal && modal.photos.length > 1 && (
           <button
             onClick={(e) => { e.stopPropagation(); next(); }}
