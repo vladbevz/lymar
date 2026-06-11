@@ -1,16 +1,15 @@
 ﻿"use client";
 
 import { useRef, useState, useEffect, useCallback } from "react";
+import type { Swiper as SwiperType } from "swiper";
 import { gsap } from "gsap";
 import { FadeUp } from "@/components/AnimatedSection";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, EffectCards, EffectCreative, Navigation } from "swiper/modules";
+import { EffectCoverflow, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/effect-cards";
-import "swiper/css/effect-creative";
 
 type Photo = { src: string; alt: string };
 
@@ -55,27 +54,26 @@ interface ModalState {
   index: number;
 }
 
-type SliderEffect = "coverflow" | "cards" | "creative";
-
-const navId = (label: string) => label.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase();
-
 const btnClass = "absolute top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-400 hover:text-black hover:border-zinc-400 transition-all duration-200 shadow-sm";
 
 function PhotoStrip({
   photos,
   label,
   onSelect,
-  effect = "coverflow",
 }: {
   photos: Photo[];
   label: string;
   onSelect: (i: number) => void;
-  effect?: SliderEffect;
 }) {
-  const prevId = `prev-${navId(label)}`;
-  const nextId = `next-${navId(label)}`;
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
 
-  const nav = { prevEl: `#${prevId}`, nextEl: `#${nextId}` };
+  const onBeforeInit = (swiper: SwiperType) => {
+    if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
+      swiper.params.navigation.prevEl = prevRef.current;
+      swiper.params.navigation.nextEl = nextRef.current;
+    }
+  };
 
   return (
     <div className="py-10">
@@ -85,100 +83,37 @@ function PhotoStrip({
         </p>
       </FadeUp>
 
-      {/* ── COVERFLOW ── */}
-      {effect === "coverflow" && (
-        <div className="relative">
-          <button id={prevId} aria-label="Précédent" className={`${btnClass} left-1`}>
-            <ChevronLeft size={20} strokeWidth={1.5} />
-          </button>
-          <Swiper
-            modules={[EffectCoverflow, Navigation]}
-            effect="coverflow"
-            centeredSlides
-            slidesPerView="auto"
-            grabCursor
-            initialSlide={Math.floor(photos.length / 2)}
-            coverflowEffect={{ rotate: 18, stretch: 0, depth: 180, modifier: 1, slideShadows: false }}
-            navigation={nav}
-            className="overflow-visible!"
-          >
-            {photos.map((photo, i) => (
-              <SwiperSlide key={photo.src} style={{ width: 260 }}>
-                {({ isActive }) => (
-                  <button onClick={() => onSelect(i)} aria-label={`Voir ${photo.alt}`} className="relative overflow-hidden block w-full transition-opacity duration-300" style={{ height: 340, opacity: isActive ? 1 : 0.55 }}>
-                    <Image src={photo.src} alt={photo.alt} fill sizes="260px" draggable={false} className="object-cover pointer-events-none" />
-                  </button>
-                )}
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <button id={nextId} aria-label="Suivant" className={`${btnClass} right-1`}>
-            <ChevronRight size={20} strokeWidth={1.5} />
-          </button>
-        </div>
-      )}
-
-      {/* ── CARDS ── */}
-      {effect === "cards" && (
-        <div className="relative flex justify-center">
-          <button id={prevId} aria-label="Précédent" className={`${btnClass} left-4 lg:left-16`}>
-            <ChevronLeft size={20} strokeWidth={1.5} />
-          </button>
-          <Swiper
-            modules={[EffectCards, Navigation]}
-            effect="cards"
-            grabCursor
-            cardsEffect={{ slideShadows: false, perSlideOffset: 10, perSlideRotate: 4 }}
-            navigation={nav}
-            style={{ width: 280, height: 370 }}
-          >
-            {photos.map((photo, i) => (
-              <SwiperSlide key={photo.src}>
-                <button onClick={() => onSelect(i)} aria-label={`Voir ${photo.alt}`} className="relative overflow-hidden block w-full h-full">
-                  <Image src={photo.src} alt={photo.alt} fill sizes="280px" draggable={false} className="object-cover pointer-events-none" />
+      <div className="relative">
+        <button ref={prevRef} aria-label="Précédent" className={`${btnClass} left-1`}>
+          <ChevronLeft size={20} strokeWidth={1.5} />
+        </button>
+        <Swiper
+          modules={[EffectCoverflow, Navigation]}
+          effect="coverflow"
+          centeredSlides
+          slidesPerView="auto"
+          grabCursor
+          loop
+          initialSlide={Math.floor(photos.length / 2)}
+          coverflowEffect={{ rotate: 18, stretch: 0, depth: 180, modifier: 1, slideShadows: false }}
+          navigation
+          onBeforeInit={onBeforeInit}
+          className="overflow-visible!"
+        >
+          {photos.map((photo, i) => (
+            <SwiperSlide key={photo.src} style={{ width: 260 }}>
+              {({ isActive }) => (
+                <button onClick={() => onSelect(i)} aria-label={`Voir ${photo.alt}`} className="relative overflow-hidden block w-full transition-opacity duration-300" style={{ height: 340, opacity: isActive ? 1 : 0.55 }}>
+                  <Image src={photo.src} alt={photo.alt} fill sizes="260px" draggable={false} className="object-cover pointer-events-none" />
                 </button>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <button id={nextId} aria-label="Suivant" className={`${btnClass} right-4 lg:right-16`}>
-            <ChevronRight size={20} strokeWidth={1.5} />
-          </button>
-        </div>
-      )}
-
-      {/* ── CREATIVE ── */}
-      {effect === "creative" && (
-        <div className="relative">
-          <button id={prevId} aria-label="Précédent" className={`${btnClass} left-1`}>
-            <ChevronLeft size={20} strokeWidth={1.5} />
-          </button>
-          <Swiper
-            modules={[EffectCreative, Navigation]}
-            effect="creative"
-            centeredSlides
-            slidesPerView="auto"
-            grabCursor
-            initialSlide={Math.floor(photos.length / 2)}
-            creativeEffect={{
-              prev: { shadow: false, translate: ["-110%", 0, -200], opacity: 0 },
-              next: { translate: ["110%", 0, 0], opacity: 0.6 },
-            }}
-            navigation={nav}
-            style={{ overflow: "visible" }}
-          >
-            {photos.map((photo, i) => (
-              <SwiperSlide key={photo.src} style={{ width: 320 }}>
-                <button onClick={() => onSelect(i)} aria-label={`Voir ${photo.alt}`} className="relative overflow-hidden block w-full" style={{ height: 400 }}>
-                  <Image src={photo.src} alt={photo.alt} fill sizes="320px" draggable={false} className="object-cover pointer-events-none" />
-                </button>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <button id={nextId} aria-label="Suivant" className={`${btnClass} right-1`}>
-            <ChevronRight size={20} strokeWidth={1.5} />
-          </button>
-        </div>
-      )}
+              )}
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <button ref={nextRef} aria-label="Suivant" className={`${btnClass} right-1`}>
+          <ChevronRight size={20} strokeWidth={1.5} />
+        </button>
+      </div>
     </div>
   );
 }
@@ -297,21 +232,18 @@ export default function GaleriePage() {
           label="Sourcils"
           photos={sourcilsPhotos}
           onSelect={(i) => openModal(sourcilsPhotos, i)}
-          effect="coverflow"
         />
         <div className="border-t border-zinc-100 mx-6 lg:mx-16" />
         <PhotoStrip
           label="Lèvres"
           photos={levresPhotos}
           onSelect={(i) => openModal(levresPhotos, i)}
-          effect="coverflow"
         />
         <div className="border-t border-zinc-100 mx-6 lg:mx-16" />
         <PhotoStrip
           label="Soins cils / yeux"
           photos={cilsPhotos}
           onSelect={(i) => openModal(cilsPhotos, i)}
-          effect="coverflow"
         />
       </section>
 
