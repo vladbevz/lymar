@@ -16,6 +16,7 @@ export default function PigmentationCorrectricePage() {
       sousTitre="Camouflage dermique de cicatrices — blépharoplastie, lifting, cicatrices diverses."
       heroImage="/images/pigment-correct.webp"
       heroImageAlt="Pigmentation correctrice — camouflage cicatrices"
+      heroImagePosition="object-center"
       intro="La dermopigmentation correctrice permet d'atténuer visuellement certaines cicatrices en rééquilibrant la couleur de la peau grâce à une pigmentation sur mesure. Chaque prise en charge est réalisée avec précision et délicatesse afin d'obtenir un résultat discret, fondu et adapté à la zone traitée. Une consultation préalable est indispensable pour évaluer la faisabilité du traitement et définir le protocole le plus adapté."
       services={[
         { nom: "Consultation camouflage cicatrice", duree: "30 min", prix: "20 €", note: "Remboursée si traitement réservé" },

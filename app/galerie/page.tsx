@@ -23,8 +23,6 @@ const sourcilsPhotos: Photo[] = [
   { src: "/images/sourcils-6.webp", alt: "Sourcils — maquillage permanent" },
   { src: "/images/sourcils-7.webp", alt: "Sourcils — avant/après" },
   { src: "/images/sourcils-8.webp", alt: "Sourcils — résultat naturel" },
-  { src: "/images/sourcils-9.webp", alt: "Sourcils — maquillage permanent" },
-  { src: "/images/sourcils-10.webp", alt: "Sourcils — résultat final" },
 ];
 
 const levresPhotos: Photo[] = [
@@ -39,8 +37,6 @@ const levresPhotos: Photo[] = [
   { src: "/images/levres-9.webp", alt: "Lèvres — aquarelle fondu" },
   { src: "/images/levres-10.webp", alt: "Lèvres — résultat avant/après" },
   { src: "/images/levres-11.webp", alt: "Lèvres — maquillage permanent" },
-  { src: "/images/levres-12.webp", alt: "Lèvres — Candy Lips" },
-  { src: "/images/levres-13.webp", alt: "Lèvres — résultat naturel" },
 ];
 
 const cilsPhotos: Photo[] = [
@@ -48,8 +44,9 @@ const cilsPhotos: Photo[] = [
   { src: "/images/cils-2.webp", alt: "Soins cils / yeux — résultat naturel" },
   { src: "/images/cils-3.webp", alt: "Soins cils / yeux — Browlift" },
   { src: "/images/cils-4.webp", alt: "Soins cils / yeux — avant/après" },
-  { src: "/images/cils-5.webp", alt: "Soins cils / yeux — résultat" },
-  { src: "/images/cils-6.jpg",  alt: "Soins cils / yeux — Lashlift résultat" },
+  { src: "/images/cils-5.jpg",  alt: "Soins cils / yeux — résultat" },
+  { src: "/images/cils-6.webp", alt: "Soins cils / yeux — Lashlift résultat" },
+  { src: "/images/cils-7.webp", alt: "Soins cils / yeux — avant/après" },
 ];
 
 
@@ -273,7 +270,7 @@ export default function GaleriePage() {
               Nos réalisations
             </h1>
             <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
-              Sourcils, lèvres, soins cils & yeux — chaque résultat révèle une beauté unique.
+              Sourcils, lèvres, yeux — chaque résultat révèle une beauté unique.
             </p>
             <p className="font-(family-name:--font-inter) text-xs tracking-[0.2em] uppercase text-zinc-400">
               {sourcilsPhotos.length + levresPhotos.length + cilsPhotos.length} réalisations

@@ -16,7 +16,7 @@ export default function TachesRousseursPage() {
       sousTitre="Pour une peau vivante et ensoleillée."
       heroImage="/images/taches.webp"
       heroImageAlt="Taches de rousseur semi-permanentes — Lymar Dermo Esthetic"
-      heroImagePosition="object-bottom"
+      heroImagePosition="object-top"
       intro="Les taches de rousseur semi-permanentes sont dessinées au dermographe une par une pour un résultat qui imite parfaitement le naturel. Elles apportent fraîcheur, douceur et relief au visage tout en donnant cet effet « retour de soleil »."
       services={[
         { nom: "Effet naturel", duree: "1h", prix: "150 €" },
