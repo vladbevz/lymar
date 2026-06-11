@@ -126,13 +126,13 @@ function PhotoStrip({
                   else setActive(i);
                 }}
               >
-                <div className="relative overflow-hidden bg-white" style={{ height: isDesktop ? 420 : 460 }}>
+                <div className="relative overflow-hidden" style={{ height: isDesktop ? 420 : 460 }}>
                   <Image
                     src={photo.src}
                     alt={photo.alt}
                     fill
                     sizes={isDesktop ? "30vw" : "72vw"}
-                    className="object-contain pointer-events-none"
+                    className="object-cover pointer-events-none"
                     draggable={false}
                   />
                 </div>
