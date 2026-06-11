@@ -58,7 +58,22 @@ function PhotoStrip({
   onSelect: (i: number) => void;
 }) {
   const [active, setActive] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(false);
   const total = photos.length;
+
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  // Mobile: 1 dominant slide (72%) with peeks
+  // Desktop: 3 slides visible (30% each + 2% gap = 32% step), active centered
+  const slideW = isDesktop ? 30 : 72;
+  const gap = 2;
+  const step = slideW + gap;
+  const peekOffset = isDesktop ? (100 - slideW) / 2 : 14; // 35% on desktop centers active
 
   const prev = () => setActive((a) => (a - 1 + total) % total);
   const next = () => setActive((a) => (a + 1) % total);
@@ -88,7 +103,7 @@ function PhotoStrip({
         <div
           className="flex"
           style={{
-            transform: `translateX(calc(14% - ${active * 74}%))`,
+            transform: `translateX(calc(${peekOffset}% - ${active * step}%))`,
             transition: "transform 0.5s cubic-bezier(0.4,0,0.2,1)",
           }}
         >
@@ -98,8 +113,8 @@ function PhotoStrip({
               <div
                 key={photo.src}
                 style={{
-                  flex: "0 0 72%",
-                  marginRight: "2%",
+                  flex: `0 0 ${slideW}%`,
+                  marginRight: `${gap}%`,
                   transform: isActive ? "scale(1)" : "scale(0.95)",
                   opacity: isActive ? 1 : 0.5,
                   filter: isActive ? "brightness(1)" : "brightness(0.85)",
@@ -111,12 +126,12 @@ function PhotoStrip({
                   else setActive(i);
                 }}
               >
-                <div className="relative overflow-hidden bg-[#F0EBE3]" style={{ height: 460 }}>
+                <div className="relative overflow-hidden bg-white" style={{ height: isDesktop ? 420 : 460 }}>
                   <Image
                     src={photo.src}
                     alt={photo.alt}
                     fill
-                    sizes="72vw"
+                    sizes={isDesktop ? "30vw" : "72vw"}
                     className="object-contain pointer-events-none"
                     draggable={false}
                   />
@@ -128,7 +143,10 @@ function PhotoStrip({
       </div>
 
       {/* Controls */}
-      <div className="flex items-center mt-4 px-[14%] gap-4">
+      <div
+        className="flex items-center mt-4 gap-4"
+        style={{ paddingLeft: `${peekOffset}%`, paddingRight: `${peekOffset}%` }}
+      >
         <button
           onClick={prev}
           aria-label="Précédent"
