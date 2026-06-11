@@ -111,13 +111,13 @@ function PhotoStrip({
                   else setActive(i);
                 }}
               >
-                <div className="relative overflow-hidden" style={{ height: 340 }}>
+                <div className="relative overflow-hidden bg-[#F0EBE3]" style={{ height: 460 }}>
                   <Image
                     src={photo.src}
                     alt={photo.alt}
                     fill
                     sizes="72vw"
-                    className="object-cover pointer-events-none"
+                    className="object-contain pointer-events-none"
                     draggable={false}
                   />
                 </div>
