@@ -1,5 +1,5 @@
 ﻿export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://lymardermoesthetic.fr";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.lymardermoesthetic.fr";
 
 export const SITE_NAME = "Lymar Dermo Esthetic";
 
