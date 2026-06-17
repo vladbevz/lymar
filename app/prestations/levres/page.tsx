@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export const metadata: Metadata = {
   title: "Maquillage permanent lèvres — Candy Lips & Aquarelle · Lymar Dermo Esthetic",
   description: "Maquillage permanent des lèvres à Saint-Georges-de-Didonne. Candy Lips dégradé et effet aquarelle. 300 € retouche incluse. Cabinet Anastasiia Lymar.",
-  alternates: { canonical: "https://lymardermoesthetic.fr/prestations/levres" },
+  alternates: { canonical: "https://www.lymardermoesthetic.fr/prestations/levres" },
 };
 
 const faq = [

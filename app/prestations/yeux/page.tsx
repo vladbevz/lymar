@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export const metadata: Metadata = {
   title: "Eyeliner permanent — Liner classique, poudré & ras-de-cils · Lymar Dermo Esthetic",
   description: "Eyeliner permanent à Saint-Georges-de-Didonne. Liner classique, poudré, ras-de-cils haut ou bas — 1ère retouche incluse. Cabinet Anastasiia Lymar.",
-  alternates: { canonical: "https://lymardermoesthetic.fr/prestations/yeux" },
+  alternates: { canonical: "https://www.lymardermoesthetic.fr/prestations/yeux" },
 };
 
 const faq = [

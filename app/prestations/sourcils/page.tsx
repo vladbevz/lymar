@@ -6,25 +6,25 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export const metadata: Metadata = {
   title: "Maquillage permanent sourcils à Saint-Georges-de-Didonne — Lymar Dermo Esthetic",
   description: "Maquillage permanent sourcils à Saint-Georges-de-Didonne. Effet poil à poil et effet poudré par Anastasiia Lymar. À partir de 250 €, retouche incluse.",
-  alternates: { canonical: "https://lymardermoesthetic.fr/prestations/sourcils" },
+  alternates: { canonical: "https://www.lymardermoesthetic.fr/prestations/sourcils" },
 };
 
 const faq = [
   {
     q: "Quelle est la différence entre l'effet poil à poil et l'effet poudré ?",
-    a: "L'effet poil à poil reproduit des poils individuels à l'aide d'une lame fine pour un rendu très naturel et aérien. L'effet poudré crée un dégradé vaporeux semblable à un sourcil maquillé. Les deux techniques peuvent être combinées.",
+    a: "L’effet poil à poil est idéal pour recréer une ligne de sourcils lorsqu’il y a peu ou pas de poils naturels. Il offre un résultat très naturel. L’effet poudré est recommandé lorsque la ligne est déjà présente. Il apporte plus de densité et un effet maquillé léger tout en restant élégant.",
   },
   {
     q: "Combien de temps dure le maquillage permanent des sourcils ?",
-    a: "En moyenne 1 à 3 ans selon le type de peau, le mode de vie et l'exposition au soleil. Une retouche est recommandée tous les 6 à 12 mois.",
+    a: "La tenue varie selon votre peau et votre mode de vie. En moyenne, le résultat reste visible entre 1 et 5 ans. Un entretien permet de conserver un résultat optimal.",
   },
   {
     q: "La séance est-elle douloureuse ?",
-    a: "Un gel anesthésiant est appliqué avant la séance pour minimiser l'inconfort. La grande majorité des clientes décrivent la sensation comme légère.",
+    a: "La prestation est généralement très bien tolérée. Nous travaillons dans les couches superficielles de la peau, ce qui limite l’inconfort. La sensation est souvent décrite comme un léger échauffement plutôt qu’une douleur.",
   },
   {
     q: "Puis-je venir si j'ai déjà du maquillage permanent ?",
-    a: "Oui, une consultation préalable permet d'évaluer l'état du pigment existant et de définir la meilleure approche (correction, densification ou repigmentation).",
+    a: "Oui, sous réserve d’une consultation préalable. Celle-ci permet d’évaluer votre ancien maquillage permanent et de déterminer la solution la plus adaptée.",
   },
 ];
 
@@ -34,7 +34,7 @@ export default function SourcilsPage() {
       slug="sourcils"
       breadcrumb="Prestations · Sourcils"
       titre="Maquillage permanent sourcils"
-      sousTitre="Effet poil à poil & effet poudré à Saint-Georges-de-Didonne — résultats naturels et durables."
+      sousTitre="Effet poil à poil & effet poudré — résultats naturels et durables."
       heroImage="/images/sourcils.webp"
       heroImageAlt="Maquillage permanent sourcils — résultat naturel Lymar Dermo Esthetic"
       heroImageFit="contain"

@@ -4,7 +4,7 @@ import PrestaPageLayout from "@/components/PrestaPageLayout";
 export const metadata: Metadata = {
   title: "Pigmentation correctrice — Camouflage cicatrices · Lymar Dermo Esthetic",
   description: "Camouflage dermique de cicatrices (blépharoplastie, lifting, petites cicatrices) à Saint-Georges-de-Didonne. Cabinet Anastasiia Lymar.",
-  alternates: { canonical: "https://lymardermoesthetic.fr/prestations/pigmentation-correctrice" },
+  alternates: { canonical: "https://www.lymardermoesthetic.fr/prestations/pigmentation-correctrice" },
 };
 
 export default function PigmentationCorrectricePage() {

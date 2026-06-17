@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "À propos — Anastasiia Lymar · Maquillage Permanent",
   description:
     "Découvrez Anastasiia Lymar, experte en maquillage permanent formée à l'international. Précision, personnalisation et résultats naturels à Saint-Georges-de-Didonne.",
-  alternates: { canonical: "https://lymardermoesthetic.fr/a-propos" },
+  alternates: { canonical: "https://www.lymardermoesthetic.fr/a-propos" },
 };
 
 const valeurs = [
@@ -22,7 +22,7 @@ const valeurs = [
   },
   {
     titre: "Naturel",
-    texte: "Le plus beau maquillage permanent est celui qu’on ne remarque pas",
+    texte: "Le plus beau maquillage permanent est celui qu’on ne remarque pas.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function AProposPage() {
               Anastasiia Lymar
             </h1>
             <p className="font-(family-name:--font-inter) text-sm text-zinc-500 leading-relaxed max-w-sm mb-6">
-              Experte internationale en maquillage permanent et pigmentation correctrice. Deux cabinets : Saint-Georges-de-Didonne et Beaune.
+              Experte internationale en maquillage permanent et pigmentation correctrice.
             </p>
             <a
               href="https://www.instagram.com/lymar.dermo.esthetic/"
@@ -105,7 +105,7 @@ export default function AProposPage() {
               <FadeUp delay={0.3}>
                 <div className="space-y-5 font-(family-name:--font-inter) text-base text-zinc-500 leading-relaxed">
                   <p>
-                    Passionnée par l&apos;art du maquillage permanent depuis plus de dix ans, Anastasiia Lymar a forgé son expertise auprès des maîtres les plus reconnus en Europe.
+                    Passionnée par l&apos;art du maquillage permanent depuis plus de cinq ans, Anastasiia Lymar a forgé son expertise auprès des maîtres les plus reconnus dans le monde.
                   </p>
                   <p>
                     Son approche est celle d&apos;une artiste autant que d&apos;une technicienne : elle analyse la morphologie de chaque visage, étudie les teintes naturelles de la peau et propose des formes qui harmonisent les traits plutôt que de les imposer.
@@ -132,7 +132,7 @@ export default function AProposPage() {
             </h2>
             <Separator className="w-12 mx-auto bg-black mb-10" />
             <p className="font-(family-name:--font-inter) text-base text-zinc-500 leading-relaxed">
-              Certifiée par les plus grands noms du maquillage permanent en Europe, Anastasiia se forme continuellement aux nouvelles techniques et aux innovations pigmentaires afin d&apos;offrir à ses clients les résultats les plus sûrs et les plus esthétiques.
+              Certifiée par les plus grands noms du maquillage permanent dans le monde, Anastasiia se forme continuellement aux nouvelles techniques et aux innovations pigmentaires afin d&apos;offrir à ses clients les résultats les plus sûrs et les plus esthétiques.
             </p>
           </FadeUp>
         </div>

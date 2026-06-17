@@ -4,7 +4,7 @@ import PrestaPageLayout from "@/components/PrestaPageLayout";
 export const metadata: Metadata = {
   title: "Soins cils & sourcils — Lashlift, Browlift, Teinture · Lymar Dermo Esthetic",
   description: "Lashlift, browlift et teinture cils/sourcils à Saint-Georges-de-Didonne. Soins express pour sublimer le regard. Cabinet Anastasiia Lymar.",
-  alternates: { canonical: "https://lymardermoesthetic.fr/prestations/soins-cils-sourcils" },
+  alternates: { canonical: "https://www.lymardermoesthetic.fr/prestations/soins-cils-sourcils" },
 };
 
 export default function SoinsCilsSourcilsPage() {
