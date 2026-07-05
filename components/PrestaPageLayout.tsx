@@ -24,6 +24,7 @@ interface Props {
   heroImageAlt?: string;
   heroImageFit?: "cover" | "contain";
   heroImagePosition?: string;
+  heroImageBg?: string;
   slug?: string;
 }
 
@@ -41,6 +42,7 @@ export default function PrestaPageLayout({
   heroImageAlt = "Maquillage permanent — Lymar Dermo Esthetic",
   heroImageFit = "cover",
   heroImagePosition = "object-bottom",
+  heroImageBg,
   slug,
 }: Props) {
   const pageName = breadcrumb.split("·").pop()?.trim() ?? titre;
@@ -96,14 +98,14 @@ export default function PrestaPageLayout({
       <section className="relative mt-16 overflow-hidden bg-white lg:flex lg:h-[calc(100svh-64px)]">
 
         {/* Mobile image */}
-        <div className="relative h-100 w-full lg:hidden">
+        <div className="relative h-100 w-full lg:hidden" style={heroImageBg ? { background: heroImageBg } : undefined}>
           <Image
             src={heroImage}
             alt={heroImageAlt}
             fill
             priority
             sizes="100vw"
-            className={`object-cover ${heroImagePosition}`}
+            className={`${heroImageFit === "contain" ? "object-contain" : "object-cover"} ${heroImagePosition}`}
           />
         </div>
 
@@ -128,14 +130,14 @@ export default function PrestaPageLayout({
         </div>
 
         {/* Right — edge-to-edge photo */}
-        <div className="hidden lg:block relative flex-1">
+        <div className="hidden lg:block relative flex-1" style={heroImageBg ? { background: heroImageBg } : undefined}>
           <Image
             src={heroImage}
             alt={heroImageAlt}
             fill
             priority
             sizes="50vw"
-            className={`object-cover ${heroImagePosition}`}
+            className={`${heroImageFit === "contain" ? "object-contain" : "object-cover"} ${heroImagePosition}`}
           />
         </div>
 

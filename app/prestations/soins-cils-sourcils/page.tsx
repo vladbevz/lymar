@@ -16,7 +16,9 @@ export default function SoinsCilsSourcilsPage() {
       sousTitre="Lashlift, browlift, teinture — des soins express pour sublimer votre regard au quotidien."
       heroImage="/images/soins-cils.webp"
       heroImageAlt="Soins cils et sourcils — Lymar Dermo Esthetic"
+      heroImageFit="contain"
       heroImagePosition="object-center"
+      heroImageBg="#FAF7F4"
       intro="Le Lashlift et le Browlift révèlent naturellement l'intensité du regard sans effet artificiel. Le rehaussement de cils apporte une courbure élégante et ouvre les yeux instantanément, tandis que le Browlift restructure les sourcils, discipline les poils et crée un effet plus dense et harmonieux. Chaque prestation est sublimée par une teinture des cils ou des sourcils afin d'intensifier davantage le regard et apporter un résultat encore plus défini."
       services={[
         { nom: "Teinture cils ou sourcils", duree: "15 min", prix: "10 €" },
