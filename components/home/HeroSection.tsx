@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import BookingButtons from "@/components/BookingButtons";
+import { GOOGLE_REVIEW_COUNT } from "@/lib/site";
 
 gsap.registerPlugin(useGSAP);
 
@@ -105,7 +106,7 @@ export default function HeroSection() {
               ))}
             </div>
             <span className="font-(family-name:--font-inter) text-xs text-zinc-400 group-hover:text-zinc-600 transition-colors">
-              131 avis Google
+              {GOOGLE_REVIEW_COUNT} avis Google
             </span>
           </div>
         </a>

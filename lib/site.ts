@@ -17,3 +17,5 @@ export const PLANITY_LOCATIONS = [
 export const INSTAGRAM = "https://www.instagram.com/lymar.dermo.esthetic/";
 
 export const CONTACT_EMAIL = "anastasiia.lymar@gmail.com";
+
+export const GOOGLE_REVIEW_COUNT = 136;

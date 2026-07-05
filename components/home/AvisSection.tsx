@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { gsap } from "gsap";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FadeUp } from "@/components/AnimatedSection";
+import { GOOGLE_REVIEW_COUNT } from "@/lib/site";
 
 const GoogleG = ({ size = 16 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="shrink-0">
@@ -111,7 +112,7 @@ export default function AvisSection() {
                   <Stars size="sm" />
                 </div>
                 <p className="font-(family-name:--font-inter) text-xs text-zinc-400 group-hover:text-zinc-600 transition-colors">
-                  131 avis Google
+                  {GOOGLE_REVIEW_COUNT} avis Google
                 </p>
               </div>
             </a>
